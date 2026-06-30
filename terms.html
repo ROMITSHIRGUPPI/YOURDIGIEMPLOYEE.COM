@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Terms of Service for DMS-IA — Digital Memo System Industrial Automation by Rohmit Neelakant Shirgoppi. Software Licence Agreement v1.0.">
+<title>Terms of Service v1.0 — DMS-IA | Your Digi Employee</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;color:#333;background:#f9f9f9;}
+header{background:linear-gradient(135deg,#0d47a1,#1a73e8);color:#fff;
+        padding:32px 20px;text-align:center;}
+header h1{font-size:1.7em;margin-bottom:6px;}
+header p{font-size:13px;opacity:0.9;}
+.topbar{background:#fff;border-bottom:1px solid #e0e0e0;
+         padding:10px 20px;font-size:13px;}
+.topbar a{color:#1a73e8;text-decoration:none;}
+.topbar a:hover{text-decoration:underline;}
+.container{max-width:900px;margin:30px auto;padding:0 20px 60px;}
+.card{background:#fff;border-radius:10px;padding:32px;
+       box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.badge-row{margin-bottom:20px;display:flex;flex-wrap:wrap;gap:8px;}
+.badge{background:#e8f0fe;color:#1a73e8;padding:4px 12px;
+        border-radius:20px;font-size:12px;font-weight:bold;}
+.badge.green{background:#e6f4ea;color:#1e8e3e;}
+.badge.red{background:#fce8e6;color:#c5221f;}
+.badge.orange{background:#fce8b2;color:#e37400;}
+.warning{background:#fff8e1;border-left:4px solid #f9a825;
+          padding:16px 20px;border-radius:0 8px 8px 0;
+          margin-bottom:20px;font-size:14px;line-height:1.6;}
+pre{white-space:pre-wrap;font-family:"Courier New",monospace;
+     font-size:13px;line-height:1.75;color:#333;
+     border-top:1px solid #e0e0e0;padding-top:24px;margin-top:8px;}
+footer{background:#0d47a1;color:#fff;text-align:center;
+        padding:28px 20px;font-size:13px;line-height:2;}
+footer a{color:#fff;text-decoration:underline;}
+@media(max-width:600px){
+  header h1{font-size:1.3em;}
+  .card{padding:20px;}
+  pre{font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>&#128220; Terms of Service</h1>
+  <p>DMS-IA &mdash; Digital Memo System Industrial Automation &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; 29 June 2026</p>
+</header>
+
+<div class="topbar">
+  <a href="/">&#8592; Back to Home</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="/privacy.html">Privacy Policy</a>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="mailto:romit232091@gmail.com">Contact Developer</a>
+</div>
+
+<div class="container">
+  <div class="card">
+
+    <div class="badge-row">
+      <span class="badge">Version 1.0</span>
+      <span class="badge green">Indian Copyright Act 1957</span>
+      <span class="badge green">DPDPA 2023</span>
+      <span class="badge green">IT Act 2000</span>
+      <span class="badge orange">Effective 29 June 2026</span>
+      <span class="badge red">Legally Binding</span>
+    </div>
+
+    <div class="warning">
+      &#9888;&#65039; <strong>IMPORTANT:</strong> By installing, deploying, or using DMS-IA in any way,
+      you confirm that you have read, understood, and agree to be bound by all terms
+      and conditions of this Agreement. Please read carefully before proceeding.
+    </div>
+
+    <pre>================================================================================
+SOFTWARE LICENCE AGREEMENT AND TERMS OF SERVICE
+DMS-IA — Digital Memo System Industrial Automation
+================================================================================
+
+Document Title   : Software Licence Agreement and Terms of Service
+Software Name    : DMS-IA — Digital Memo System Industrial Automation
+Developer / Owner: Rohmit Neelakant Shirgoppi (Aadhaar: Neelkant Shirgoppi)
+Contact Email    : romit232091@gmail.com
+Phone            : +91-9535835504
+Address          : H.No. 522, Near CSI Church, Teachers Colony Road,
+                   Township, Dandeli — 581325, Karnataka, India
+Document Version : 1.0 — First public release.
+Effective Date   : 01 June 2026
+Last Updated     : 29 June 2026
+
+CHANGE LOG v2.1 → v2.2 (29 June 2026):
+- Updated Section 1 (Definitions): Removed Google Forms and Google Drive
+  from the &quot;Google Workspace&quot; definition — FormApp and DriveApp are not
+  used in the current codebase.
+- Updated Section 1 (Definitions): Added &quot;Official Memo Module&quot; definition
+  — the Official Memo is now a built-in HTML web application served via
+  HtmlService, not a Google Form.
+- Updated Section 1 (Definitions): Updated &quot;Google Workspace&quot; definition to
+  accurately reflect services DMS-IA actually uses.
+- Updated Section 4.2 (System Requirements): Removed &quot;Gmail access&quot; as a
+  system requirement for full Gmail API — DMS-IA uses MailApp (send-only,
+  script.send_mail scope) which does not require full Gmail access.
+- Updated Section 4.3 (Licensee Responsibilities): Replaced references to
+  &quot;Google Form&quot; with &quot;Official Memo HTML form&quot; throughout.
+- Updated Section 4.3(c): Corrected HMAC_SECRET minimum length from 16+
+  to 32+ characters — matches the code enforcement threshold.
+- Updated Section 4.3: Added responsibilities for Official Memo Module
+  (CC DP-01 validation, mandatory Context / Message field, Drive link
+  attachment model).
+- Updated Section 8.6: Renamed from &quot;OTP Authentication — Licensee
+  Responsibilities (Call Memo Module)&quot; to cover both modules.
+- Updated Section 10.5(c): &quot;Google Form&quot; replaced with &quot;Official Memo HTML
+  form&quot; and &quot;Call Memo HTML form&quot;.
+- Updated Section 16.3 (OAuth Permissions): Listed all 6 current OAuth
+  scopes explicitly, confirmed all non-restricted.
+- Updated Schedule B (Acceptable Use): &quot;Google Form&quot; references replaced
+  with &quot;Official Memo HTML form&quot;. Added Drive link attachment policy.
+  Confirmed no Google Forms or Google Drive API used.
+
+CHANGE LOG v2.0 → v2.1 (18 June 2026):
+- Updated Schedule A: Indicative pricing brackets added
+- Updated Schedule C: SLA made binding for Premium tier
+- Added Section 21: IP Breach Remedy and Penalty Clause
+- Added Section 22: Source Code Escrow (on request)
+- Added Section 23: Multi-Deployment Volume Discount Policy
+- Added Section 24: Trial and Evaluation Licence Terms
+- Updated Section 13: Jurisdiction confirmed — Dharwad, Karnataka
+- Updated Section 12.3: Termination cure period confirmed 14 days
+
+Copyright Diary  : SW-25725/2026-CO — Filed 01/06/2026, Copyright Office,
+                   Government of India
+Governing Law    : Laws of India — Karnataka jurisdiction
+Applicable Acts  : Indian Copyright Act 1957 · Indian Contract Act 1872 ·
+                   Information Technology Act 2000 · DPDPA 2023 ·
+                   Sale of Goods Act 1930 · Consumer Protection Act 2019
+
+================================================================================
+IMPORTANT — READ BEFORE INSTALLING OR USING DMS-IA
+================================================================================
+
+This Software Licence Agreement and Terms of Service (&quot;Agreement&quot;) is a legally
+binding contract between you or the organisation you represent (&quot;Licensee&quot;, &quot;you&quot;,
+&quot;your&quot;) and Rohmit Neelakant Shirgoppi (&quot;Developer&quot;, &quot;Licensor&quot;, &quot;we&quot;, &quot;us&quot;).
+
+BY INSTALLING, COPYING, DEPLOYING, RUNNING, OR USING DMS-IA IN ANY WAY, YOU
+CONFIRM THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY ALL TERMS AND
+CONDITIONS OF THIS AGREEMENT.
+
+IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL, DEPLOY, OR USE DMS-IA.
+RETURN OR DELETE ALL COPIES OF THE SOFTWARE IMMEDIATELY.
+
+If you are accepting this Agreement on behalf of an organisation, company, or
+institution, you represent and warrant that you have the legal authority to bind
+that entity to this Agreement.
+
+================================================================================
+1. DEFINITIONS
+================================================================================
+
+In this Agreement, the following terms have the meanings given below:
+
+&quot;Software&quot; means DMS-IA — Digital Memo System Industrial Automation, including
+all source code (DMS-IA.gs), manifest files (appsscript.json), documentation,
+scripts, templates, email HTML, HTML web application pages, and any updates,
+patches, or new versions provided by the Developer.
+
+&quot;Developer&quot; means Rohmit Neelakant Shirgoppi, the sole author and owner of
+DMS-IA, residing at H.No. 522, Near CSI Church, Teachers Colony Road, Township,
+Dandeli — 581325, Karnataka, India.
+
+&quot;Licensee&quot; means the individual, company, organisation, or institution that
+purchases a licence and deploys the Software.
+
+&quot;Deployment&quot; means a single installation of the Software within one Google
+Workspace account (one Google Spreadsheet + one Google Apps Script project).
+
+&quot;Google Workspace&quot; means Google&#x27;s suite of cloud-based productivity and
+collaboration tools. For the purposes of this Agreement, DMS-IA uses and relies
+upon Google Sheets, Gmail (send-only via MailApp), and Google Apps Script.
+DMS-IA does not use Google Forms, Google Drive API (DriveApp), or any other
+Google Workspace service not listed in this definition.
+
+&quot;Authorised Users&quot; means employees, contractors, or representatives of the
+Licensee who are permitted to use the Software under this Agreement.
+
+&quot;Documentation&quot; means all technical documentation, user guides, privacy policy,
+and other written materials provided by the Developer in connection with the
+Software.
+
+&quot;Intellectual Property Rights&quot; means all copyright, trade secrets, patents,
+trademarks, database rights, and all other proprietary rights worldwide.
+
+&quot;Confidential Information&quot; means the Software source code, algorithms, security
+architecture, HMAC token implementation, self-healing mechanisms, and any other
+non-public information disclosed by the Developer.
+
+&quot;Official Memo Module&quot; means the Official Memo HTML web application component
+of DMS-IA, served via Google Apps Script HtmlService, accessible via the Web
+App URL or QR code scan. It allows Authorised Users to submit official internal
+memos through a structured HTML form requiring DP-01 entry, live receiver and CC
+DP-01 validation, mandatory subject and context fields, priority and action
+selection, and an optional Google Drive link for attachments. The form includes
+a three-step flow: fill, preview, and confirm submission.
+
+&quot;Call Memo Module&quot; means the Call Memo HTML web application component of DMS-IA,
+accessible via QR code, which allows Authorised Users to submit Call Memos
+through a mobile-friendly web page requiring OTP authentication.
+
+&quot;OTP&quot; means a one-time password — a 6-digit code generated by the Software and
+delivered to an Authorised User&#x27;s registered email address as a Magic Link, used
+to verify the user&#x27;s identity before granting access to the Call Memo form.
+
+&quot;Magic Link&quot; means a unique, time-limited, single-use URL embedded in an OTP
+email that, when clicked, authenticates the Authorised User and opens the Call
+Memo submission form with their details pre-filled.
+
+&quot;QR Code&quot; means the machine-readable code generated by the Software and stored
+in the QR CODE sheet, encoding the DMS-IA portal URL, intended to be printed
+and displayed at the Licensee&#x27;s premises to provide access to both the Official
+Memo and Call Memo modules.
+
+&quot;WORKER LIST&quot; means the Google Sheets tab within DMS-IA storing the Licensee&#x27;s
+workers&#x27; details (department, name, DP number, designation) from which the Call
+Memo form populates worker selection lists server-side.
+
+&quot;CALL MEMO Sheet&quot; means the Google Sheets tab permanently storing all Call Memo
+submissions including submitter details, department, people selected, reason for
+overtime, and timestamp.
+
+&quot;QR CODE Sheet&quot; means the Google Sheets tab storing the QR code image for the
+DMS-IA portal URL. Contains no personal data.
+
+&quot;Update&quot; means any bug fix, patch, enhancement, or new version of the Software
+released by the Developer.
+
+&quot;Effective Date&quot; means the date on which the Licensee first installs, deploys,
+or uses the Software, or the date of purchase, whichever is earlier.
+
+================================================================================
+2. GRANT OF LICENCE
+================================================================================
+
+2.1 Licence Grant
+Subject to the terms and conditions of this Agreement and payment of the
+applicable licence fee, the Developer grants the Licensee a limited,
+non-exclusive, non-transferable, non-sublicensable, revocable licence to:
+
+(a) Install and deploy one (1) instance of the Software within one (1) Google
+    Workspace account controlled by the Licensee;
+
+(b) Use the Software solely for the Licensee&#x27;s internal business operations —
+    specifically for the management of internal memo submissions and approvals
+    within the Licensee&#x27;s organisation;
+
+(c) Allow Authorised Users to interact with the Software for the purposes
+    described in (b) above;
+
+(d) Make one (1) backup copy of the Software source code for archival purposes
+    only, provided the copyright notice and all proprietary notices are
+    preserved.
+
+2.2 Licence Tiers
+The Developer offers the following licence tiers (see also Schedule A). The
+specific tier purchased by the Licensee is set out in the invoice or purchase
+confirmation:
+
+Base Licence:
+Single deployment. Up to 50 active users (Authorised Users). Includes email
+support for 30 days from Effective Date.
+
+Standard Licence:
+Single deployment. Up to 200 active users. Includes email support for 90 days
+from Effective Date. Includes one major version update.
+
+Premium Licence:
+Single deployment. Unlimited active users. Includes priority email support for
+12 months. Includes all major and minor version updates for 12 months.
+
+Additional Deployments:
+Each additional deployment (additional Google Workspace account or spreadsheet)
+requires a separate licence purchased from the Developer.
+
+2.3 Licence Restrictions
+The licence granted in Section 2.1 is subject to the following restrictions
+and the Acceptable Use Policy set out in Schedule B. The Licensee shall NOT,
+and shall ensure that Authorised Users do NOT:
+
+(a) Copy, reproduce, distribute, publish, or make available the Software source
+    code or any part thereof to any third party;
+
+(b) Sell, resell, rent, lease, loan, sublicence, transfer, or otherwise
+    commercialise the Software or any rights in the Software;
+
+(c) Modify, adapt, translate, reverse engineer, decompile, disassemble, or
+    create derivative works based on the Software;
+
+(d) Remove, alter, or obscure any copyright notice, proprietary notice, or
+    identifier from the Software or Documentation;
+
+(e) Use the Software to build a competing product, similar service, or any
+    product that replicates the core functionality of DMS-IA;
+
+(f) Use the Software for any unlawful purpose or in violation of any applicable
+    law or regulation;
+
+(g) Deploy the Software in more than the number of instances permitted by the
+    purchased licence tier;
+
+(h) Share, publish, or disclose the Software source code, security architecture,
+    or HMAC token implementation to any person not employed by the Licensee;
+
+(i) Use the Software to process personal data beyond what is described in the
+    Privacy Policy without explicit written consent from the Developer;
+
+(j) Attempt to circumvent, disable, or interfere with any security feature of
+    the Software.
+
+================================================================================
+3. INTELLECTUAL PROPERTY RIGHTS
+================================================================================
+
+3.1 Ownership
+The Software, including all source code, object code, algorithms, email
+templates, HTML pages (Official Memo form, Call Memo form, approval pages,
+rejection form, OTP pages, print view), security architecture, self-healing
+mechanisms, and all Intellectual Property Rights therein, are and shall remain
+the exclusive property of the Developer, Rohmit Neelakant Shirgoppi.
+
+The Developer&#x27;s ownership is protected under:
+- Indian Copyright Act 1957
+- Copyright Diary No. SW-25725/2026-CO (filed 01/06/2026)
+- All applicable international copyright treaties and conventions
+
+3.2 No Transfer of Ownership
+This Agreement does not transfer any ownership, title, or Intellectual Property
+Rights in the Software to the Licensee. The Licensee acquires only the limited
+licence rights expressly set out in Section 2.1.
+
+3.3 Licensee Data
+All data generated by the Licensee&#x27;s use of the Software (memo records, staff
+directory, audit logs, etc.) remains the property of the Licensee. The Developer
+has no claim over Licensee data and no access to it.
+
+3.4 Feedback
+If the Licensee provides feedback, suggestions, or ideas regarding the Software,
+the Developer may freely use such feedback without any obligation or
+compensation to the Licensee.
+
+3.5 Copyright Notice
+All copies or portions of the Software must retain the following notice:
+
+Copyright © 2026 Rohmit Neelakant Shirgoppi. All Rights Reserved.
+DMS-IA — Digital Memo System Industrial Automation
+Diary No. SW-25725/2026-CO
+
+================================================================================
+4. INSTALLATION AND DEPLOYMENT
+================================================================================
+
+4.1 Licence Key and Deployment
+The Developer will provide the Licensee with the Software source code and
+deployment instructions upon payment of the applicable licence fee. The
+Licensee is responsible for deploying the Software within their Google Workspace
+account following the provided instructions.
+
+4.2 System Requirements
+The Software requires:
+- A Google Workspace account (any tier) or a personal Google account
+- Google Sheets access
+- Google Apps Script enabled
+- A Gmail account for the deploying account (used for sending emails via
+  MailApp — send-only; no full Gmail access or GmailApp permissions required)
+- Sufficient MailApp quota for email operations (1,500/day for Workspace,
+  100/day for free Gmail — Workspace strongly recommended for organisations)
+- A web browser to access the Google Apps Script editor
+
+For the Official Memo Module specifically:
+- A desktop or mobile browser capable of opening the Web App URL or scanning
+  the QR code
+- The Receiver DP-01 and CC DP-01 (if applicable) must be registered in the
+  TO sheet before submission for live validation to succeed
+- Workers&#x27; data (FROM sheet, TO sheet) must be populated before the module
+  is made available to users
+
+For the Call Memo Module specifically:
+- A mobile device or desktop browser capable of scanning QR codes
+- Gmail or any email client capable of rendering HTML emails and opening links
+- An internet connection at the point of QR code scan
+- Workers&#x27; DP numbers and email addresses entered into the TO sheet before use
+
+4.3 Licensee Responsibilities
+The Licensee is solely responsible for:
+(a) Deploying the Software correctly following the provided instructions;
+(b) Running selfSetup() to configure the Software after deployment;
+(c) Setting a strong HMAC_SECRET (32+ characters) in Script Properties or
+    via the SETTINGS sheet;
+(d) Setting the correct WEB_APP_URL (the /exec deployment URL) in the SETTINGS
+    sheet and ADMIN_EMAIL in Script Properties;
+(e) Filling in the DEPARTMENTS sheet with correct HOD emails;
+(f) Filling in the FROM sheet with correct staff details (email, DP number,
+    department, name) for all Official Memo submitters;
+(g) Securing their Google Workspace account with strong passwords and 2FA;
+(h) Managing their own Google API quota limits;
+(i) Maintaining their Google Workspace account in good standing;
+(j) Ensuring the Software is redeployed after any code updates;
+(k) Testing the system before making it available to all users;
+(l) Informing Authorised Users that the Context / Message field is mandatory
+    on the Official Memo HTML form and that submission will be blocked without
+    it;
+(m) Informing Authorised Users that file attachments must be shared as a
+    Google Drive public link (&quot;Anyone with the link&quot;) in the attachment field —
+    DMS-IA does not support direct file uploads;
+(n) Informing Authorised Users that the CC DP-01 field on the Official Memo
+    form is validated live — only registered DP numbers are accepted.
+
+For the Call Memo Module:
+(o) Populating the WORKER LIST sheet with accurate worker data (department,
+    name, DP number, designation) before enabling the Call Memo Module;
+(p) Populating the TO sheet with accurate DP numbers and registered email
+    addresses for all workers who will use the Call Memo HTML page;
+(q) Printing and displaying the QR code (from the QR CODE sheet) in an
+    accessible location for workers to scan;
+(r) Informing workers that the OTP magic link sent to their registered email
+    is single-use, expires in 5 minutes, and must not be shared with others;
+(s) Ensuring workers&#x27; registered email addresses in the TO sheet are current
+    and accessible on their mobile devices at the point of QR code scan;
+(t) Regenerating the QR code via the provided menu option if the web app URL
+    changes after redeployment.
+
+4.4 Google Account Terms
+The use of DMS-IA is subject to Google&#x27;s Terms of Service for Google Workspace.
+The Licensee must comply with all applicable Google policies. The Developer is
+not responsible for any actions taken by Google with respect to the Licensee&#x27;s
+account.
+
+================================================================================
+5. SUPPORT AND UPDATES
+================================================================================
+
+5.1 Support
+Support is provided via email at romit232091@gmail.com. The Developer will
+respond within 7 business days (see Schedule C for service level targets).
+Support covers:
+- Assistance with installation and initial setup
+- Bug fixes for confirmed defects in the Software
+- Clarification of Documentation
+
+Support does not cover:
+- Customisation or modification of the Software
+- Issues caused by the Licensee&#x27;s incorrect deployment or configuration
+- Issues caused by Google platform changes outside the Developer&#x27;s control
+- Issues caused by the Licensee&#x27;s Google account being suspended or restricted
+- Training beyond the provided Documentation
+
+5.2 Updates
+Updates will be provided to the Licensee in accordance with the purchased
+licence tier (Section 2.2). Updates are delivered as new versions of the
+Software source code. The Licensee is responsible for deploying updates.
+
+5.3 No Obligation to Update
+The Developer is under no obligation to develop, release, or provide any
+specific update, feature, or enhancement to the Software.
+
+5.4 End of Support
+The Developer may discontinue support for a version of the Software with 30
+days&#x27; written notice to the Licensee. The Software will continue to function
+after end of support, but no further bug fixes or updates will be provided.
+
+================================================================================
+6. PAYMENT TERMS
+================================================================================
+
+6.1 Licence Fee
+The licence fee applicable to the Licensee&#x27;s tier is as communicated separately
+by the Developer in the invoice or purchase confirmation. Pricing is not stated
+in this Agreement and will be confirmed at time of purchase. For pricing
+enquiries, contact romit232091@gmail.com.
+
+6.2 Payment
+Payment is due in full before or at the time of delivery of the Software. The
+Developer will deliver the Software upon confirmation of payment.
+
+6.3 Annual Maintenance Charge (AMC)
+After the first year, the Developer may offer an optional Annual Maintenance
+Charge (AMC) for continued support and updates. The AMC amount and terms will
+be communicated to the Licensee before renewal. AMC is entirely optional — the
+Software continues to function without it. Pricing for AMC is not stated in
+this Agreement and will be confirmed separately.
+
+6.4 No Refunds
+All licence fees are non-refundable once the Software has been delivered to the
+Licensee, except as required by applicable consumer protection law or as
+expressly agreed in writing by the Developer.
+
+6.5 Currency
+All fees are in Indian Rupees (INR) unless otherwise stated in the invoice.
+
+6.6 Taxes
+The Licensee is responsible for all applicable taxes, duties, or levies (including
+GST) arising from the purchase of the licence, unless otherwise stated in the
+invoice.
+
+================================================================================
+7. CONFIDENTIALITY
+================================================================================
+
+7.1 Confidential Information
+The Licensee acknowledges that the Software source code, security architecture,
+HMAC token implementation, and all non-public technical information constitute
+Confidential Information of the Developer.
+
+7.2 Obligations
+The Licensee shall:
+(a) Keep all Confidential Information strictly confidential;
+(b) Not disclose Confidential Information to any third party without the
+    Developer&#x27;s prior written consent;
+(c) Use Confidential Information only for the purpose of using the Software
+    under this Agreement;
+(d) Restrict access to Confidential Information to Authorised Users who need
+    it to use the Software, and ensure those users are bound by confidentiality
+    obligations no less protective than this Section.
+
+7.3 Exceptions
+Confidentiality obligations do not apply to information that:
+(a) Was publicly known at the time of disclosure without breach by the Licensee;
+(b) The Licensee is required to disclose by law or court order, provided the
+    Licensee gives the Developer prompt written notice before disclosure.
+
+7.4 Survival
+Confidentiality obligations survive termination of this Agreement for a period
+of five (5) years.
+
+================================================================================
+8. DATA PROTECTION AND PRIVACY
+================================================================================
+
+8.1 Privacy Policy
+The Developer&#x27;s Privacy Policy (available at the URL provided in the Google
+Marketplace SDK listing) is incorporated into this Agreement by reference. The
+Licensee agrees to the Privacy Policy as a condition of using the Software.
+
+8.2 Data Controller
+As described in the Privacy Policy, the Licensee is the Data Controller for
+all personal data processed through the Software. The Developer is not a Data
+Controller or Data Processor in respect of end-user data.
+
+8.3 Licensee&#x27;s Data Protection Obligations
+The Licensee shall:
+(a) Comply with all applicable data protection laws including DPDPA 2023 and
+    any other applicable data protection legislation;
+(b) Inform their employees and users about DMS-IA&#x27;s data processing as required
+    by DPDPA 2023;
+(c) Implement appropriate technical and organisational measures to protect
+    personal data;
+(d) Not use the Software to process personal data in a manner that violates
+    applicable law;
+(e) Promptly notify the Developer if they become aware of any data breach
+    potentially related to the Software;
+(f) Ensure that employees do not enter sensitive personal data — including health
+    information, financial data, or government ID numbers — into memo content
+    fields or the Context / Message field.
+
+8.4 Sensitive Data Warning
+The Software stores memo content as submitted without filtering. The Licensee
+is solely responsible for ensuring that Authorised Users do not submit sensitive
+personal data through any memo content field, including the Subject, Context /
+Message, and Reason for Overtime fields.
+
+8.5 Developer&#x27;s Data Access
+The Developer has no access to any data stored in the Licensee&#x27;s DMS-IA
+deployment. All data is stored exclusively within the Licensee&#x27;s own Google
+Workspace account.
+
+8.6 OTP Authentication — Licensee Responsibilities (Call Memo Module)
+The Call Memo Module uses OTP authentication to verify worker identity before
+allowing form submission. The Licensee acknowledges and agrees that:
+
+(a) OTP magic links are time-limited (5 minutes) and single-use. The Licensee
+    is responsible for informing workers of this limitation;
+(b) OTP magic links are delivered to the email address registered in the TO
+    sheet. The Licensee is responsible for ensuring TO sheet data is accurate
+    and current;
+(c) If a worker&#x27;s registered email is inaccessible at the point of QR scan
+    (e.g. no mobile data, incorrect email address), the Licensee is responsible
+    for the resulting inability to submit;
+(d) The OTP magic link should not be shared with any other person. The
+    Licensee is responsible for communicating this requirement to workers;
+(e) The Developer is not responsible for OTP delivery failures caused by the
+    worker&#x27;s email provider marking the OTP email as spam, the worker&#x27;s mailbox
+    being full, or the registered email address being incorrect in the TO sheet;
+(f) The Software limits OTP sends to 1 per worker per 2 minutes and limits
+    brute-force attempts to 5 per worker per 10 minutes. These security limits
+    are by design and the Developer is not responsible for access issues
+    resulting from these limits being triggered by the worker&#x27;s own actions;
+(g) For security, the OTP is stored as a SHA-256 cryptographic hash — never
+    in plain text. A temporary verified session key is created upon successful
+    OTP verification and expires automatically after 15 minutes. These are
+    internal security measures — the Licensee has no obligation to disclose
+    them to workers beyond stating that the link is single-use and time-limited.
+
+8.7 Drive Link Attachments — Licensee Responsibilities (Official Memo Module)
+The Official Memo Module allows Authorised Users to attach files via a Google
+Drive sharing link. The Licensee acknowledges and agrees that:
+
+(a) DMS-IA stores only the URL provided in the attachment field — it does not
+    upload, copy, or access the file itself;
+(b) The Licensee is responsible for informing Authorised Users that the shared
+    file must have &quot;Anyone with the link&quot; access set in Google Drive before
+    submitting, or the approver will not be able to open it;
+(c) The Developer is not responsible for any file access failures resulting from
+    incorrect sharing permissions, deleted files, or expired sharing links;
+(d) The Licensee is responsible for ensuring that no sensitive or confidential
+    files are shared via memo attachments in violation of applicable law.
+
+8.8 CC DP-01 Validation — Licensee Responsibilities (Official Memo Module)
+The Official Memo Module validates the CC DP-01 field live before allowing
+submission. The Licensee acknowledges and agrees that:
+
+(a) Only DP numbers registered in the TO sheet will pass CC validation;
+(b) The Licensee is responsible for keeping the TO sheet accurate and current;
+(c) Submission is blocked if an invalid CC DP-01 is entered — the submitter
+    must either enter a valid DP number or leave the field blank.
+
+================================================================================
+9. WARRANTIES
+================================================================================
+
+9.1 Developer&#x27;s Limited Warranty
+The Developer warrants that:
+(a) The Software will substantially perform the functions described in the
+    Documentation for a period of thirty (30) days from the Effective Date
+    (&quot;Warranty Period&quot;);
+(b) The Developer has the right to grant the licence in Section 2.1 and the
+    Software does not infringe any third-party intellectual property rights
+    known to the Developer.
+
+9.2 Warranty Remedy
+If the Software fails to comply with the warranty in Section 9.1(a) during
+the Warranty Period, the Developer will, at the Developer&#x27;s sole discretion,
+either repair or replace the defective Software at no charge.
+
+9.3 Warranty Exclusions
+The warranty in Section 9.1 does not apply if:
+(a) The Software has been modified by the Licensee or any third party;
+(b) The failure results from incorrect installation, deployment, or
+    configuration by the Licensee;
+(c) The failure results from changes to the Google platform outside the
+    Developer&#x27;s control;
+(d) The failure results from the Licensee&#x27;s Google account being suspended,
+    restricted, or having insufficient quota;
+(e) The Licensee has not deployed the most recent version of the Software.
+
+9.4 DISCLAIMER OF WARRANTIES
+EXCEPT FOR THE EXPRESS LIMITED WARRANTY IN SECTION 9.1, THE SOFTWARE IS PROVIDED
+&quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
+TITLE, NON-INFRINGEMENT, ACCURACY, RELIABILITY, OR UNINTERRUPTED OPERATION.
+
+THE DEVELOPER DOES NOT WARRANT THAT:
+(a) THE SOFTWARE WILL MEET ALL OF THE LICENSEE&#x27;S REQUIREMENTS;
+(b) THE SOFTWARE WILL OPERATE WITHOUT INTERRUPTION OR ERROR;
+(c) THE SOFTWARE WILL BE COMPATIBLE WITH FUTURE VERSIONS OF GOOGLE WORKSPACE;
+(d) ALL BUGS OR DEFECTS IN THE SOFTWARE WILL BE CORRECTED;
+(e) THE SOFTWARE IS FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS.
+
+THE LICENSEE ASSUMES ALL RISK ASSOCIATED WITH THE USE OF THE SOFTWARE.
+
+================================================================================
+10. LIMITATION OF LIABILITY
+================================================================================
+
+10.1 Exclusion of Consequential Damages
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
+DEVELOPER BE LIABLE FOR ANY:
+(a) INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES;
+(b) LOSS OF PROFITS, REVENUE, BUSINESS, DATA, GOODWILL, OR ANTICIPATED SAVINGS;
+(c) BUSINESS INTERRUPTION OR LOSS OF BUSINESS OPPORTUNITY;
+(d) LOSS OR CORRUPTION OF DATA;
+(e) COST OF SUBSTITUTE SOFTWARE OR SERVICES;
+
+WHETHER ARISING FROM CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY
+OTHER LEGAL THEORY, EVEN IF THE DEVELOPER HAS BEEN ADVISED OF THE POSSIBILITY
+OF SUCH DAMAGES.
+
+10.2 Cap on Liability
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER&#x27;S TOTAL
+CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT — WHETHER
+IN CONTRACT, TORT, OR OTHERWISE — SHALL NOT EXCEED THE TOTAL LICENCE FEE PAID
+BY THE LICENSEE FOR THE SOFTWARE IN THE TWELVE (12) MONTHS IMMEDIATELY
+PRECEDING THE CLAIM.
+
+10.3 Essential Basis
+THE PARTIES ACKNOWLEDGE THAT THE LIMITATIONS OF LIABILITY IN THIS SECTION
+REFLECT A REASONABLE ALLOCATION OF RISK AND ARE AN ESSENTIAL ELEMENT OF THE
+BASIS OF THE BARGAIN BETWEEN THE PARTIES. THE DEVELOPER WOULD NOT HAVE ENTERED
+INTO THIS AGREEMENT WITHOUT THESE LIMITATIONS.
+
+10.4 Consumer Rights
+Nothing in this Agreement limits or excludes any liability that cannot be limited
+or excluded under applicable Indian consumer protection law or other mandatory
+applicable law.
+
+10.5 User Negligence and Misuse
+The Developer shall not be responsible or liable for any loss, damage, delay,
+data loss, security breach, operational failure, financial loss, or any other
+consequence — direct or indirect — arising from:
+
+(a) The Licensee&#x27;s or any Authorised User&#x27;s negligent, incorrect, or improper
+    use of the Software, including but not limited to incorrect deployment,
+    incorrect configuration, or failure to follow the provided Documentation;
+
+(b) Failure by the Licensee to set a strong HMAC_SECRET or to secure their
+    Google account with appropriate passwords and two-factor authentication;
+
+(c) Entry of incorrect, incomplete, or misleading data by any Authorised User
+    into the Official Memo HTML form, Call Memo HTML form, FROM sheet, TO sheet,
+    or DEPARTMENTS sheet;
+
+(d) Failure by the Licensee to redeploy the Software after receiving an update
+    or bug fix from the Developer;
+
+(e) Actions taken — or not taken — by an approver after receiving a valid
+    approval or rejection email link;
+
+(f) Submission of sensitive personal data (including health information,
+    financial data, or government identification numbers) by any Authorised
+    User into memo content fields, contrary to the warnings in this Agreement
+    and the Privacy Policy;
+
+(g) Loss or corruption of data resulting from the Licensee&#x27;s failure to maintain
+    adequate backups, to protect their Google account, or to comply with
+    Google&#x27;s Terms of Service;
+
+(h) Any delay in memo approval, escalation, or notification caused by the
+    Licensee&#x27;s MailApp quota being exhausted due to the Licensee&#x27;s own usage;
+
+(i) Any failure, outage, or change in Google&#x27;s platform, APIs, or services
+    that prevents the Software from functioning as expected, where the
+    Developer has no control over such changes;
+
+(j) Any accident, operational incident, business loss, or consequential harm
+    arising from the Licensee&#x27;s reliance on DMS-IA for time-critical decisions
+    without maintaining adequate alternative processes;
+
+(k) Any file access failure resulting from an Authorised User sharing a Drive
+    link with incorrect permissions, or a Drive file being deleted or moved
+    after a memo is submitted;
+
+(l) Any inability of a worker to submit a Call Memo or Official Memo due to
+    their registered email address being incorrect, inaccessible, or not
+    current in the TO or FROM sheet.
+
+The Licensee agrees that the Developer&#x27;s role is limited to providing the
+Software. The Licensee assumes full responsibility for all consequences arising
+from how the Software is used, configured, and maintained within their
+organisation.
+
+================================================================================
+11. INDEMNIFICATION
+================================================================================
+
+11.1 Licensee Indemnification
+The Licensee shall indemnify, defend, and hold harmless the Developer from and
+against any and all claims, demands, losses, liabilities, costs, damages, and
+expenses (including reasonable legal fees) arising out of or related to:
+
+(a) The Licensee&#x27;s use of the Software in violation of this Agreement;
+(b) The Licensee&#x27;s violation of any applicable law or regulation;
+(c) The Licensee&#x27;s breach of any representation, warranty, or obligation under
+    this Agreement;
+(d) Any data breach or data loss arising from the Licensee&#x27;s failure to secure
+    their Google account;
+(e) Any claim by a third party arising from the Licensee&#x27;s use of the Software;
+(f) The Licensee&#x27;s failure to comply with applicable data protection laws
+    including DPDPA 2023.
+
+================================================================================
+12. TERM AND TERMINATION
+================================================================================
+
+12.1 Term
+This Agreement commences on the Effective Date and continues until terminated
+in accordance with this Section.
+
+12.2 Termination by Licensee
+The Licensee may terminate this Agreement at any time by:
+(a) Ceasing all use of the Software;
+(b) Deleting all copies of the Software source code;
+(c) Deleting all deployments of the Software from their Google account.
+
+No refund is due upon termination by the Licensee unless required by applicable
+consumer protection law.
+
+12.3 Termination by Developer
+The Developer may terminate this Agreement with immediate effect by written
+notice to the Licensee if:
+(a) The Licensee materially breaches this Agreement and fails to cure the breach
+    within fourteen (14) days of written notice;
+(b) The Licensee violates Section 2.3 (Licence Restrictions);
+(c) The Licensee becomes insolvent, is placed in liquidation, or makes an
+    assignment for the benefit of creditors;
+(d) The Licensee uses the Software for any illegal purpose.
+
+12.4 Effect of Termination
+Upon termination of this Agreement:
+(a) All licence rights granted to the Licensee under Section 2.1 immediately
+    cease;
+(b) The Licensee must immediately cease all use of the Software;
+(c) The Licensee must delete all copies of the Software source code and all
+    deployments from their Google account;
+(d) Sections 1, 3, 7, 8, 9.4, 10, 11, 13, 14, and 15 survive termination.
+
+12.5 Survival
+The following Sections survive termination of this Agreement: Definitions (1),
+Intellectual Property Rights (3), Confidentiality (7), Data Protection (8),
+Disclaimer of Warranties (9.4), Limitation of Liability (10, including 10.5),
+Indemnification (11), Governing Law (13), Dispute Resolution (14), and General
+Provisions (15).
+
+================================================================================
+13. GOVERNING LAW AND JURISDICTION
+================================================================================
+
+13.1 Governing Law
+This Agreement shall be governed by and construed in accordance with the laws
+of India, without regard to its conflict of law principles.
+
+13.2 Jurisdiction
+The parties submit to the exclusive jurisdiction of the courts in Dharwad,
+Karnataka, India for the resolution of any dispute arising out of or related
+to this Agreement.
+
+13.3 Applicable Indian Laws
+This Agreement is subject to and the parties shall comply with:
+- Indian Copyright Act 1957
+- Indian Contract Act 1872
+- Information Technology Act 2000 and its amendments
+- Digital Personal Data Protection Act 2023
+- Consumer Protection Act 2019
+- Sale of Goods Act 1930
+- Any other applicable Indian law or regulation
+
+================================================================================
+14. DISPUTE RESOLUTION
+================================================================================
+
+14.1 Informal Resolution
+In the event of any dispute, controversy, or claim arising out of or related
+to this Agreement, the parties shall first attempt to resolve the matter through
+good faith negotiation. Either party may initiate informal resolution by sending
+written notice to the other party describing the dispute. The parties shall have
+thirty (30) days from the date of such notice to attempt resolution.
+
+14.2 Mediation
+If the dispute cannot be resolved through informal negotiation within 30 days,
+either party may refer the matter to mediation under the Mediation Act 2023
+(India) before initiating formal legal proceedings.
+
+14.3 Litigation
+If mediation fails or is not pursued, either party may initiate legal proceedings
+in the courts specified in Section 13.2.
+
+14.4 Injunctive Relief
+Nothing in this Section prevents the Developer from seeking immediate injunctive
+or other equitable relief in any court of competent jurisdiction to protect
+Intellectual Property Rights, Confidential Information, or to prevent irreparable
+harm.
+
+================================================================================
+15. GENERAL PROVISIONS
+================================================================================
+
+15.1 Entire Agreement
+This Agreement, together with the Privacy Policy incorporated by reference,
+constitutes the entire agreement between the parties regarding the Software and
+supersedes all prior agreements, representations, warranties, and understandings
+relating to the subject matter hereof.
+
+15.2 Amendments
+No amendment to this Agreement is valid unless made in writing and signed by
+both parties. The Developer may update this Agreement for future licences by
+posting an updated version. Existing Licensees will be notified of material
+changes.
+
+15.3 No Waiver
+The failure of either party to enforce any right or provision of this Agreement
+shall not constitute a waiver of that right or provision. A waiver is only
+effective if given in writing.
+
+15.4 Severability
+If any provision of this Agreement is found to be invalid, illegal, or
+unenforceable under applicable law, that provision shall be modified to the
+minimum extent necessary to make it valid, legal, and enforceable, and the
+remaining provisions shall continue in full force and effect.
+
+15.5 Assignment
+The Licensee may not assign, transfer, or sublicence this Agreement or any
+rights under it without the Developer&#x27;s prior written consent. Any purported
+assignment without consent is void. The Developer may assign this Agreement
+without restriction.
+
+15.6 Force Majeure
+Neither party shall be liable for any failure or delay in performance resulting
+from causes beyond their reasonable control, including but not limited to acts
+of God, natural disasters, government actions, changes to Google platform
+policies, internet outages, or power failures. The affected party shall promptly
+notify the other party of the force majeure event.
+
+15.7 Notices
+All notices under this Agreement must be in writing and sent to:
+
+Developer : Rohmit Neelakant Shirgoppi
+            romit232091@gmail.com
+            +91-9535835504
+            H.No. 522, Near CSI Church, Teachers Colony Road,
+            Township, Dandeli — 581325, Karnataka, India
+
+Licensee  : The email address and contact information provided at time
+            of purchase.
+
+Notices sent by email are effective on the date sent, provided no delivery
+failure notification is received. Notices sent by post are effective 7 days
+after posting.
+
+15.8 Relationship of the Parties
+The parties are independent contractors. Nothing in this Agreement creates a
+partnership, joint venture, agency, employment, or franchise relationship.
+The Developer is not an employee of the Licensee and the Licensee is not an
+employee of the Developer.
+
+15.9 Language
+This Agreement is written in English. In the event of any conflict between an
+English version and any translated version, the English version shall prevail.
+
+15.10 Headings
+Section headings are for convenience only and do not affect the interpretation
+of this Agreement.
+
+15.11 Counterparts
+This Agreement may be executed electronically and electronic signatures shall
+be treated as original signatures and be fully binding.
+
+================================================================================
+16. SPECIFIC PROVISIONS FOR GOOGLE WORKSPACE MARKETPLACE
+================================================================================
+
+16.1 Google Marketplace Distribution
+If the Software is obtained through the Google Workspace Marketplace, the
+following additional terms apply:
+
+(a) The Licensee must comply with Google Workspace Marketplace Terms of Service
+    in addition to this Agreement;
+(b) Google is not a party to this Agreement and has no responsibility for the
+    Software or any support;
+(c) The Licensee&#x27;s use of the Software is subject to Google&#x27;s policies for
+    installed applications;
+(d) The Developer may list, update, or remove the Software from Google
+    Marketplace at any time.
+
+16.2 Private Listing
+If the Software is obtained via a private Marketplace listing, the Licensee
+must not share the private listing link with any party outside their organisation
+without the Developer&#x27;s prior written consent.
+
+16.3 OAuth Permissions
+The Software requests the following Google API permissions (OAuth scopes),
+all of which are non-restricted and do not require CASA security assessment:
+
+  https://www.googleapis.com/auth/spreadsheets
+  — Required to read and write memo data, configuration, audit logs, and
+    all supporting sheets within the Licensee&#x27;s own spreadsheet.
+
+  https://www.googleapis.com/auth/script.send_mail
+  — Required to send all outbound emails via MailApp: approval requests,
+    rejection notifications, OTP magic links, escalation alerts, and
+    administrative health reports. No Gmail inbox access is used.
+
+  https://www.googleapis.com/auth/script.scriptapp
+  — Required to install and manage time-based triggers that process the memo
+    queue, check escalations, retry failed emails, run health checks, and
+    clean up expired OTP keys automatically without the owner being present.
+
+  https://www.googleapis.com/auth/script.external_request
+  — Required to fetch publicly-shared Drive file attachments via UrlFetchApp
+    for inclusion in approval emails, and to generate the QR code image from
+    api.qrserver.com (only the deployment URL is transmitted — no personal
+    data).
+
+  https://www.googleapis.com/auth/script.container.ui
+  — Required to create the DMS-IA custom menu in the Google Sheets toolbar
+    and to display setup and configuration alert dialogs.
+
+  https://www.googleapis.com/auth/userinfo.email
+  — Required to detect the admin email address automatically during initial
+    setup (selfSetup). Not used during normal operation.
+
+The Licensee acknowledges and accepts these permissions as necessary for the
+Software to function. The Developer&#x27;s use of these permissions is governed by
+Google&#x27;s API Services User Data Policy and the Developer&#x27;s Privacy Policy.
+None of these scopes grant access to Gmail inbox, Google Drive files, Google
+Contacts, Google Calendar, or any other sensitive Google service.
+
+================================================================================
+17. OPEN SOURCE COMPONENTS
+================================================================================
+
+DMS-IA does not incorporate any open source software. The Software is entirely
+original proprietary code authored by Rohmit Neelakant Shirgoppi. No open
+source licence obligations apply to this Software.
+
+================================================================================
+18. EXPORT CONTROLS
+================================================================================
+
+The Licensee shall comply with all applicable export control laws and regulations
+of India and any other jurisdiction in which the Software is used. The Licensee
+shall not export or re-export the Software to any country, entity, or individual
+prohibited under applicable export control laws.
+
+DMS-IA is a software product developed in India and intended primarily for use
+within India. International deployments are subject to applicable import
+regulations of the destination country. The Licensee is solely responsible for
+ensuring compliance with all export and import controls in any jurisdiction
+outside India, including but not limited to the Foreign Trade (Development and
+Regulation) Act 1992 (India) and any applicable regulations of the destination
+country.
+
+================================================================================
+19. ANTI-CORRUPTION
+================================================================================
+
+Each party represents and warrants that it has not and will not offer, promise,
+authorise, give, or take any payment, gift, or other advantage that would
+constitute a violation of the Prevention of Corruption Act 1988 (India) or any
+other applicable anti-corruption law.
+
+================================================================================
+21. IP BREACH REMEDY AND PENALTY CLAUSE
+================================================================================
+
+21.1 Acknowledgement of Irreparable Harm
+The Licensee acknowledges that any unauthorised copying, distribution,
+reverse engineering, decompilation, or disclosure of the Software source code
+would cause immediate and irreparable harm to the Developer for which monetary
+damages would be an inadequate remedy.
+
+21.2 Injunctive Relief
+In the event of any actual or threatened breach of Section 2.3 (Licence
+Restrictions) or Section 7 (Confidentiality), the Developer shall be entitled
+to seek immediate injunctive relief and specific performance from any court of
+competent jurisdiction without the obligation to prove actual damage, post a
+bond, or exhaust other remedies.
+
+21.3 Liquidated Damages
+In addition to injunctive relief and without prejudice to any other remedy,
+the Licensee agrees to pay the Developer liquidated damages of:
+(a) INR 5,00,000 (Five Lakh Rupees) per instance of unauthorised distribution
+    of the Software source code to a third party;
+(b) INR 2,00,000 (Two Lakh Rupees) per instance of unauthorised deployment
+    beyond the licensed number of instances;
+(c) INR 10,00,000 (Ten Lakh Rupees) if the Software is used to build a
+    competing product.
+
+The parties agree that these amounts represent a genuine pre-estimate of the
+Developer&#x27;s losses and are not a penalty. These amounts are in addition to
+any actual damages proven.
+
+21.4 Legal Costs
+In any successful action by the Developer to enforce IP rights or
+confidentiality obligations, the Licensee shall pay the Developer&#x27;s reasonable
+legal costs and expenses.
+
+================================================================================
+22. SOURCE CODE ESCROW
+================================================================================
+
+22.1 Escrow Option
+The Developer offers, on request and for an additional fee to be agreed, to
+deposit the Software source code with a mutually agreed escrow agent. Escrow
+provides the Licensee with access to the source code in the event that the
+Developer becomes permanently unable to support the Software due to death,
+incapacity, or cessation of business.
+
+22.2 Release Conditions
+Escrowed source code shall be released to the Licensee only upon:
+(a) Written certification from a licensed medical practitioner that the
+    Developer is permanently incapacitated; or
+(b) Death of the Developer, evidenced by death certificate; or
+(c) Written declaration by the Developer that they are ceasing the DMS-IA
+    business with no successor.
+
+22.3 Licence on Release
+Upon release from escrow, the Licensee receives a perpetual, royalty-free,
+non-transferable licence to use and maintain the source code solely for their
+own internal use within their existing deployment. The Licensee may not
+distribute, sell, or sublicence the escrowed source code.
+
+22.4 Requesting Escrow
+Licensees wishing to arrange source code escrow should contact the Developer
+at romit232091@gmail.com. Escrow is not automatic — it must be separately
+requested and agreed. Escrow fees are in addition to the licence fee.
+
+================================================================================
+23. MULTI-DEPLOYMENT VOLUME DISCOUNT POLICY
+================================================================================
+
+23.1 Volume Discount Eligibility
+Licensees purchasing two or more Additional Deployments simultaneously (i.e.
+multiple Google Workspace accounts for the same corporate group or organisation)
+are eligible for volume discounts on Additional Deployment fees as follows:
+
+Deployments 2–3   : 10% discount on Additional Deployment fee per deployment
+Deployments 4–6   : 20% discount on Additional Deployment fee per deployment
+Deployments 7–10  : 30% discount on Additional Deployment fee per deployment
+Deployments 11+   : By negotiation — contact romit232091@gmail.com
+
+23.2 Eligibility Conditions
+Volume discounts apply only where:
+(a) All deployments are for the same corporate group, parent, subsidiary, or
+    affiliated entity under common control;
+(b) All deployments are purchased in a single transaction or within 30 days;
+(c) The Licensee provides written confirmation of the organisational structure.
+
+23.3 AMC Volume Discounts
+AMC renewals for multiple deployments from the same organisation are eligible
+for the same volume discount as the original purchase tier.
+
+23.4 Discount Application
+Discounts are applied by the Developer at invoice stage. Retrospective discounts
+are not available. All discounts are exclusive of GST.
+
+================================================================================
+24. TRIAL AND EVALUATION LICENCE
+================================================================================
+
+24.1 Trial Licence Grant
+The Developer may, at their sole discretion, offer a Trial Licence to
+prospective Licensees. A Trial Licence permits the Licensee to install and
+use a single deployment of the Software for evaluation purposes only, for a
+period not exceeding thirty (30) calendar days from the date of delivery
+(&quot;Trial Period&quot;).
+
+24.2 Trial Licence Restrictions
+During the Trial Period:
+(a) The Software may be used for internal evaluation only — not for live
+    operational use;
+(b) No more than ten (10) Authorised Users may use the Software;
+(c) All other restrictions in Section 2.3 apply in full;
+(d) The Licensee may not use the Trial Licence as a basis for building a
+    competing product.
+
+24.3 Conversion
+Upon expiry of the Trial Period, the Licensee must either:
+(a) Purchase a full licence to continue using the Software; or
+(b) Cease using the Software and delete all copies.
+
+The Developer reserves the right to disable the Software at the end of the
+Trial Period if a full licence is not purchased.
+
+24.4 No Warranty During Trial
+The Software is provided &quot;AS IS&quot; during the Trial Period with no warranties
+of any kind. Section 9.1 (Limited Warranty) does not apply to Trial Licences.
+
+24.5 Trial Licence Fee
+Trial Licences may be provided at no charge or at a nominal fee at the
+Developer&#x27;s discretion. Trial fees are non-refundable.
+
+================================================================================
+25. ACKNOWLEDGEMENT
+================================================================================
+
+BY INSTALLING, DEPLOYING, OR USING DMS-IA, THE LICENSEE ACKNOWLEDGES THAT:
+
+(a) They have read and understood this entire Agreement;
+(b) They agree to be bound by all terms and conditions of this Agreement;
+(c) They have the authority to bind their organisation to this Agreement;
+(d) They understand that this Agreement is a legally binding contract;
+(e) The Software source code is protected by copyright and is confidential;
+(f) Any violation of this Agreement may result in legal action and liquidated
+    damages as set out in Section 21.
+
+================================================================================
+SCHEDULE A — LICENCE FEE TIERS
+================================================================================
+
+Licence fee tiers and pricing will be communicated by the Developer separately
+in the invoice or purchase confirmation issued at time of sale.
+Indicative pricing in Indian Rupees (INR), exclusive of GST. Final pricing is
+confirmed in the invoice at time of purchase. Contact romit232091@gmail.com.
+
+Base Licence:
+Users           : Up to 50 Authorised Users
+Support         : 30 days email support
+Updates         : Critical bug fixes only
+Indicative Price: INR 5,000 – 15,000 (one-time, excl. GST)
+
+Standard Licence:
+Users           : Up to 200 Authorised Users
+Support         : 90 days email support
+Updates         : All updates for 6 months
+Indicative Price: INR 15,000 – 35,000 (one-time, excl. GST)
+
+Premium Licence:
+Users           : Unlimited Authorised Users
+Support         : 12 months priority support (binding SLA — see Schedule C)
+Updates         : All updates for 12 months
+Indicative Price: INR 35,000 – 75,000 (one-time, excl. GST)
+
+Annual Maintenance Charge (AMC — from Year 2):
+Coverage        : Continued support and updates
+Indicative Price: 20–30% of original licence fee per annum (excl. GST)
+Note            : Entirely optional. Software functions without AMC.
+
+Additional Deployment:
+Coverage        : Each additional Google Workspace account / deployment
+Indicative Price: 50–70% of applicable licence tier fee
+Note            : Volume discounts available — see Section 23.
+
+Custom Enterprise:
+Indicative Price: By negotiation. Contact romit232091@gmail.com.
+
+================================================================================
+SCHEDULE B — ACCEPTABLE USE POLICY
+================================================================================
+
+The Software may be used only for the following permitted uses:
+- Internal memo submission and approval workflow management via the Official
+  Memo HTML web form (DP-01 validated, HMAC-secured approval links)
+- Internal escalation and notification management
+- Internal audit trail maintenance
+- Internal departmental communication management
+- Call Memo submission via QR code for internal overtime call management
+- OTP-authenticated worker identification for Call Memo submissions
+- Printing and displaying QR codes within the Licensee&#x27;s own premises
+- Sharing Google Drive file links as attachments in Official Memos, where the
+  file is stored in the Licensee&#x27;s own Google Drive
+
+The Software must NOT be used for:
+- Processing memos between different organisations (external use)
+- Storing or processing sensitive personal data such as health records,
+  financial data, or government identification numbers in any memo content
+  field (Subject, Context / Message, Reason for Overtime)
+- Any purpose that violates applicable law
+- Harassment, discrimination, or illegal activities
+- Commercial resale or redistribution
+- Any purpose that could damage the reputation of the Developer
+- Processing personal data in excess of what is described in the Privacy Policy
+- Distributing the QR code beyond the Licensee&#x27;s own premises or sharing it
+  with persons outside the Licensee&#x27;s organisation
+- Using the Call Memo Module to collect data from persons who are not
+  Authorised Users registered in the WORKER LIST and TO sheets
+- Using the Official Memo Module to submit memos on behalf of another person
+  or using another person&#x27;s DP-01 number
+- Attempting to bypass or circumvent OTP authentication or CC DP-01 validation
+- Sharing Google Drive attachment links with persons outside the Licensee&#x27;s
+  organisation without appropriate authorisation
+- Uploading files directly to DMS-IA — the Software only stores Drive URLs
+
+Violation of this Acceptable Use Policy is a material breach of this Agreement
+and may result in immediate termination.
+
+================================================================================
+SCHEDULE C — SERVICE LEVEL AGREEMENT
+================================================================================
+
+Service levels vary by licence tier:
+
+PREMIUM LICENCE — BINDING SLA:
+The following targets are binding contractual commitments for Premium Licensees.
+Failure to meet these targets entitles the Licensee to a pro-rata credit against
+their next AMC payment equivalent to 10% of the monthly licence value per
+business day of delay beyond the stated target, up to a maximum of 50% of the
+monthly licence value per incident.
+
+Support Acknowledgement  : Within 2 business days of email receipt
+Critical Bug Fix         : Within 10 business days of confirmed reproduction
+Non-Critical Bug Fix     : Within 30 business days of confirmed reproduction
+
+BASE AND STANDARD LICENCE — INDICATIVE TARGETS (non-binding):
+The following targets are indicative and do not constitute binding commitments.
+The Developer will use best efforts to meet these targets.
+
+Support Acknowledgement  : Within 7 business days of email receipt
+Critical Bug Fix         : Best effort within 14 business days
+Non-Critical Bug Fix     : Best effort within 30 business days
+
+ALL TIERS:
+Software Availability    : Subject to Google platform availability. The
+                           Developer cannot guarantee uptime or performance
+                           beyond what Google&#x27;s infrastructure provides.
+Quarterly Health Check   : Available on request for Premium Licensees.
+
+&quot;Critical Bug&quot; means a defect that prevents the core memo submission and
+approval workflow from functioning entirely. &quot;Non-Critical Bug&quot; means any
+other confirmed defect. Issues caused by Google platform changes, incorrect
+deployment, quota exhaustion, or incorrect Licensee configuration are excluded
+from SLA coverage.
+
+================================================================================
+SIGNATURE BLOCK
+================================================================================
+
+By accepting this Agreement (whether electronically, by installing the Software,
+or by signing below), the parties agree to be bound by its terms.
+
+DEVELOPER:
+
+Name    : Rohmit Neelakant Shirgoppi
+Role    : Developer and Licensor — DMS-IA
+Date    : 01 June 2026
+Email   : romit232091@gmail.com
+
+
+LICENSEE:
+
+Organisation  : _______________________________________________
+
+Authorised
+Signatory Name: _______________________________________________
+
+Designation   : _______________________________________________
+
+Date          : _______________________________________________
+
+Email         : _______________________________________________
+
+Signature     : _______________________________________________
+
+
+================================================================================
+DMS-IA — Digital Memo System Industrial Automation
+Software Licence Agreement and Terms of Service — Version 1.0
+Updated for current codebase. Full Legal and Commercial Compliance.
+Effective 01 June 2026 | Last Updated 29 June 2026
+
+Copyright © 2026 Rohmit Neelakant Shirgoppi (Aadhaar: Neelkant Shirgoppi)
+All Rights Reserved
+Protected under the Indian Copyright Act 1957
+Diary No. SW-25725/2026-CO
+romit232091@gmail.com | +91-9535835504
+================================================================================
+</pre>
+
+  </div>
+</div>
+
+<footer>
+  Copyright &copy; 2026 Rohmit Neelakant Shirgoppi. All Rights Reserved.<br>
+  Your Digi Employee &nbsp;|&nbsp; DMS-IA &mdash; Digital Memo System Industrial Automation<br>
+  Diary No. SW-25725/2026-CO &nbsp;|&nbsp; Dandeli, Karnataka, India<br>
+  <a href="/">Home</a> &nbsp;|&nbsp;
+  <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="mailto:romit232091@gmail.com">Contact</a>
+</footer>
+
+</body>
+</html>
