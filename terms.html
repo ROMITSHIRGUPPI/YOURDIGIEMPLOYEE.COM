@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Terms of Service for DMS-IA — Digital Memo System Industrial Automation by Rohmit Neelakant Shirgoppi. Software Licence Agreement v1.0.">
-<title>Terms of Service v1.0 — DMS-IA | Your Digi Employee</title>
+<meta name="description" content="Privacy Policy for DMS-IA — Digital Memo System Industrial Automation by Rohmit Neelakant Shirgoppi. DPDPA 2023, GDPR, CCPA compliant.">
+<title>Privacy Policy v1.0 — DMS-IA | Your Digi Employee</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:Arial,sans-serif;color:#333;background:#f9f9f9;}
-header{background:linear-gradient(135deg,#0d47a1,#1a73e8);color:#fff;
+header{background:linear-gradient(135deg,#1a73e8,#0d47a1);color:#fff;
         padding:32px 20px;text-align:center;}
 header h1{font-size:1.7em;margin-bottom:6px;}
 header p{font-size:13px;opacity:0.9;}
@@ -23,15 +23,11 @@ header p{font-size:13px;opacity:0.9;}
 .badge{background:#e8f0fe;color:#1a73e8;padding:4px 12px;
         border-radius:20px;font-size:12px;font-weight:bold;}
 .badge.green{background:#e6f4ea;color:#1e8e3e;}
-.badge.red{background:#fce8e6;color:#c5221f;}
 .badge.orange{background:#fce8b2;color:#e37400;}
-.warning{background:#fff8e1;border-left:4px solid #f9a825;
-          padding:16px 20px;border-radius:0 8px 8px 0;
-          margin-bottom:20px;font-size:14px;line-height:1.6;}
 pre{white-space:pre-wrap;font-family:"Courier New",monospace;
      font-size:13px;line-height:1.75;color:#333;
      border-top:1px solid #e0e0e0;padding-top:24px;margin-top:8px;}
-footer{background:#0d47a1;color:#fff;text-align:center;
+footer{background:#1a73e8;color:#fff;text-align:center;
         padding:28px 20px;font-size:13px;line-height:2;}
 footer a{color:#fff;text-decoration:underline;}
 @media(max-width:600px){
@@ -44,14 +40,14 @@ footer a{color:#fff;text-decoration:underline;}
 <body>
 
 <header>
-  <h1>&#128220; Terms of Service</h1>
+  <h1>&#128274; Privacy Policy</h1>
   <p>DMS-IA &mdash; Digital Memo System Industrial Automation &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; 29 June 2026</p>
 </header>
 
 <div class="topbar">
   <a href="/">&#8592; Back to Home</a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="/privacy.html">Privacy Policy</a>
+  <a href="/terms.html">Terms of Service</a>
   &nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="mailto:romit232091@gmail.com">Contact Developer</a>
 </div>
@@ -61,1278 +57,1451 @@ footer a{color:#fff;text-decoration:underline;}
 
     <div class="badge-row">
       <span class="badge">Version 1.0</span>
-      <span class="badge green">Indian Copyright Act 1957</span>
-      <span class="badge green">DPDPA 2023</span>
-      <span class="badge green">IT Act 2000</span>
+      <span class="badge green">DPDPA 2023 Compliant</span>
+      <span class="badge green">GDPR Compliant</span>
+      <span class="badge green">CCPA Compliant</span>
+      <span class="badge green">Google API Limited Use Compliant</span>
       <span class="badge orange">Effective 29 June 2026</span>
-      <span class="badge red">Legally Binding</span>
-    </div>
-
-    <div class="warning">
-      &#9888;&#65039; <strong>IMPORTANT:</strong> By installing, deploying, or using DMS-IA in any way,
-      you confirm that you have read, understood, and agree to be bound by all terms
-      and conditions of this Agreement. Please read carefully before proceeding.
     </div>
 
     <pre>================================================================================
-SOFTWARE LICENCE AGREEMENT AND TERMS OF SERVICE
+PRIVACY POLICY
 DMS-IA — Digital Memo System Industrial Automation
 ================================================================================
 
-Document Title   : Software Licence Agreement and Terms of Service
-Software Name    : DMS-IA — Digital Memo System Industrial Automation
+Document Title   : Privacy Policy — DMS-IA Digital Memo System Industrial Automation
 Developer / Owner: Rohmit Neelakant Shirgoppi (Aadhaar: Neelkant Shirgoppi)
 Contact Email    : romit232091@gmail.com
 Phone            : +91-9535835504
 Address          : H.No. 522, Near CSI Church, Teachers Colony Road,
                    Township, Dandeli — 581325, Karnataka, India
-Document Version : 1.0 — First public release.
 Effective Date   : 01 June 2026
 Last Updated     : 29 June 2026
+Document Version : 1.0 — First public release
+Policy Version   : 1.0 — Updated for current codebase. All gaps closed.
 
-CHANGE LOG v2.1 → v2.2 (29 June 2026):
-- Updated Section 1 (Definitions): Removed Google Forms and Google Drive
-  from the &quot;Google Workspace&quot; definition — FormApp and DriveApp are not
-  used in the current codebase.
-- Updated Section 1 (Definitions): Added &quot;Official Memo Module&quot; definition
-  — the Official Memo is now a built-in HTML web application served via
-  HtmlService, not a Google Form.
-- Updated Section 1 (Definitions): Updated &quot;Google Workspace&quot; definition to
-  accurately reflect services DMS-IA actually uses.
-- Updated Section 4.2 (System Requirements): Removed &quot;Gmail access&quot; as a
-  system requirement for full Gmail API — DMS-IA uses MailApp (send-only,
-  script.send_mail scope) which does not require full Gmail access.
-- Updated Section 4.3 (Licensee Responsibilities): Replaced references to
-  &quot;Google Form&quot; with &quot;Official Memo HTML form&quot; throughout.
-- Updated Section 4.3(c): Corrected HMAC_SECRET minimum length from 16+
-  to 32+ characters — matches the code enforcement threshold.
-- Updated Section 4.3: Added responsibilities for Official Memo Module
-  (CC DP-01 validation, mandatory Context / Message field, Drive link
-  attachment model).
-- Updated Section 8.6: Renamed from &quot;OTP Authentication — Licensee
-  Responsibilities (Call Memo Module)&quot; to cover both modules.
-- Updated Section 10.5(c): &quot;Google Form&quot; replaced with &quot;Official Memo HTML
-  form&quot; and &quot;Call Memo HTML form&quot;.
-- Updated Section 16.3 (OAuth Permissions): Listed all 6 current OAuth
-  scopes explicitly, confirmed all non-restricted.
-- Updated Schedule B (Acceptable Use): &quot;Google Form&quot; references replaced
-  with &quot;Official Memo HTML form&quot;. Added Drive link attachment policy.
-  Confirmed no Google Forms or Google Drive API used.
+CHANGE LOG v2.4 → v2.5 (29 June 2026):
+- REMOVED Section 6.5: Gmail Sent Folder Access — GmailApp.search() was
+  removed from the codebase. DMS-IA no longer reads Gmail Sent folder.
+  LINK 1 / LINK 2 columns now store &quot;SENT&quot; (plain text status label) not
+  a Gmail thread URL. No gmail.readonly scope is used.
+- UPDATED Section 8: Google API Limited Use Disclosure
+  - Replaced &quot;Gmail API (GmailApp)&quot; with &quot;Gmail API (MailApp)&quot; — DMS-IA
+    uses MailApp exclusively (script.send_mail scope only). GmailApp is
+    not used anywhere in the codebase.
+  - REMOVED Google Forms API (FormApp) entry — DriveApp and FormApp
+    are not used in the current codebase. The Official Memo form is now
+    a built-in HTML web page (HtmlService), not a Google Form.
+  - REMOVED Google Drive API (DriveApp) entry — Drive folder creation
+    and file upload through DriveApp has been removed. File attachments
+    are now shared via Google Drive public link entered manually by the
+    submitter. Drive is accessed only via UrlFetchApp (no Drive scope).
+  - ADDED api.qrserver.com external fetch entry for QR code generation.
+  - UPDATED HtmlService entry — now covers Official Memo HTML form
+    (including CC DP-01 live lookup), in addition to Call Memo pages.
+- UPDATED Section 3.5: Memo Content — Context / Message field is now
+  MANDATORY (not optional) on the Official Memo HTML form. The submitter
+  cannot submit without completing this field.
+- UPDATED Section 3.6: File Attachments — now entered as a Google Drive
+  public link (text field) rather than a file upload via Google Form.
+- UPDATED Section 5: Data Minimisation — corrected Context character
+  limit to 3,000 characters (was stated as 2,000 in v2.4).
+- UPDATED Section 9: Sub-processors — added api.qrserver.com as a
+  limited sub-processor for QR code image generation (no personal data
+  sent; only the deployment URL is transmitted).
+- UPDATED Section 10: Data Storage — QUEUE sheet now also covers Official
+  Memo web form submissions (previously Google Form only).
+- UPDATED Section 12: Security — added CC DP-01 live validation via
+  CHECKDP endpoint; added CSP-compliant HTML (no inline event handlers).
+- UPDATED Section 28: Machine-readable — all v2.5 changes reflected.
 
-CHANGE LOG v2.0 → v2.1 (18 June 2026):
-- Updated Schedule A: Indicative pricing brackets added
-- Updated Schedule C: SLA made binding for Premium tier
-- Added Section 21: IP Breach Remedy and Penalty Clause
-- Added Section 22: Source Code Escrow (on request)
-- Added Section 23: Multi-Deployment Volume Discount Policy
-- Added Section 24: Trial and Evaluation Licence Terms
-- Updated Section 13: Jurisdiction confirmed — Dharwad, Karnataka
-- Updated Section 12.3: Termination cure period confirmed 14 days
+CHANGE LOG v2.3 → v2.4 (18 June 2026):
+- Added Section 25: Data Protection Officer Statement (GDPR Art.37)
+- Added Section 26: Cross-Border Transfer Mechanisms (GDPR Ch.V)
+- Added Section 27: Consent Withdrawal Mechanism (DPDPA S.6)
+- Updated Section 23: Grievance timeline made legally binding with remedy
+- Updated Section 15: Explicit consent withdrawal procedure added
+- Updated Section 24: Machine-readable updated for all v2.4 additions
+
+CHANGE LOG v2.2 → v2.3 (18 June 2026):
+- Updated Section 3.4: Added designation data from WORKER LIST Col D
+- Updated Section 5: Added 30-person limit as data minimisation measure
+- Updated Section 6.13: Added confirmation email sent after Call Memo submission
+- Updated Section 10: Added CALL MEMO sheet and QR CODE sheet
+- Updated Section 14: Added cleanupExpiredOtpKeys daily automated deletion
+- Updated Section 24: Machine-readable entries updated
+
+CHANGE LOG v2.1 → v2.2 (18 June 2026):
+- Added Section 3.8: OTP Authentication Data (Call Memo HTML page)
+- Added Section 3.9: Reason for Overtime (new form field)
+- Updated multiple sections for OTP and Call Memo additions
 
 Copyright Diary  : SW-25725/2026-CO — Filed 01/06/2026, Copyright Office,
                    Government of India
-Governing Law    : Laws of India — Karnataka jurisdiction
-Applicable Acts  : Indian Copyright Act 1957 · Indian Contract Act 1872 ·
-                   Information Technology Act 2000 · DPDPA 2023 ·
-                   Sale of Goods Act 1930 · Consumer Protection Act 2019
+Applicable Laws  : DPDPA 2023 (India) · IT Act 2000 · IT Rules 2011 · GDPR (EU)
+                   CCPA (California) · Google API Limited Use Policy
+                   Google Workspace Marketplace Policies
 
 ================================================================================
-IMPORTANT — READ BEFORE INSTALLING OR USING DMS-IA
+1. INTRODUCTION AND SCOPE
 ================================================================================
 
-This Software Licence Agreement and Terms of Service (&quot;Agreement&quot;) is a legally
-binding contract between you or the organisation you represent (&quot;Licensee&quot;, &quot;you&quot;,
-&quot;your&quot;) and Rohmit Neelakant Shirgoppi (&quot;Developer&quot;, &quot;Licensor&quot;, &quot;we&quot;, &quot;us&quot;).
+This Privacy Policy (&quot;Policy&quot;) governs the collection, use, storage, processing,
+transfer, and protection of personal data by DMS-IA — Digital Memo System
+Industrial Automation (&quot;DMS-IA&quot;, &quot;the Software&quot;, &quot;the System&quot;). DMS-IA is
+developed, owned, and maintained by Rohmit Neelakant Shirgoppi (&quot;Developer&quot;,
+&quot;we&quot;, &quot;us&quot;).
 
-BY INSTALLING, COPYING, DEPLOYING, RUNNING, OR USING DMS-IA IN ANY WAY, YOU
-CONFIRM THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY ALL TERMS AND
-CONDITIONS OF THIS AGREEMENT.
+DMS-IA is a Google Apps Script-based software product deployed within an
+organisation&#x27;s own Google Workspace account. It provides digital memo submission,
+routing, approval, escalation, and audit trail capabilities exclusively for
+internal organisational use. It also provides a dedicated Call Memo HTML web
+application accessible via QR code for direct worker submission, and an Official
+Memo HTML web application for internal staff. If you are using DMS-IA, your
+organisation has purchased a licence from the Developer and has deployed the
+system within their own Google account.
 
-IF YOU DO NOT AGREE TO THESE TERMS, DO NOT INSTALL, DEPLOY, OR USE DMS-IA.
-RETURN OR DELETE ALL COPIES OF THE SOFTWARE IMMEDIATELY.
+This Policy applies to all natural persons whose personal data is processed by
+DMS-IA — memo submitters, Call Memo submitters, approvers, CC recipients,
+department heads, managers, system administrators, and any other person whose
+data enters the system.
 
-If you are accepting this Agreement on behalf of an organisation, company, or
-institution, you represent and warrant that you have the legal authority to bind
-that entity to this Agreement.
-
-================================================================================
-1. DEFINITIONS
-================================================================================
-
-In this Agreement, the following terms have the meanings given below:
-
-&quot;Software&quot; means DMS-IA — Digital Memo System Industrial Automation, including
-all source code (DMS-IA.gs), manifest files (appsscript.json), documentation,
-scripts, templates, email HTML, HTML web application pages, and any updates,
-patches, or new versions provided by the Developer.
-
-&quot;Developer&quot; means Rohmit Neelakant Shirgoppi, the sole author and owner of
-DMS-IA, residing at H.No. 522, Near CSI Church, Teachers Colony Road, Township,
-Dandeli — 581325, Karnataka, India.
-
-&quot;Licensee&quot; means the individual, company, organisation, or institution that
-purchases a licence and deploys the Software.
-
-&quot;Deployment&quot; means a single installation of the Software within one Google
-Workspace account (one Google Spreadsheet + one Google Apps Script project).
-
-&quot;Google Workspace&quot; means Google&#x27;s suite of cloud-based productivity and
-collaboration tools. For the purposes of this Agreement, DMS-IA uses and relies
-upon Google Sheets, Gmail (send-only via MailApp), and Google Apps Script.
-DMS-IA does not use Google Forms, Google Drive API (DriveApp), or any other
-Google Workspace service not listed in this definition.
-
-&quot;Authorised Users&quot; means employees, contractors, or representatives of the
-Licensee who are permitted to use the Software under this Agreement.
-
-&quot;Documentation&quot; means all technical documentation, user guides, privacy policy,
-and other written materials provided by the Developer in connection with the
-Software.
-
-&quot;Intellectual Property Rights&quot; means all copyright, trade secrets, patents,
-trademarks, database rights, and all other proprietary rights worldwide.
-
-&quot;Confidential Information&quot; means the Software source code, algorithms, security
-architecture, HMAC token implementation, self-healing mechanisms, and any other
-non-public information disclosed by the Developer.
-
-&quot;Official Memo Module&quot; means the Official Memo HTML web application component
-of DMS-IA, served via Google Apps Script HtmlService, accessible via the Web
-App URL or QR code scan. It allows Authorised Users to submit official internal
-memos through a structured HTML form requiring DP-01 entry, live receiver and CC
-DP-01 validation, mandatory subject and context fields, priority and action
-selection, and an optional Google Drive link for attachments. The form includes
-a three-step flow: fill, preview, and confirm submission.
-
-&quot;Call Memo Module&quot; means the Call Memo HTML web application component of DMS-IA,
-accessible via QR code, which allows Authorised Users to submit Call Memos
-through a mobile-friendly web page requiring OTP authentication.
-
-&quot;OTP&quot; means a one-time password — a 6-digit code generated by the Software and
-delivered to an Authorised User&#x27;s registered email address as a Magic Link, used
-to verify the user&#x27;s identity before granting access to the Call Memo form.
-
-&quot;Magic Link&quot; means a unique, time-limited, single-use URL embedded in an OTP
-email that, when clicked, authenticates the Authorised User and opens the Call
-Memo submission form with their details pre-filled.
-
-&quot;QR Code&quot; means the machine-readable code generated by the Software and stored
-in the QR CODE sheet, encoding the DMS-IA portal URL, intended to be printed
-and displayed at the Licensee&#x27;s premises to provide access to both the Official
-Memo and Call Memo modules.
-
-&quot;WORKER LIST&quot; means the Google Sheets tab within DMS-IA storing the Licensee&#x27;s
-workers&#x27; details (department, name, DP number, designation) from which the Call
-Memo form populates worker selection lists server-side.
-
-&quot;CALL MEMO Sheet&quot; means the Google Sheets tab permanently storing all Call Memo
-submissions including submitter details, department, people selected, reason for
-overtime, and timestamp.
-
-&quot;QR CODE Sheet&quot; means the Google Sheets tab storing the QR code image for the
-DMS-IA portal URL. Contains no personal data.
-
-&quot;Update&quot; means any bug fix, patch, enhancement, or new version of the Software
-released by the Developer.
-
-&quot;Effective Date&quot; means the date on which the Licensee first installs, deploys,
-or uses the Software, or the date of purchase, whichever is earlier.
+This Policy satisfies the requirements of: Google Workspace Marketplace Programme
+Policies, Google API Services User Data Policy (Limited Use), DPDPA 2023 (India),
+IT Act 2000, GDPR (EU), CCPA (California), and automated AI-based compliance
+scanners. This Policy should be read in conjunction with the DMS-IA Software
+Licence Agreement and Terms of Service (&quot;Agreement&quot;), which is incorporated
+herein by reference. Please read this policy carefully. If you have any
+questions, contact romit232091@gmail.com.
 
 ================================================================================
-2. GRANT OF LICENCE
+2. DATA CONTROLLER, PROCESSOR, AND DEVELOPER ROLES
 ================================================================================
 
-2.1 Licence Grant
-Subject to the terms and conditions of this Agreement and payment of the
-applicable licence fee, the Developer grants the Licensee a limited,
-non-exclusive, non-transferable, non-sublicensable, revocable licence to:
+2.1 The Deploying Organisation — Primary Data Controller
+---------------------------------------------------------
+The organisation that licences and deploys DMS-IA within their Google Workspace
+account is the primary Data Controller. They determine purposes and means of
+processing, manage access, set retention periods, and bear full DPDPA/GDPR
+compliance responsibility toward their employees and stakeholders.
 
-(a) Install and deploy one (1) instance of the Software within one (1) Google
-    Workspace account controlled by the Licensee;
+2.2 The Developer — Not a Data Controller or Processor
+-------------------------------------------------------
+Rohmit Neelakant Shirgoppi (Developer) is the software author only. The Developer
+does NOT access, view, collect, or store any of your personal data at any time.
+All data processed by DMS-IA stays within your organisation&#x27;s Google Sheets and
+Gmail, which your organisation controls. The Developer receives zero telemetry,
+analytics, logs, or user data from any deployment.
 
-(b) Use the Software solely for the Licensee&#x27;s internal business operations —
-    specifically for the management of internal memo submissions and approvals
-    within the Licensee&#x27;s organisation;
-
-(c) Allow Authorised Users to interact with the Software for the purposes
-    described in (b) above;
-
-(d) Make one (1) backup copy of the Software source code for archival purposes
-    only, provided the copyright notice and all proprietary notices are
-    preserved.
-
-2.2 Licence Tiers
-The Developer offers the following licence tiers (see also Schedule A). The
-specific tier purchased by the Licensee is set out in the invoice or purchase
-confirmation:
-
-Base Licence:
-Single deployment. Up to 50 active users (Authorised Users). Includes email
-support for 30 days from Effective Date.
-
-Standard Licence:
-Single deployment. Up to 200 active users. Includes email support for 90 days
-from Effective Date. Includes one major version update.
-
-Premium Licence:
-Single deployment. Unlimited active users. Includes priority email support for
-12 months. Includes all major and minor version updates for 12 months.
-
-Additional Deployments:
-Each additional deployment (additional Google Workspace account or spreadsheet)
-requires a separate licence purchased from the Developer.
-
-2.3 Licence Restrictions
-The licence granted in Section 2.1 is subject to the following restrictions
-and the Acceptable Use Policy set out in Schedule B. The Licensee shall NOT,
-and shall ensure that Authorised Users do NOT:
-
-(a) Copy, reproduce, distribute, publish, or make available the Software source
-    code or any part thereof to any third party;
-
-(b) Sell, resell, rent, lease, loan, sublicence, transfer, or otherwise
-    commercialise the Software or any rights in the Software;
-
-(c) Modify, adapt, translate, reverse engineer, decompile, disassemble, or
-    create derivative works based on the Software;
-
-(d) Remove, alter, or obscure any copyright notice, proprietary notice, or
-    identifier from the Software or Documentation;
-
-(e) Use the Software to build a competing product, similar service, or any
-    product that replicates the core functionality of DMS-IA;
-
-(f) Use the Software for any unlawful purpose or in violation of any applicable
-    law or regulation;
-
-(g) Deploy the Software in more than the number of instances permitted by the
-    purchased licence tier;
-
-(h) Share, publish, or disclose the Software source code, security architecture,
-    or HMAC token implementation to any person not employed by the Licensee;
-
-(i) Use the Software to process personal data beyond what is described in the
-    Privacy Policy without explicit written consent from the Developer;
-
-(j) Attempt to circumvent, disable, or interfere with any security feature of
-    the Software.
+2.3 Google — Infrastructure Provider
+--------------------------------------
+Google LLC provides the underlying platform (Google Sheets, Gmail, and Google
+Apps Script). Google processes data under its own Privacy Policy and Workspace
+Terms. The Developer has no control over Google&#x27;s data handling. If you have
+questions about how your organisation uses your data within DMS-IA, please
+contact your organisation&#x27;s administrator or HR department directly.
 
 ================================================================================
-3. INTELLECTUAL PROPERTY RIGHTS
+3. PERSONAL DATA COLLECTED — COMPLETE INVENTORY
 ================================================================================
 
-3.1 Ownership
-The Software, including all source code, object code, algorithms, email
-templates, HTML pages (Official Memo form, Call Memo form, approval pages,
-rejection form, OTP pages, print view), security architecture, self-healing
-mechanisms, and all Intellectual Property Rights therein, are and shall remain
-the exclusive property of the Developer, Rohmit Neelakant Shirgoppi.
+DMS-IA collects and processes only the following categories of personal data.
+This is the complete and exhaustive inventory — no other data is collected.
 
-The Developer&#x27;s ownership is protected under:
-- Indian Copyright Act 1957
-- Copyright Diary No. SW-25725/2026-CO (filed 01/06/2026)
-- All applicable international copyright treaties and conventions
+--------------------------------------------------------------------------------
+3.1 Email Address
+--------------------------------------------------------------------------------
+What it is:
+Your Google account email address (e.g. yourname@gmail.com or
+yourname@yourcompany.com).
 
-3.2 No Transfer of Ownership
-This Agreement does not transfer any ownership, title, or Intellectual Property
-Rights in the Software to the Licensee. The Licensee acquires only the limited
-licence rights expressly set out in Section 2.1.
+How it is collected:
+(a) Automatically retrieved when you submit a memo through the Official Memo
+    HTML web form (the system reads it from your session), or when your
+    organisation&#x27;s administrator enters it into the system during setup.
+(b) Retrieved automatically from the TO sheet when you enter your DP-01
+    number on the Call Memo HTML page. You do not type your email — the
+    system fetches it from your registered record and pre-fills it read-only.
 
-3.3 Licensee Data
-All data generated by the Licensee&#x27;s use of the Software (memo records, staff
-directory, audit logs, etc.) remains the property of the Licensee. The Developer
-has no claim over Licensee data and no access to it.
+Why it is used:
+- To identify you as the person submitting a memo
+- To send you a one-time OTP magic link for Call Memo authentication
+- To send you a confirmation email when your memo is submitted
+- To send you a notification email when your memo is approved or rejected
+- To verify your identity as the designated approver before processing your
+  approval or rejection decision
+- To send you a reminder or escalation alert if a memo requires your attention
+- To record your action in the permanent audit log
+- To temporarily store in Google&#x27;s secure cache for duplicate submission
+  prevention for 60 seconds and for cryptographic token verification for up
+  to 6 hours
 
-3.4 Feedback
-If the Licensee provides feedback, suggestions, or ideas regarding the Software,
-the Developer may freely use such feedback without any obligation or
-compensation to the Licensee.
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
 
-3.5 Copyright Notice
-All copies or portions of the Software must retain the following notice:
+--------------------------------------------------------------------------------
+3.2 DP Number (Department Position Number)
+--------------------------------------------------------------------------------
+What it is:
+A unique identification number assigned to your position within your organisation
+(e.g. DP001 or ELE-02).
 
-Copyright © 2026 Rohmit Neelakant Shirgoppi. All Rights Reserved.
+How it is collected:
+(a) Entered by your organisation&#x27;s administrator during system setup in the FROM
+    or TO configuration sheet.
+(b) Entered by you on the Call Memo HTML page DP-01 field to initiate OTP
+    authentication. The DP-01 field on the Call Memo form itself is pre-set to
+    0000 (the recipient&#x27;s DP) and is non-editable.
+(c) Entered by you on the Official Memo HTML form in the &quot;Your DP-01&quot; field,
+    or auto-populated if your session is already authenticated.
+
+Why it is used:
+- To match your submission to your department and position in the system
+- To look up your registered email address from the TO sheet for OTP delivery
+- To identify and route the memo to the correct approver for your department
+- To identify you as the CC recipient when applicable
+- To display your department position in the memo record
+- To perform live validation (CHECKDP lookup) when a submitter enters a
+  Receiver DP-01 or CC DP-01 on the Official Memo form
+
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
+
+--------------------------------------------------------------------------------
+3.3 Department Name
+--------------------------------------------------------------------------------
+What it is:
+The name of the department you belong to (e.g. Civil, Electrical, Mechanical,
+or Administration).
+
+How it is collected:
+Entered by your organisation&#x27;s administrator during system setup.
+
+Why it is used:
+- To display the sender and recipient department clearly in all memo emails
+- To route escalation alerts to the correct department head or manager when
+  a memo is not actioned within the configured time limit
+- To group and display memo statistics by department in the Command Centre
+- To identify the correct escalation authority for your department
+- To populate the department dropdown in the Call Memo HTML form
+
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
+
+--------------------------------------------------------------------------------
+3.4 Full Name and Job Designation
+--------------------------------------------------------------------------------
+What it is:
+Your full name and job designation as entered by your organisation&#x27;s administrator
+(e.g. Rajesh Kumar / Engineer, Sunil Sharma / Technician).
+
+How it is collected:
+(a) Entered by your organisation&#x27;s administrator during system setup in the
+    WORKER LIST sheet (Col B = Name, Col D = Designation).
+(b) Retrieved automatically from the WORKER LIST sheet by the server when you
+    are selected as a person involved in a Call Memo. You do not type your name
+    or designation — the backend looks them up using your DP number to ensure
+    accuracy and eliminate URL-length data loss.
+(c) Retrieved from the FROM sheet for Official Memo submitters by matching
+    your email address.
+
+Why it is used:
+- To display your name and designation professionally in all memo emails
+- To identify you as the approver or rejector in decision confirmation emails
+- To display your name in the PDF memo document under the Authorization section
+- To record your name in the permanent audit log alongside your actions
+- To display in the Call Memo people list in the format:
+  Name (DP:ELE001, Designation) when a submitter selects you
+- To display in the Official Memo preview panel and in the live receiver name
+  lookup when a submitter enters a DP-01
+
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
+
+--------------------------------------------------------------------------------
+3.5 Memo Content and Rejection Reasons
+--------------------------------------------------------------------------------
+What it is:
+The content of memos you submit, including Subject, Context / Message (mandatory),
+Priority, Action Required fields, and any rejection reason typed by the approver.
+
+How it is collected:
+Entered by you through the Official Memo HTML web form at the time of submission,
+or typed by the approver in the rejection comment box.
+
+IMPORTANT — Context / Message is Mandatory:
+The Context / Message field is a required field on the Official Memo HTML form.
+The form will not submit without it. This is a deliberate policy choice to ensure
+every memo has adequate context for the approver.
+
+IMPORTANT — Licensee Responsibility Regarding Sensitive Data:
+The deploying organisation is responsible for ensuring that employees do not
+include sensitive personal data — such as health information, financial details,
+personal identification numbers, or third-party personal data — in memo content
+fields. DMS-IA stores whatever content is submitted without filtering. The
+organisation must inform their employees accordingly.
+
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
+
+--------------------------------------------------------------------------------
+3.6 File Attachments (Optional)
+--------------------------------------------------------------------------------
+What it is:
+A Google Drive public sharing link entered voluntarily by the submitter in the
+&quot;Google Drive Link&quot; field of the Official Memo HTML form (optional field).
+
+How it is collected:
+Entered voluntarily by the user at time of submission as a text URL. DMS-IA
+does not upload, store, or access the file itself. Only the URL is stored in
+the MASTER MEMO sheet.
+
+Why it is used:
+To provide supporting documentation for the memo. The submitter is responsible
+for ensuring the shared link has appropriate access permissions (&quot;Anyone with
+the link&quot;) before submitting. DMS-IA displays this link to the approver in the
+approval email and in the MASTER MEMO record.
+
+IMPORTANT: DMS-IA does not read, copy, or process the file at the shared URL.
+It only stores the URL as provided by the submitter.
+
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
+The file itself remains in the submitter&#x27;s own Google Drive.
+
+--------------------------------------------------------------------------------
+3.7 Security and Audit Data (Temporary)
+--------------------------------------------------------------------------------
+What it is:
+Email-to-memo ID mapping, token burn keys, bad attempt counters, rate limit
+counters, escalation timestamps, OTP hashes, brute-force counters, and OTP
+send rate limit keys.
+
+How it is collected:
+Automatically generated by the system during memo processing and Call Memo
+OTP authentication.
+
+Why it is used:
+To prevent token reuse, brute force attacks, duplicate submissions, quota abuse,
+OTP flooding, and to track escalation timing.
+
+How long it is kept:
+- Token burn keys: 6 hours (CacheService TTL)
+- Rate limit counters: 10 minutes (CacheService TTL)
+- Spam/duplicate blocks: 60 seconds (CacheService TTL)
+- OTP send rate limit: 2 minutes (CacheService TTL)
+- OTP brute-force counter: 10 minutes (CacheService TTL)
+- OTP hash (Script Properties): 5 minutes, then auto-deleted after use
+- Verified session key: 15 minutes, deleted immediately after submission
+- Approver-memo mappings: auto-deleted when memo is actioned, expired, or
+  withdrawn
+
+--------------------------------------------------------------------------------
+3.8 OTP Authentication Data (Call Memo HTML Page)
+--------------------------------------------------------------------------------
+What it is:
+A one-time 6-digit OTP generated when you enter your DP-01 number on the
+Call Memo HTML page.
+
+How it is collected:
+Automatically generated by the system when you tap &quot;Send Access Link&quot; on the
+Call Memo DP entry page.
+
+Why it is used:
+- To verify that you are the registered holder of the DP-01 number you entered
+- To ensure that only persons whose email is registered in the TO sheet can
+  submit a Call Memo
+- To deliver the OTP magic link to your registered email address only
+- To prevent impersonation, form forwarding misuse, and unauthorised submissions
+
+How it is stored:
+The OTP is NEVER stored in plain text. It is immediately converted to a
+SHA-256 cryptographic hash before storage. The raw OTP exists only in the
+email sent to you. The hash is stored temporarily in Google Apps Script
+PropertiesService under a key linked to your DP number. It is automatically
+deleted after successful verification or after 5 minutes, whichever is sooner.
+
+How long it is kept:
+Maximum 5 minutes. Auto-deleted on successful use. Cleaned up daily by the
+system&#x27;s automated cleanup function.
+
+--------------------------------------------------------------------------------
+3.9 Reason for Overtime (Call Memo HTML Page)
+--------------------------------------------------------------------------------
+What it is:
+A free-text field in the Call Memo HTML form where you enter the reason why
+overtime is being called.
+
+How it is collected:
+Entered voluntarily by you at the time of Call Memo submission.
+
+Why it is used:
+- To provide justification for the overtime call in the memo record
+- To inform the approver of the reason before making a decision
+- To maintain an accurate record in the MASTER MEMO sheet
+
+Input is limited to 500 characters maximum.
+
+IMPORTANT: Do not include sensitive personal data in this field. See Section 3.5.
+
+How long it is kept: As determined by your organisation&#x27;s data retention policy.
+
+MACHINE-READABLE DECLARATION: The above 9 categories constitute the complete
+data inventory for DMS-IA v2.5. No data categories exist outside this list.
+
+================================================================================
+4. DATA NOT COLLECTED — EXPLICIT EXCLUSIONS
+================================================================================
+
+DMS-IA does NOT collect, store, or process the following data under any
+circumstances:
+
+- Passwords or authentication credentials of any kind
+- Mobile phone numbers or telephone numbers
+- Physical home or residential address
+- Date of birth or age
+- Aadhaar number, PAN number, Voter ID, Passport, or any government-issued ID
+- Bank account details, credit card details, salary, or any financial data
+- Health or medical information of any kind
+- Biometric data of any kind
+- Photographs, unless the user personally chooses to attach one via Drive link
+- Any information about your personal life outside your work identity
+- Location data, GPS coordinates, or IP addresses
+- Browser history or device information
+- Personal Gmail account content — only the organisation&#x27;s system Gmail is used
+- Social media profiles or identifiers
+- Racial or ethnic origin, political opinions, religious or philosophical beliefs
+- Sexual orientation or gender identity
+- Criminal conviction data
+- Children&#x27;s data (persons under 18)
+- Any telemetry, crash reports, or usage analytics sent to the Developer
+- Any data outside the deploying organisation&#x27;s own Google Workspace environment
+- The raw OTP code — only its SHA-256 hash is stored, never the plain OTP
+- The contents of any Google Drive file shared via attachment link — only the
+  URL is stored
+
+================================================================================
+5. DATA MINIMISATION PRINCIPLE
+================================================================================
+
+DMS-IA is built on the principle of data minimisation as required by DPDPA 2023
+Section 4(1)(b), GDPR Article 5(1)(c), and Google&#x27;s API User Data Policy.
+
+- Purpose limitation: Each data element is collected for one specific purpose
+  only. No data is repurposed or used for profiling.
+
+- Minimum fields: DMS-IA collects exactly 9 data categories (Section 3). The
+  Official Memo HTML form and Call Memo HTML page contain only the fields
+  strictly required for memo routing.
+
+- Temporary security data auto-deleted: Token burn keys, rate limit counters,
+  and spam blocks are stored in CacheService with TTLs of 60 seconds to 10
+  minutes and are never persisted beyond their TTL.
+
+- OTP hash storage: The raw OTP is never stored. Only its SHA-256 hash is
+  stored in Script Properties for a maximum of 5 minutes.
+
+- DP-number-only URL transmission: When submitting a Call Memo with people
+  selected, only DP numbers are sent in the URL. Full names and designations
+  are reconstructed server-side from WORKER LIST. This eliminates URL
+  truncation risk and minimises data in transit.
+
+- 30-person limit enforced server-side: Call Memo submissions are capped at
+  a maximum of 30 workers per memo. This limit is enforced both client-side
+  (checkbox disabling) and server-side (hard rejection). This deliberately
+  limits the volume of personal data per memo record.
+
+- Email pre-filled server-side: The Call Memo HTML page retrieves your email
+  from the TO sheet and pre-fills it as read-only. You never type or transmit
+  your email manually, reducing input error and data exposure risk.
+
+- Approval mapping auto-deleted: The approver email stored in Script Properties
+  (a_+memoId) is automatically deleted the instant the memo is actioned, expired,
+  or withdrawn.
+
+- Input length limits enforced: Subject capped at 200 characters. Context /
+  Message capped at 3,000 characters. Reason for OT capped at 500 characters.
+  Attachment field accepts URL text only (no file upload).
+
+- Drive link only — no file access: File attachments are submitted as a Drive
+  sharing URL only. DMS-IA does not fetch, read, or store the file content.
+  The 20MB file upload restriction from previous versions no longer applies —
+  the submitter controls file size through their own Drive settings.
+
+- No developer data collection: The Developer architecture contains no telemetry
+  endpoint, no analytics hook, and no mechanism to receive any data.
+
+================================================================================
+6. PURPOSES OF PROCESSING
+================================================================================
+
+6.1 Core Memo Workflow
+Your email address and DP number are used to route your submitted memo to the
+correct approver and to send you status notifications.
+
+6.2 Identity Verification via HMAC-SHA256
+Your email address is cryptographically encoded into each approval link using
+HMAC-SHA256. When you click the link, the system recomputes the hash and verifies
+it matches. This ensures only the intended approver can action a memo. You should
+not share approval links with any other person as they contain your encoded
+identity information.
+
+6.3 Approval Link Security — Script Properties
+When an approval or rejection link is generated for you, your email address is
+stored in Google Apps Script PropertiesService linked to the memo ID
+(key: &quot;a_&quot; + memoId). This is used exclusively to verify your identity when you
+click the link. This data is stored within your organisation&#x27;s Google Apps Script
+environment, is never accessible to the Developer, and is automatically deleted
+the instant the memo is actioned, expired, or withdrawn.
+
+6.4 Escalation Routing
+Your department name is used to identify and contact the correct department
+authority if a memo is not actioned within the configured time limit (default:
+24 hours for Stage 1, 48 hours for Stage 2). Escalation emails are
+information-only — no action buttons are provided.
+
+[SECTION 6.5 REMOVED IN v2.5]
+Gmail Sent Folder Access has been removed from DMS-IA. GmailApp.search() is
+no longer used. The LINK 1 and LINK 2 columns in MASTER MEMO now store the
+plain text label &quot;SENT&quot; to confirm email delivery, replacing the previous Gmail
+thread URL. No Gmail inbox, sent folder, or email content is read by DMS-IA.
+
+6.5 Audit Trail
+Your email address, name, and the action you took are recorded in a permanent
+audit log for organisational accountability and traceability.
+
+6.6 PDF Documentation
+Your name is displayed in the memo PDF document in the Authorization section
+to identify who submitted and who approved or rejected the memo.
+
+6.7 Backup
+Your data may be included in automated weekly backups of the memo records,
+retained for a maximum of 4 weeks and then automatically deleted.
+
+6.8 Security Event Recording
+If an approval or rejection link associated with your memo is used incorrectly
+or appears to be tampered with, DMS-IA records the failed attempt. If the maximum
+number of failed attempts is reached (default: 5), the memo is automatically
+locked and your organisation&#x27;s administrator is notified.
+
+6.9 Administrative Reporting
+A daily summary email to the administrator contains aggregate statistics only —
+pending count, approved count, rejected count, and email quota remaining. No
+individual personal data is included beyond what the administrator already has
+direct access to.
+
+6.10 Delegated Approval
+If your organisation has configured the delegation feature and the primary
+approver does not act within the set time limit, your memo content including
+your name and department may be automatically forwarded to a backup approver
+designated by your organisation.
+
+6.11 OTP Authentication for Call Memo
+When you use the Call Memo HTML page (accessed via QR code), the system:
+(1) Accepts your DP-01 number as input
+(2) Looks up your registered email address from the TO sheet
+(3) Generates a one-time 6-digit OTP, hashes it with SHA-256, and stores the
+    hash in Script Properties for a maximum of 5 minutes
+(4) Sends a magic link email to your registered address only
+(5) When you click the link, verifies the OTP hash against the stored value
+(6) On successful verification, deletes the OTP hash, opens the Call Memo form
+    with your email pre-filled and read-only
+Your email is never shown to you during entry — only a masked version
+(e.g. ro***@company.com) is displayed for confirmation. This prevents
+impersonation and ensures only registered employees can submit Call Memos.
+
+6.12 Call Memo Submission
+When you submit a Call Memo via the HTML page, your email address is verified
+against the TO sheet on the server before the memo is written to the CALL MEMO
+sheet. Only DP numbers of selected workers are transmitted in the URL — names
+and designations are reconstructed server-side from the WORKER LIST sheet to
+prevent data loss from URL length limits. The Reason for Overtime you enter is
+stored in the memo context alongside the people list.
+
+Upon successful submission, a confirmation email is automatically sent to your
+registered email address containing your Memo ID, department, call time, subject,
+and count of people selected. This email serves as your receipt and proof of
+submission. It does not contain the full names of selected workers — only the
+count.
+
+6.13 CC DP-01 Live Validation (Official Memo)
+When a submitter enters a CC DP-01 number on the Official Memo HTML form, the
+system performs a live lookup (via the CHECKDP action) to verify whether the
+DP-01 is registered in the system. If valid, the registered name and department
+are displayed as confirmation. If invalid, submission is blocked. No additional
+personal data is collected — only the DP-01 entered by the submitter is used
+for this lookup.
+
+================================================================================
+7. USER CONSENT AND LAWFUL BASIS FOR DATA COLLECTION
+================================================================================
+
+DMS-IA operates within an organisational context. The lawful basis for processing
+personal data is as follows for each user category:
+
+Memo Submitters (Official Memo HTML Form):
+Basis: Implied consent + contractual necessity
+How: By voluntarily submitting a memo via the Official Memo HTML web form, the
+submitter knowingly provides their data for the stated purpose in the course of
+their employment within the organisation.
+
+Call Memo Submitters (HTML Page):
+Basis: Implied consent + contractual necessity
+How: By entering their DP-01 number and requesting an OTP link, the submitter
+voluntarily initiates the authentication process. By clicking the magic link
+and submitting the form, they knowingly provide their data for the stated
+purpose. The email pre-fill is a system convenience from registered data, not
+new collection.
+
+Approvers:
+Basis: Legitimate interest + employment contract
+How: Approver details are entered by the administrator as part of system setup.
+Approvers act in their official capacity as employees performing their role.
+
+CC Recipients:
+Basis: Legitimate interest
+How: CC is an optional field. If used, the CC recipient is an employee of the
+organisation receiving information relevant to their work. The CC DP-01 is
+verified live before submission to ensure validity.
+
+Administrators:
+Basis: Contractual + legitimate interest
+How: Administrators configure the system and receive alert emails in their
+official capacity as the system operator.
+
+HODs / Managers:
+Basis: Legitimate interest
+How: Escalation emails are sent to department authorities in their official
+capacity when a memo within their department is unactioned past the threshold.
+
+The deploying organisation is responsible for informing their employees about
+DMS-IA&#x27;s data processing as part of their own employee privacy notices or
+acceptable use policies. This Policy should be made available to all users.
+
+================================================================================
+8. GOOGLE API SERVICES — LIMITED USE DISCLOSURE
+================================================================================
+
+DMS-IA&#x27;s use of Google API data adheres strictly to the Google API Services
+User Data Policy including the Limited Use requirements.
+
+Mail API (MailApp — script.send_mail scope):
+Data Accessed : Send-only. DMS-IA sends approval request emails, rejection
+                notifications, escalation alerts, OTP magic link emails,
+                delegation notifications, and administrative health reports.
+                DMS-IA does NOT read, search, or access any Gmail inbox,
+                sent folder, drafts, or email thread. GmailApp is not used.
+Purpose       : Send all outbound emails required by the DMS-IA workflow.
+                All emails include the deploying organisation&#x27;s name as the
+                sender display name.
+Limited Use   : YES — send only. No Gmail read access whatsoever.
+Scope         : https://www.googleapis.com/auth/script.send_mail (non-restricted)
+
+Google Sheets API (SpreadsheetApp — spreadsheets scope):
+Data Accessed : Read/write to the spreadsheet in which DMS-IA is installed only.
+                Reads WORKER LIST sheet to reconstruct worker names from DP
+                numbers server-side. Reads TO/FROM sheets to look up registered
+                emails and DP numbers. Writes to MASTER MEMO, QUEUE, CALL MEMO,
+                AUDIT LOG, BACKUP, COMMAND CENTER, and QR CODE sheets.
+Purpose       : Store memo data, config, audit log, backups, dashboard, and
+                Call Memo data. Look up worker and approver details.
+Limited Use   : YES — own spreadsheet only. No access to other spreadsheets.
+Scope         : https://www.googleapis.com/auth/spreadsheets (non-restricted)
+
+Apps Script Triggers (ScriptApp — script.scriptapp scope):
+Data Accessed : Installs and manages time-based triggers only.
+Purpose       : Schedule processQueue (every 1 min), checkEscalations (every
+                30 min), retryFailedEmails (every 30 min), dailyHealthCheck
+                (daily), and cleanupExpiredOtpKeys (daily) to run automatically
+                without requiring the owner to be present.
+Limited Use   : YES — trigger management only. No user data accessed via this
+                scope.
+Scope         : https://www.googleapis.com/auth/script.scriptapp (non-restricted)
+
+External Request (UrlFetchApp — script.external_request scope):
+Data Accessed : Two external targets only:
+                (1) drive.google.com CDN — to download publicly-shared Drive
+                    file attachments (if a Drive link is provided with a memo)
+                    for inclusion in approval emails. No OAuth token is sent.
+                    Only files with &quot;Anyone with the link&quot; sharing are fetched.
+                (2) api.qrserver.com — to generate a QR code image from the
+                    deployment URL. Only the /exec Web App URL is transmitted.
+                    No personal data is sent to this service.
+Purpose       : Fetch file attachments for email inclusion; generate QR code.
+Limited Use   : YES — two specific external services only, both without personal
+                data transmission.
+Scope         : https://www.googleapis.com/auth/script.external_request
+                (non-restricted)
+
+Apps Script Container UI (SpreadsheetApp.getUi — script.container.ui scope):
+Data Accessed : No user data accessed.
+Purpose       : Create the ⚙ DMS-IA custom menu in the spreadsheet toolbar,
+                and display alert/confirmation dialogs during setup and settings
+                sync operations.
+Limited Use   : YES — UI only. No data read or written via this scope.
+Scope         : https://www.googleapis.com/auth/script.container.ui
+                (non-restricted)
+
+User Info (Session.getActiveUser — userinfo.email scope):
+Data Accessed : Email address of the Google account running selfSetup().
+Purpose       : Auto-detect and store the ADMIN_EMAIL during initial system
+                setup. Not used during normal operation.
+Limited Use   : YES — setup only. Not stored beyond setup completion.
+Scope         : https://www.googleapis.com/auth/userinfo.email (non-restricted)
+
+Apps Script Properties (PropertiesService — no separate scope):
+Data Accessed : Key-value: approver emails per memo, counters, config values.
+                Also stores OTP SHA-256 hashes (max 5 min TTL) and verified
+                session keys (max 15 min TTL) for Call Memo auth.
+Purpose       : Store operational config and temporary security data.
+Limited Use   : YES — own script only. Encrypted at rest by Google.
+
+Apps Script Cache (CacheService — no separate scope):
+Data Accessed : Burn keys, rate counters, spam blocks, duplicate blocks.
+                Also stores OTP send rate limit keys (2 min TTL) and OTP
+                brute-force attempt counters (10 min TTL). All auto-expire.
+Purpose       : Security — prevent token reuse, brute force, spam, OTP flooding.
+Limited Use   : YES — auto-expires. Never persistent.
+
+HtmlService (no separate scope):
+Data Accessed : Serves HTML pages to the user&#x27;s browser.
+Purpose       : Render the Official Memo HTML form (including live DP-01
+                name lookup, CC validation, priority chips, preview panel,
+                and three-step submission flow), approval/rejection pages,
+                rejection comment form, memo print view, Call Memo QR landing
+                page, OTP DP entry page, &quot;check your email&quot; waiting page, and
+                Call Memo submission form.
+Limited Use   : YES — no user data collected from HTML pages beyond what
+                the user explicitly enters and submits. No cookies, no tracking,
+                no external scripts. CSP compliant — no inline event handlers.
+
+--- GOOGLE LIMITED USE COMPLIANCE DECLARATION ---
+
+DMS-IA&#x27;s use of Google API data is limited to:
+(1) Providing the DMS-IA memo workflow service;
+(2) Uses described in this Privacy Policy;
+(3) Uses permitted by the deploying organisation&#x27;s Google Workspace administrator.
+
+DMS-IA does NOT:
+- Transfer data to third parties for advertising
+- Use data for purposes unrelated to memo management
+- Sell or rent Google user data
+- Use data to train AI or machine learning models
+- Allow any human including the Developer to read user data
+- Read Gmail inbox, sent folder, or any email thread (GmailApp not used)
+- Upload files to any external server (Drive links stored as URL only)
+
+================================================================================
+9. SUB-PROCESSORS AND THIRD-PARTY SERVICE PROVIDERS
+================================================================================
+
+The following is the COMPLETE and exhaustive list of all sub-processors used
+by DMS-IA. No other parties exist beyond this list.
+
+Sub-Processor : Google LLC
+Country       : USA (Global infrastructure)
+Service       : Google Sheets, Gmail (send only), Google Apps Script —
+                the entire platform on which DMS-IA runs
+Data Involved : All personal data processed by DMS-IA
+Safeguards    : Google Workspace Terms, Data Processing Addendum, Privacy
+                Policy (policies.google.com)
+
+Sub-Processor : GoQR.me / api.qrserver.com
+Country       : Germany (Servers)
+Service       : QR code image generation
+Data Involved : ONLY the deployment Web App URL (/exec URL). No personal
+                data whatsoever is sent to this service. The URL is a
+                publicly visible Apps Script deployment URL.
+Safeguards    : HTTPS transport only. No authentication, no account, no
+                persistent data storage on their end.
+Purpose       : Generate the QR code image displayed on the QR CODE sheet
+                for worker access to the Call Memo form.
+
+No other sub-processors:
+DMS-IA integrates with no other external service, API, or platform.
+No CDN, no analytics SDK, no advertising network, and no other external
+API is ever called by DMS-IA beyond the two listed above.
+
+================================================================================
+10. DATA STORAGE — LOCATION AND ACCESS CONTROL
+================================================================================
+
+ALL personal data is stored exclusively within the deploying organisation&#x27;s own
+Google Workspace account. The Developer holds no data infrastructure whatsoever.
+
+Google Sheets (Organisation&#x27;s Drive):
+Data    : MASTER MEMO, QUEUE, RETRY QUEUE, FROM/TO, DEPARTMENTS, SETTINGS,
+          AUDIT LOG, BACKUP, WORKER LIST sheets
+          CALL MEMO sheet — stores all Call Memo submissions including
+          submitter email, DP-01, department, call time, subject, reason
+          for OT, and reconstructed people list. Permanent record.
+          QR CODE sheet — stores the QR code image linking to the Call
+          Memo web app URL. Contains no personal data — only the deployment
+          URL encoded as a QR image for printing and display.
+          Note: Official Memo submissions are received via the HTML web form
+          (not Google Form). All submissions flow through the QUEUE sheet
+          before being written to MASTER MEMO.
+Access  : Sheet protection removes all editors including the owner for
+          protected sheets. Script execution bypasses protection by GAS
+          design. No manual browser editing possible by any user on
+          protected sheets.
+Developer Access: NONE
+
+Script Properties (PropertiesService):
+Data    : WEB_APP_URL, ADMIN_EMAIL, HMAC_SECRET, approver-memo mappings,
+          bad attempt counters, escalation timestamps, backup week keys,
+          OTP SHA-256 hashes (max 5 min), verified session keys (max 15 min)
+Access  : Encrypted at rest by Google. Script-scope only. Never accessible
+          to the Developer.
+Developer Access: NONE
+
+CacheService:
+Data    : Token burn keys, rate limit counters, spam blocks, duplicate blocks,
+          OTP send rate limit keys (2 min TTL), OTP brute-force counters
+          (10 min TTL). All auto-expire within stated TTLs.
+Access  : Script-scope only. No persistence beyond TTL.
+Developer Access: NONE
+
+Google Drive (Submitter&#x27;s account — attachment links only):
+Data    : File attachments remain in the submitter&#x27;s own Google Drive.
+          DMS-IA stores only the publicly shared URL, not the file itself.
+Access  : Submitter&#x27;s own Google Drive permissions apply.
+Developer Access: NONE
+
+Developer Servers: NOTHING — BY DESIGN. No Developer infrastructure exists.
+
+================================================================================
+11. DATA SHARING — COMPLETE STATEMENT
+================================================================================
+
+The following is the COMPLETE statement of all data sharing in DMS-IA.
+No data sharing exists beyond what is described here.
+
+Within the Organisation (Necessary):
+Your name, department, and memo content are visible to the designated approver,
+the CC recipient if configured, and your department HOD/manager in escalation
+emails (information only). This is the core intended function and is always
+with your knowledge and intent when submitting a memo.
+
+Call Memo People List:
+When you are selected by a Call Memo submitter as a person involved, your name,
+DP number, and designation from the WORKER LIST sheet appear in the Call Memo
+record and in the notification email sent to the approver. This is consistent
+with your employment role and is visible only within the organisation.
+
+Automatic Delegation:
+If configured, your memo may be forwarded to a backup approver if the primary
+does not act within the set time limit.
+
+With Google (Infrastructure):
+Data is processed on Google&#x27;s servers under Google&#x27;s Privacy Policy and
+Workspace Terms.
+
+With api.qrserver.com (Limited):
+ONLY the deployment URL is transmitted — no personal data.
+
+With the Developer — NONE:
+The Developer does not receive, access, view, copy, analyse, or process any
+personal data from any deployment.
+
+With Third Parties — NONE (beyond Google and api.qrserver.com above):
+Zero personal data is transmitted outside Google&#x27;s infrastructure.
+
+Sale of Data — NEVER:
+Personal data is never sold, rented, traded, or monetised in any form.
+
+================================================================================
+12. SECURITY MEASURES
+================================================================================
+
+DMS-IA implements the following security measures to protect your personal data:
+
+Cryptographic Token Security (HMAC-SHA256):
+Every approval and rejection link is signed with HMAC-SHA256 cryptography and
+is mathematically bound to your specific email address, memo ID, decision type,
+and timestamp.
+
+Single-Use Burn Keys:
+Each approval or rejection link can only be used once.
+
+Time-Limited Links:
+Approval links expire after 48 hours by default.
+
+Brute Force Lockout:
+After a configurable number of failed token attempts (default: 5), the memo is
+automatically locked and the administrator is immediately alerted.
+
+OTP SHA-256 Hash Storage:
+The raw 6-digit OTP is never stored. Immediately upon generation, it is hashed
+using SHA-256 and only the hash is stored in Script Properties. Even if Script
+Properties were somehow accessed, the raw OTP could not be recovered.
+
+OTP Single-Use:
+Each OTP magic link can be used exactly once. After successful verification, the
+OTP hash is immediately deleted from Script Properties.
+
+OTP Expiry:
+OTP magic links expire after 5 minutes. Expired links are permanently invalid.
+
+OTP Brute-Force Protection:
+A maximum of 5 OTP verification attempts are permitted per DP number per 10
+minutes. After 5 failed attempts, further attempts are blocked for 10 minutes.
+
+OTP Send Rate Limiting:
+A maximum of 1 OTP magic link can be sent per DP number per 2 minutes. This
+prevents OTP flooding attacks against any registered employee&#x27;s email inbox.
+
+Email Pre-Fill Security (Call Memo):
+The email address shown on the Call Memo form is retrieved server-side from
+the TO sheet and rendered read-only. It cannot be modified by the user in the
+browser. Server-side validation re-verifies the email against the TO sheet
+at submission time, so even if the HTML is modified client-side, the check
+still passes only for registered emails.
+
+DP-Number-Only URL Transmission:
+Only DP numbers are sent in the submission URL — not names or designations.
+Names are reconstructed server-side from WORKER LIST. This eliminates the risk
+of URL truncation causing data loss for large people lists.
+
+CC DP-01 Live Validation:
+On the Official Memo HTML form, the CC DP-01 field is validated live against
+the registered DP list (CHECKDP action). If the DP is invalid, submission is
+blocked with an error message. Blank CC is permitted (CC is optional).
+
+CSP-Compliant HTML Pages:
+All HTML pages served by DMS-IA (Official Memo form, Call Memo form, approval
+pages, rejection form, print view, OTP pages) do not use inline event handlers
+(onclick=, onchange=, onload=, etc.). All interactivity is wired via JavaScript
+addEventListener calls, making the pages Content Security Policy compliant.
+
+Rate Limiting, Full Sheet Protection, Clickjacking Prevention, Email Case
+Normalisation, HMAC Secret Enforcement, Tamper-Evident Audit Log, HTTPS
+Transport, and Self-Healing Architecture remain as documented in v2.1.
+
+================================================================================
+13. DATA BREACH AND INCIDENT RESPONSE PROCEDURE
+================================================================================
+
+A &quot;data breach&quot; means any unauthorised access to, disclosure of, or destruction
+of personal data stored in an organisation&#x27;s DMS-IA deployment.
+
+13.1 Who Is Responsible:
+Since all data is stored within the deploying organisation&#x27;s own Google Workspace
+account, the deploying organisation (as Data Controller) bears primary
+responsibility for breach detection, assessment, containment, and notification
+under DPDPA 2023 Section 8(6) and GDPR Article 33.
+
+13.2 Developer&#x27;s Breach Obligations:
+As the Developer holds no personal data, a breach of the Developer&#x27;s systems
+would not expose any user data. However, if the Developer becomes aware of a
+vulnerability in DMS-IA code that could lead to a breach, the Developer will:
+(1) Notify affected licensees within 72 hours of discovery;
+(2) Publish a patched version of DMS-IA;
+(3) Provide remediation guidance.
+Contact: romit232091@gmail.com
+
+13.3 Deploying Organisation&#x27;s Obligations:
+Under DPDPA 2023 and GDPR, the deploying organisation must:
+(1) Notify the Data Protection Board of India within 72 hours (DPDPA S.8(6));
+(2) Notify affected data principals without undue delay if harm is likely;
+(3) Document all breaches in their breach register.
+
+================================================================================
+14. DATA RETENTION SCHEDULE
+================================================================================
+
+DMS-IA stores your personal data for as long as your organisation requires.
+
+Retention schedule by data type:
+
+Memo records (MASTER MEMO, CALL MEMO):
+Retention : Organisation decides
+Deletion  : Admin manually deletes rows or sheet
+
+Queue rows (DONE/FAILED/WITHDRAWN):
+Retention : Auto-deleted after 7 days
+Deletion  : cleanupOldQueueRows() — runs daily automatically
+
+OTP hash (Script Properties):
+Retention : Maximum 5 minutes
+Deletion  : Auto-deleted on successful verification. Additionally, the system
+            runs cleanupExpiredOtpKeys() automatically every day via a scheduled
+            trigger. This function scans all Script Properties keys prefixed
+            with OTP_ or VFD_ and deletes any that have passed their expiry
+            timestamp, preventing quota accumulation over time.
+
+Verified session key (Script Properties):
+Retention : Maximum 15 minutes
+Deletion  : Auto-deleted on form submission, or by daily cleanup
+
+OTP send rate limit key (CacheService):
+Retention : 2 minutes
+Deletion  : Auto-expires via CacheService TTL
+
+OTP brute-force counter (CacheService):
+Retention : 10 minutes
+Deletion  : Auto-expires via CacheService TTL; cleared on successful OTP
+
+Audit log entries:
+Retention : Indefinite — permanent record
+Deletion  : Admin manually (not recommended)
+
+Weekly backup sheets:
+Retention : Last 4 Sundays only
+Deletion  : Oldest auto-deleted when 5th backup is created
+
+Token burn keys:
+Retention : Maximum 6 hours
+Deletion  : Auto-expires via CacheService TTL
+
+Approver-memo mappings:
+Retention : Until memo is actioned, expired, or withdrawn
+Deletion  : Automatically deleted by processApproval() or recallMemo()
+
+Rate limit counters: 10 minutes | Spam/duplicate blocks: 60 seconds
+
+================================================================================
+15. YOUR RIGHTS
+================================================================================
+
+You have the following rights: Right to Information, Right to Access, Right to
+Correction, Right to Erasure, Right to Withdraw Memo, Right to Restrict
+Processing, Right to Data Portability, Right to Object, Right Against Automated
+Decision-Making, Right to Grievance Redressal (romit232091@gmail.com, 7 business
+days), and CCPA rights for California residents.
+
+Most rights are exercised through your organisation&#x27;s administrator.
+
+For consent withdrawal, follow the four-step procedure in Section 27.
+
+================================================================================
+16. LEGAL BASIS FOR PROCESSING
+================================================================================
+
+Core Memo Workflow:
+DPDPA 2023 : Legitimate purpose — internal operational communication
+GDPR       : Art.6(1)(b) — performance of employment contract
+Parties    : All submitters and approvers
+
+Escalation Routing:
+DPDPA 2023 : Legitimate purpose — organisational oversight
+GDPR       : Art.6(1)(f) — legitimate interest
+Parties    : Department heads, managers
+
+Email Notifications (MailApp):
+DPDPA 2023 : Legitimate purpose — status communication
+GDPR       : Art.6(1)(b) — performance of employment contract
+Parties    : Submitters, approvers, CC recipients
+Note       : Sent via MailApp only (script.send_mail scope). GmailApp not used.
+
+Call Memo OTP Authentication:
+DPDPA 2023 : Legitimate purpose — identity verification and security
+GDPR       : Art.6(1)(f) — legitimate interest
+Parties    : Call Memo submitters
+
+Call Memo Submission:
+DPDPA 2023 : Legitimate purpose — internal operational communication
+GDPR       : Art.6(1)(b) — performance of employment contract
+Parties    : Call Memo submitters and selected workers
+
+CC DP-01 Validation:
+DPDPA 2023 : Legitimate purpose — data accuracy and routing
+GDPR       : Art.6(1)(f) — legitimate interest
+Parties    : CC recipients
+
+Audit Log:
+DPDPA 2023 : Legitimate purpose — accountability and traceability
+GDPR       : Art.6(1)(f) — legitimate interest
+Parties    : All users
+
+Security Processing (HMAC, burn keys, rate limits, OTP hashes):
+DPDPA 2023 : Legitimate purpose — security and fraud prevention
+GDPR       : Art.6(1)(f) — legitimate interest
+Parties    : All users
+
+================================================================================
+17. COOKIES, TRACKING, AND ANALYTICS
+================================================================================
+
+DMS-IA does not use cookies, tracking pixels, web beacons, session tokens,
+fingerprinting, analytics SDKs, advertising scripts, or any other form of
+tracking technology.
+
+All HTML pages served by DMS-IA — the Official Memo form, Call Memo HTML pages
+(DP entry, OTP waiting, submission form), approval/rejection pages, rejection
+comment form, and memo print view — are served by Google Apps Script HtmlService.
+They do not set cookies, do not load external scripts, do not call any analytics
+endpoint, and do not collect any device or browser information beyond what the
+user explicitly enters and submits. All pages are CSP compliant with no inline
+event handlers.
+
+Any cookies set when accessing DMS-IA pages are set by Google&#x27;s infrastructure
+and are governed by Google&#x27;s Cookie Policy, not by DMS-IA.
+
+================================================================================
+18–21. INTERNATIONAL TRANSFERS, CHILDREN&#x27;S PRIVACY, GOOGLE PLATFORM,
+        TERMS OF SERVICE
+================================================================================
+
+[Unchanged from v2.1 — all provisions remain in full effect]
+
+================================================================================
+22. CHANGES TO THIS PRIVACY POLICY
+================================================================================
+
+The Developer may update this Privacy Policy from time to time. The Last Updated
+date at the top of this document will be revised for all updates.
+
+This version (2.5, 29 June 2026) updates the policy to reflect the removal of
+GmailApp and the Gmail Sent folder search, the replacement of Google Form with
+the Official Memo HTML web form, the removal of DriveApp and FormApp, the
+addition of api.qrserver.com as a limited sub-processor, the introduction of
+CC DP-01 live validation, the mandatory Context / Message field, the change from
+file upload to Drive link for attachments, and CSP-compliant HTML across all
+served pages.
+
+================================================================================
+23. CONTACT AND GRIEVANCE OFFICER
+================================================================================
+
+Name         : Rohmit Neelakant Shirgoppi
+Aadhaar Name : Neelkant Shirgoppi
+Role         : Developer, Owner, and Grievance Officer — DMS-IA
+Email        : romit232091@gmail.com
+Phone        : +91-9535835504
+Address      : H.No. 522, Near CSI Church, Teachers Colony Road,
+               Township, Dandeli — 581325, Karnataka, India
+
+BINDING RESPONSE COMMITMENT:
+The Developer commits to acknowledging all written grievances within
+7 business days of receipt at romit232091@gmail.com. This is a binding
+commitment. If the Developer fails to acknowledge within 7 business days,
+the complainant may escalate directly to the Data Protection Board of India
+(meity.gov.in) or the relevant regulatory authority without any further
+obligation to await a response. The 7-business-day period begins on the
+first business day following receipt of the written grievance.
+
+For the purpose of this Section, &quot;business days&quot; means Monday to Friday
+excluding public holidays in Karnataka, India.
+
+How to submit a grievance:
+(1) Send a written email to romit232091@gmail.com with subject line:
+    &quot;DMS-IA Privacy Grievance — [Your Name] — [Date]&quot;
+(2) Describe the specific data processing activity you are concerned about
+(3) State the right you wish to exercise or the remedy you seek
+(4) Include your contact details for the response
+
+The Developer will provide a substantive response within 30 calendar days
+of acknowledgement. If the matter cannot be resolved within 30 days, the
+Developer will inform you of the reason and the expected resolution timeline.
+
+Regulatory Authorities:
+India (DPDPA 2023) : Data Protection Board of India — meity.gov.in
+India (IT Act 2000): Ministry of Electronics and IT — meity.gov.in
+European Union     : Your national DPA — edpb.europa.eu
+California (CCPA)  : California Privacy Protection Agency — cppa.ca.gov
+Google Platform    : Google Privacy Team — policies.google.com/privacy
+
+================================================================================
+25. DATA PROTECTION OFFICER (DPO) STATEMENT
+================================================================================
+
+GDPR Article 37 requires certain organisations to appoint a Data Protection
+Officer. This section states DMS-IA&#x27;s position clearly.
+
+25.1 Developer DPO Status
+Rohmit Neelakant Shirgoppi (the Developer) does not process personal data at
+a scale or nature that triggers mandatory DPO appointment under GDPR Article
+37(1). Specifically:
+(a) The Developer does not process personal data as a core activity — DMS-IA
+    is a software tool and all data remains within the deploying organisation&#x27;s
+    own Google Workspace account;
+(b) The Developer does not process special categories of data (GDPR Art.9)
+    or criminal conviction data (GDPR Art.10);
+(c) The Developer does not carry out large-scale systematic monitoring.
+
+Therefore, the Developer is not required to appoint a DPO under GDPR Article
+37 and has not done so. The Developer personally acts as the point of contact
+for all data protection matters at romit232091@gmail.com.
+
+25.2 Deploying Organisation DPO Status
+The deploying organisation (Data Controller) must independently assess whether
+they are required to appoint a DPO under GDPR Article 37 or equivalent
+national law. DMS-IA&#x27;s deployment does not automatically trigger a DPO
+requirement for the deploying organisation, but the organisation must make this
+assessment based on their own processing activities, scale, and jurisdiction.
+
+25.3 DPDPA 2023 — Significant Data Fiduciary
+Under DPDPA 2023, the Central Government may notify certain organisations as
+Significant Data Fiduciaries requiring additional obligations. DMS-IA is a
+small internal tool and the Developer does not currently meet the criteria for
+Significant Data Fiduciary classification. The deploying organisation must make
+their own assessment under DPDPA 2023.
+
+================================================================================
+26. CROSS-BORDER DATA TRANSFERS
+================================================================================
+
+26.1 Data Location
+All personal data processed by DMS-IA is stored exclusively within the deploying
+organisation&#x27;s own Google Workspace account. Google LLC maintains data centres
+globally and may process or store data in multiple countries in accordance with
+Google&#x27;s own Privacy Policy and Data Processing Addendum.
+
+26.2 Developer&#x27;s Position
+The Developer does not receive, access, or transfer any personal data. Therefore,
+the Developer does not make any cross-border transfers of personal data.
+
+26.3 Google as Infrastructure Provider
+Any cross-border transfer of data arising from Google LLC&#x27;s global infrastructure
+is governed by Google&#x27;s own compliance mechanisms including:
+(a) Standard Contractual Clauses (SCCs) as approved by the European Commission
+    under GDPR Chapter V, incorporated into Google Workspace&#x27;s Data Processing
+    Addendum (DPA);
+(b) Google&#x27;s participation in applicable data transfer frameworks;
+(c) Google&#x27;s certification under applicable cross-border transfer mechanisms.
+
+The deploying organisation, as Data Controller, should review Google Workspace&#x27;s
+DPA and SCCs to satisfy themselves that Google&#x27;s cross-border transfer mechanisms
+meet applicable legal requirements for their jurisdiction. Google&#x27;s DPA is
+available at: workspace.google.com/terms/dpa_terms.html
+
+26.4 api.qrserver.com (GoQR.me)
+The only personal-data-free external request made by DMS-IA to a non-Google
+server is to api.qrserver.com for QR code generation. Only the deployment URL
+(a public Apps Script /exec URL containing no personal data) is transmitted.
+This service is operated from Germany. No cross-border personal data transfer
+occurs via this call.
+
+26.5 DPDPA 2023 Cross-Border Transfers
+Under DPDPA 2023, transfer of personal data outside India is subject to
+restrictions notified by the Central Government. Since data is stored in Google
+Workspace, the deploying organisation must ensure their Google Workspace
+configuration complies with any applicable DPDPA cross-border transfer
+restrictions. The Developer recommends configuring Google Workspace data
+residency settings to store data within India where possible.
+
+26.6 Deploying Organisation&#x27;s Responsibility
+The deploying organisation is solely responsible for ensuring that their use of
+Google Workspace for DMS-IA complies with all applicable cross-border data
+transfer laws in their jurisdiction. The Developer is not responsible for the
+deploying organisation&#x27;s failure to comply with such laws.
+
+================================================================================
+27. CONSENT WITHDRAWAL MECHANISM
+================================================================================
+
+27.1 Right to Withdraw Consent
+Where processing is based on consent (including implied consent for Official Memo
+and Call Memo form submission), data subjects have the right to withdraw their
+consent at any time without detriment. Withdrawal of consent does not affect the
+lawfulness of processing carried out before withdrawal.
+
+27.2 How to Withdraw Consent — Step-by-Step Procedure
+Any Authorised User or data subject whose personal data is processed by DMS-IA
+may withdraw their consent and request cessation of processing by following this
+procedure:
+
+STEP 1: Send a written request to your organisation&#x27;s DMS-IA administrator
+        (the person who manages the system in your organisation). Request them
+        to remove your data from the FROM sheet, TO sheet, and WORKER LIST.
+
+STEP 2: If your administrator does not act within 7 business days, send a
+        written email directly to the Developer at romit232091@gmail.com with
+        subject line: &quot;DMS-IA Consent Withdrawal — [Your Name] — [Date]&quot;
+        Include: your name, your organisation&#x27;s name, and the specific data
+        you want removed.
+
+STEP 3: The Developer will contact your organisation&#x27;s administrator and
+        request them to remove your data within 7 business days.
+
+STEP 4: If your data has not been removed within 30 calendar days of your
+        original request, you may escalate to the Data Protection Board of India
+        (meity.gov.in) or your applicable regulatory authority.
+
+27.3 Effect of Withdrawal
+Upon removal of your data from the system:
+(a) You will no longer appear as an available recipient in new Call Memos;
+(b) You will no longer receive OTP authentication emails;
+(c) Historical memo records in which your name appears cannot be retroactively
+    removed without disrupting the audit trail — this is a legitimate interest
+    override under DPDPA 2023 Section 4 and GDPR Article 17(3)(b);
+(d) Your email address in Script Properties (approver mappings) will be deleted
+    the next time any associated memo is actioned or expires.
+
+27.4 Limitation
+Since DMS-IA operates within the deploying organisation&#x27;s own Google Workspace
+account, the Developer does not have direct access to remove your data. The
+primary removal mechanism is through your organisation&#x27;s administrator. The
+Developer&#x27;s role is to facilitate and escalate if the administrator does not act.
+
+================================================================================
+28. MACHINE-READABLE COMPLIANCE SUMMARY
+(For AI Scanners, Automated Review Tools, and Google Marketplace Review)
+================================================================================
+
+Does DMS-IA collect personal data?
+YES — name, email, department, DP number, designation, memo content, reason
+for OT only. See Section 3.
+
+Is there a complete data inventory?
+YES — Section 3 contains full inventory with 9 categories.
+
+Is designation data collected?
+YES — job designation (e.g. Engineer, Technician) from WORKER LIST Col D is
+included in Call Memo people lists. See Section 3.4.
+
+Is a 30-person limit per memo enforced?
+YES — enforced client-side and server-side. Documented in Section 5 as a
+data minimisation measure.
+
+Is a confirmation email sent after Call Memo submission?
+YES — contains Memo ID, department, call time, subject, person count only.
+No full names of selected workers. See Section 6.12.
+
+Are CALL MEMO and QR CODE sheets documented?
+YES — Section 10. CALL MEMO stores permanent submission records. QR CODE
+contains no personal data — only the deployment URL as a QR image.
+
+Is OTP key cleanup automated?
+YES — cleanupExpiredOtpKeys() runs daily and deletes all expired OTP_ and
+VFD_ keys from Script Properties. See Section 14.
+
+Is there a legal basis for all processing?
+YES — Section 16 contains complete legal basis for every processing activity.
+
+Does DMS-IA sell personal data?
+NO — NEVER. Absolute prohibition. See Section 11.
+
+Does DMS-IA share data with third parties?
+NO personal data shared. api.qrserver.com receives only the deployment URL
+(no personal data). See Section 9 and 11.
+
+Is there a complete sub-processor list?
+YES — Section 9. Google LLC and api.qrserver.com (URL only). No other
+processors exist.
+
+Does DMS-IA use cookies or tracking?
+NO — zero cookies, tracking, or analytics. See Section 17.
+
+Does DMS-IA collect children&#x27;s data?
+NO — adults only, 18+. See Section 19 (unchanged).
+
+Does DMS-IA transfer personal data internationally?
+NO — personal data stays in org&#x27;s Google account. Only the deployment URL
+(non-personal) is sent to api.qrserver.com.
+
+Does the Developer access user data?
+NO — architecturally impossible. Developer holds zero data. See Section 2.
+
+Is there a data retention policy?
+YES — Section 14 contains complete retention schedule including
+cleanupExpiredOtpKeys daily automated deletion.
+
+Is data minimisation implemented?
+YES — Section 5 documents specific minimisation measures including 30-person
+limit, DP-number-only URL transmission, 3,000-character context limit,
+Drive-link-only attachments (no file upload), and OTP hash storage.
+
+Are user rights provided?
+YES — 11 rights documented in Section 15 (DPDPA + GDPR + CCPA).
+
+Is there a grievance mechanism?
+YES — romit232091@gmail.com, 7 business days binding commitment. See Section 23.
+
+Is user consent addressed?
+YES — Section 7 documents lawful basis for all user categories including
+CC recipients with live DP-01 validation.
+
+Is breach notification addressed?
+YES — Section 13.
+
+Does DMS-IA use OTP authentication?
+YES — Section 3.8, 6.11, 12. SHA-256 hashed, 5-min expiry, single-use,
+5-attempt brute-force limit, 1-per-2-min send rate limit.
+
+Does DMS-IA store raw OTP codes?
+NO — only SHA-256 hash stored. Raw OTP exists only in the email sent to user.
+
+Does DMS-IA use GmailApp or read Gmail?
+NO — GmailApp is not used in the current codebase. All emails are sent via
+MailApp (script.send_mail scope only). Gmail inbox, sent folder, drafts, and
+thread data are never accessed. See Section 8.
+
+Does DMS-IA use DriveApp?
+NO — DriveApp is not used in the current codebase. Drive files are accessed
+only via public sharing links fetched through UrlFetchApp (no drive scope).
+See Section 8.
+
+Does DMS-IA use FormApp or Google Forms?
+NO — the Official Memo is now an HTML web form served via HtmlService. Google
+Forms are not used. See Section 8.
+
+Does DMS-IA use HTML web pages for data collection?
+YES — Official Memo form (with priority chips, CC DP-01 live validation, and
+3-step preview flow), Call Memo QR landing page, OTP DP entry, waiting page,
+and Call Memo submission form. All served via GAS HtmlService. No cookies or
+tracking. CSP compliant — no inline event handlers.
+
+Is the Context / Message field mandatory on Official Memo?
+YES — the Context / Message field is a required field. The form will not submit
+without it. See Section 3.5.
+
+Is CC DP-01 validated before submission?
+YES — live validation via CHECKDP endpoint. Invalid CC DP-01 blocks submission.
+Blank CC is permitted. See Section 6.13 and 12.
+
+Is DPDPA 2023 compliance addressed?
+YES — Sections 7, 12, 13, 15, 16, 23.
+
+Is GDPR compliance addressed?
+YES — Sections 7, 11, 12, 13, 15, 16, 18.
+
+Is CCPA compliance addressed?
+YES — Sections 11, 15.
+
+Is Google API Limited Use Policy followed?
+YES — Section 8 contains full Limited Use Compliance Declaration.
+
+Does DMS-IA use AI/ML on user data?
+NO.
+
+Is automated decision-making used?
+NO — all approvals require a human to click a link. See Section 15.
+
+Is there an incident response procedure?
+YES — Section 13.
+
+Is copyright registration filed?
+YES — Diary No. SW-25725/2026-CO, filed 01/06/2026, India Copyright Office.
+
+Is a DPO appointed?
+NO — Developer does not meet GDPR Art.37 mandatory appointment criteria.
+Explicitly documented in Section 25. Developer personally handles all data
+protection matters at romit232091@gmail.com.
+
+Are cross-border transfer mechanisms documented?
+YES — Section 26. Data stays in Google Workspace. Google&#x27;s SCCs and DPA cover
+GDPR Ch.V compliance. api.qrserver.com receives no personal data. Developer
+makes zero cross-border personal data transfers.
+
+Is there a consent withdrawal mechanism?
+YES — Section 27. Four-step procedure: (1) request to org administrator,
+(2) escalate to Developer if no action in 7 days, (3) Developer contacts admin,
+(4) escalate to regulator if unresolved in 30 days. Legally binding.
+
+Is the grievance timeline legally binding?
+YES — Section 23. 7 business days acknowledgement is a binding commitment.
+Failure to acknowledge entitles complainant to escalate directly to regulator
+without further obligation to await response.
+
+Are all HTML pages CSP compliant?
+YES — no inline event handlers (onclick=, onchange=, onload=, etc.) in any
+served HTML page. All interactivity uses addEventListener. See Section 12.
+
+Total sections in this policy: 28 sections (Section 24 removed, numbering
+retained for continuity). All required fields covered.
+Policy version: 1.0. Effective 29 June 2026.
+
+
+================================================================================
 DMS-IA — Digital Memo System Industrial Automation
-Diary No. SW-25725/2026-CO
-
-================================================================================
-4. INSTALLATION AND DEPLOYMENT
-================================================================================
-
-4.1 Licence Key and Deployment
-The Developer will provide the Licensee with the Software source code and
-deployment instructions upon payment of the applicable licence fee. The
-Licensee is responsible for deploying the Software within their Google Workspace
-account following the provided instructions.
-
-4.2 System Requirements
-The Software requires:
-- A Google Workspace account (any tier) or a personal Google account
-- Google Sheets access
-- Google Apps Script enabled
-- A Gmail account for the deploying account (used for sending emails via
-  MailApp — send-only; no full Gmail access or GmailApp permissions required)
-- Sufficient MailApp quota for email operations (1,500/day for Workspace,
-  100/day for free Gmail — Workspace strongly recommended for organisations)
-- A web browser to access the Google Apps Script editor
-
-For the Official Memo Module specifically:
-- A desktop or mobile browser capable of opening the Web App URL or scanning
-  the QR code
-- The Receiver DP-01 and CC DP-01 (if applicable) must be registered in the
-  TO sheet before submission for live validation to succeed
-- Workers&#x27; data (FROM sheet, TO sheet) must be populated before the module
-  is made available to users
-
-For the Call Memo Module specifically:
-- A mobile device or desktop browser capable of scanning QR codes
-- Gmail or any email client capable of rendering HTML emails and opening links
-- An internet connection at the point of QR code scan
-- Workers&#x27; DP numbers and email addresses entered into the TO sheet before use
-
-4.3 Licensee Responsibilities
-The Licensee is solely responsible for:
-(a) Deploying the Software correctly following the provided instructions;
-(b) Running selfSetup() to configure the Software after deployment;
-(c) Setting a strong HMAC_SECRET (32+ characters) in Script Properties or
-    via the SETTINGS sheet;
-(d) Setting the correct WEB_APP_URL (the /exec deployment URL) in the SETTINGS
-    sheet and ADMIN_EMAIL in Script Properties;
-(e) Filling in the DEPARTMENTS sheet with correct HOD emails;
-(f) Filling in the FROM sheet with correct staff details (email, DP number,
-    department, name) for all Official Memo submitters;
-(g) Securing their Google Workspace account with strong passwords and 2FA;
-(h) Managing their own Google API quota limits;
-(i) Maintaining their Google Workspace account in good standing;
-(j) Ensuring the Software is redeployed after any code updates;
-(k) Testing the system before making it available to all users;
-(l) Informing Authorised Users that the Context / Message field is mandatory
-    on the Official Memo HTML form and that submission will be blocked without
-    it;
-(m) Informing Authorised Users that file attachments must be shared as a
-    Google Drive public link (&quot;Anyone with the link&quot;) in the attachment field —
-    DMS-IA does not support direct file uploads;
-(n) Informing Authorised Users that the CC DP-01 field on the Official Memo
-    form is validated live — only registered DP numbers are accepted.
-
-For the Call Memo Module:
-(o) Populating the WORKER LIST sheet with accurate worker data (department,
-    name, DP number, designation) before enabling the Call Memo Module;
-(p) Populating the TO sheet with accurate DP numbers and registered email
-    addresses for all workers who will use the Call Memo HTML page;
-(q) Printing and displaying the QR code (from the QR CODE sheet) in an
-    accessible location for workers to scan;
-(r) Informing workers that the OTP magic link sent to their registered email
-    is single-use, expires in 5 minutes, and must not be shared with others;
-(s) Ensuring workers&#x27; registered email addresses in the TO sheet are current
-    and accessible on their mobile devices at the point of QR code scan;
-(t) Regenerating the QR code via the provided menu option if the web app URL
-    changes after redeployment.
-
-4.4 Google Account Terms
-The use of DMS-IA is subject to Google&#x27;s Terms of Service for Google Workspace.
-The Licensee must comply with all applicable Google policies. The Developer is
-not responsible for any actions taken by Google with respect to the Licensee&#x27;s
-account.
-
-================================================================================
-5. SUPPORT AND UPDATES
-================================================================================
-
-5.1 Support
-Support is provided via email at romit232091@gmail.com. The Developer will
-respond within 7 business days (see Schedule C for service level targets).
-Support covers:
-- Assistance with installation and initial setup
-- Bug fixes for confirmed defects in the Software
-- Clarification of Documentation
-
-Support does not cover:
-- Customisation or modification of the Software
-- Issues caused by the Licensee&#x27;s incorrect deployment or configuration
-- Issues caused by Google platform changes outside the Developer&#x27;s control
-- Issues caused by the Licensee&#x27;s Google account being suspended or restricted
-- Training beyond the provided Documentation
-
-5.2 Updates
-Updates will be provided to the Licensee in accordance with the purchased
-licence tier (Section 2.2). Updates are delivered as new versions of the
-Software source code. The Licensee is responsible for deploying updates.
-
-5.3 No Obligation to Update
-The Developer is under no obligation to develop, release, or provide any
-specific update, feature, or enhancement to the Software.
-
-5.4 End of Support
-The Developer may discontinue support for a version of the Software with 30
-days&#x27; written notice to the Licensee. The Software will continue to function
-after end of support, but no further bug fixes or updates will be provided.
-
-================================================================================
-6. PAYMENT TERMS
-================================================================================
-
-6.1 Licence Fee
-The licence fee applicable to the Licensee&#x27;s tier is as communicated separately
-by the Developer in the invoice or purchase confirmation. Pricing is not stated
-in this Agreement and will be confirmed at time of purchase. For pricing
-enquiries, contact romit232091@gmail.com.
-
-6.2 Payment
-Payment is due in full before or at the time of delivery of the Software. The
-Developer will deliver the Software upon confirmation of payment.
-
-6.3 Annual Maintenance Charge (AMC)
-After the first year, the Developer may offer an optional Annual Maintenance
-Charge (AMC) for continued support and updates. The AMC amount and terms will
-be communicated to the Licensee before renewal. AMC is entirely optional — the
-Software continues to function without it. Pricing for AMC is not stated in
-this Agreement and will be confirmed separately.
-
-6.4 No Refunds
-All licence fees are non-refundable once the Software has been delivered to the
-Licensee, except as required by applicable consumer protection law or as
-expressly agreed in writing by the Developer.
-
-6.5 Currency
-All fees are in Indian Rupees (INR) unless otherwise stated in the invoice.
-
-6.6 Taxes
-The Licensee is responsible for all applicable taxes, duties, or levies (including
-GST) arising from the purchase of the licence, unless otherwise stated in the
-invoice.
-
-================================================================================
-7. CONFIDENTIALITY
-================================================================================
-
-7.1 Confidential Information
-The Licensee acknowledges that the Software source code, security architecture,
-HMAC token implementation, and all non-public technical information constitute
-Confidential Information of the Developer.
-
-7.2 Obligations
-The Licensee shall:
-(a) Keep all Confidential Information strictly confidential;
-(b) Not disclose Confidential Information to any third party without the
-    Developer&#x27;s prior written consent;
-(c) Use Confidential Information only for the purpose of using the Software
-    under this Agreement;
-(d) Restrict access to Confidential Information to Authorised Users who need
-    it to use the Software, and ensure those users are bound by confidentiality
-    obligations no less protective than this Section.
-
-7.3 Exceptions
-Confidentiality obligations do not apply to information that:
-(a) Was publicly known at the time of disclosure without breach by the Licensee;
-(b) The Licensee is required to disclose by law or court order, provided the
-    Licensee gives the Developer prompt written notice before disclosure.
-
-7.4 Survival
-Confidentiality obligations survive termination of this Agreement for a period
-of five (5) years.
-
-================================================================================
-8. DATA PROTECTION AND PRIVACY
-================================================================================
-
-8.1 Privacy Policy
-The Developer&#x27;s Privacy Policy (available at the URL provided in the Google
-Marketplace SDK listing) is incorporated into this Agreement by reference. The
-Licensee agrees to the Privacy Policy as a condition of using the Software.
-
-8.2 Data Controller
-As described in the Privacy Policy, the Licensee is the Data Controller for
-all personal data processed through the Software. The Developer is not a Data
-Controller or Data Processor in respect of end-user data.
-
-8.3 Licensee&#x27;s Data Protection Obligations
-The Licensee shall:
-(a) Comply with all applicable data protection laws including DPDPA 2023 and
-    any other applicable data protection legislation;
-(b) Inform their employees and users about DMS-IA&#x27;s data processing as required
-    by DPDPA 2023;
-(c) Implement appropriate technical and organisational measures to protect
-    personal data;
-(d) Not use the Software to process personal data in a manner that violates
-    applicable law;
-(e) Promptly notify the Developer if they become aware of any data breach
-    potentially related to the Software;
-(f) Ensure that employees do not enter sensitive personal data — including health
-    information, financial data, or government ID numbers — into memo content
-    fields or the Context / Message field.
-
-8.4 Sensitive Data Warning
-The Software stores memo content as submitted without filtering. The Licensee
-is solely responsible for ensuring that Authorised Users do not submit sensitive
-personal data through any memo content field, including the Subject, Context /
-Message, and Reason for Overtime fields.
-
-8.5 Developer&#x27;s Data Access
-The Developer has no access to any data stored in the Licensee&#x27;s DMS-IA
-deployment. All data is stored exclusively within the Licensee&#x27;s own Google
-Workspace account.
-
-8.6 OTP Authentication — Licensee Responsibilities (Call Memo Module)
-The Call Memo Module uses OTP authentication to verify worker identity before
-allowing form submission. The Licensee acknowledges and agrees that:
-
-(a) OTP magic links are time-limited (5 minutes) and single-use. The Licensee
-    is responsible for informing workers of this limitation;
-(b) OTP magic links are delivered to the email address registered in the TO
-    sheet. The Licensee is responsible for ensuring TO sheet data is accurate
-    and current;
-(c) If a worker&#x27;s registered email is inaccessible at the point of QR scan
-    (e.g. no mobile data, incorrect email address), the Licensee is responsible
-    for the resulting inability to submit;
-(d) The OTP magic link should not be shared with any other person. The
-    Licensee is responsible for communicating this requirement to workers;
-(e) The Developer is not responsible for OTP delivery failures caused by the
-    worker&#x27;s email provider marking the OTP email as spam, the worker&#x27;s mailbox
-    being full, or the registered email address being incorrect in the TO sheet;
-(f) The Software limits OTP sends to 1 per worker per 2 minutes and limits
-    brute-force attempts to 5 per worker per 10 minutes. These security limits
-    are by design and the Developer is not responsible for access issues
-    resulting from these limits being triggered by the worker&#x27;s own actions;
-(g) For security, the OTP is stored as a SHA-256 cryptographic hash — never
-    in plain text. A temporary verified session key is created upon successful
-    OTP verification and expires automatically after 15 minutes. These are
-    internal security measures — the Licensee has no obligation to disclose
-    them to workers beyond stating that the link is single-use and time-limited.
-
-8.7 Drive Link Attachments — Licensee Responsibilities (Official Memo Module)
-The Official Memo Module allows Authorised Users to attach files via a Google
-Drive sharing link. The Licensee acknowledges and agrees that:
-
-(a) DMS-IA stores only the URL provided in the attachment field — it does not
-    upload, copy, or access the file itself;
-(b) The Licensee is responsible for informing Authorised Users that the shared
-    file must have &quot;Anyone with the link&quot; access set in Google Drive before
-    submitting, or the approver will not be able to open it;
-(c) The Developer is not responsible for any file access failures resulting from
-    incorrect sharing permissions, deleted files, or expired sharing links;
-(d) The Licensee is responsible for ensuring that no sensitive or confidential
-    files are shared via memo attachments in violation of applicable law.
-
-8.8 CC DP-01 Validation — Licensee Responsibilities (Official Memo Module)
-The Official Memo Module validates the CC DP-01 field live before allowing
-submission. The Licensee acknowledges and agrees that:
-
-(a) Only DP numbers registered in the TO sheet will pass CC validation;
-(b) The Licensee is responsible for keeping the TO sheet accurate and current;
-(c) Submission is blocked if an invalid CC DP-01 is entered — the submitter
-    must either enter a valid DP number or leave the field blank.
-
-================================================================================
-9. WARRANTIES
-================================================================================
-
-9.1 Developer&#x27;s Limited Warranty
-The Developer warrants that:
-(a) The Software will substantially perform the functions described in the
-    Documentation for a period of thirty (30) days from the Effective Date
-    (&quot;Warranty Period&quot;);
-(b) The Developer has the right to grant the licence in Section 2.1 and the
-    Software does not infringe any third-party intellectual property rights
-    known to the Developer.
-
-9.2 Warranty Remedy
-If the Software fails to comply with the warranty in Section 9.1(a) during
-the Warranty Period, the Developer will, at the Developer&#x27;s sole discretion,
-either repair or replace the defective Software at no charge.
-
-9.3 Warranty Exclusions
-The warranty in Section 9.1 does not apply if:
-(a) The Software has been modified by the Licensee or any third party;
-(b) The failure results from incorrect installation, deployment, or
-    configuration by the Licensee;
-(c) The failure results from changes to the Google platform outside the
-    Developer&#x27;s control;
-(d) The failure results from the Licensee&#x27;s Google account being suspended,
-    restricted, or having insufficient quota;
-(e) The Licensee has not deployed the most recent version of the Software.
-
-9.4 DISCLAIMER OF WARRANTIES
-EXCEPT FOR THE EXPRESS LIMITED WARRANTY IN SECTION 9.1, THE SOFTWARE IS PROVIDED
-&quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
-TITLE, NON-INFRINGEMENT, ACCURACY, RELIABILITY, OR UNINTERRUPTED OPERATION.
-
-THE DEVELOPER DOES NOT WARRANT THAT:
-(a) THE SOFTWARE WILL MEET ALL OF THE LICENSEE&#x27;S REQUIREMENTS;
-(b) THE SOFTWARE WILL OPERATE WITHOUT INTERRUPTION OR ERROR;
-(c) THE SOFTWARE WILL BE COMPATIBLE WITH FUTURE VERSIONS OF GOOGLE WORKSPACE;
-(d) ALL BUGS OR DEFECTS IN THE SOFTWARE WILL BE CORRECTED;
-(e) THE SOFTWARE IS FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS.
-
-THE LICENSEE ASSUMES ALL RISK ASSOCIATED WITH THE USE OF THE SOFTWARE.
-
-================================================================================
-10. LIMITATION OF LIABILITY
-================================================================================
-
-10.1 Exclusion of Consequential Damages
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE
-DEVELOPER BE LIABLE FOR ANY:
-(a) INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES;
-(b) LOSS OF PROFITS, REVENUE, BUSINESS, DATA, GOODWILL, OR ANTICIPATED SAVINGS;
-(c) BUSINESS INTERRUPTION OR LOSS OF BUSINESS OPPORTUNITY;
-(d) LOSS OR CORRUPTION OF DATA;
-(e) COST OF SUBSTITUTE SOFTWARE OR SERVICES;
-
-WHETHER ARISING FROM CONTRACT, TORT (INCLUDING NEGLIGENCE), STATUTE, OR ANY
-OTHER LEGAL THEORY, EVEN IF THE DEVELOPER HAS BEEN ADVISED OF THE POSSIBILITY
-OF SUCH DAMAGES.
-
-10.2 Cap on Liability
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER&#x27;S TOTAL
-CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT — WHETHER
-IN CONTRACT, TORT, OR OTHERWISE — SHALL NOT EXCEED THE TOTAL LICENCE FEE PAID
-BY THE LICENSEE FOR THE SOFTWARE IN THE TWELVE (12) MONTHS IMMEDIATELY
-PRECEDING THE CLAIM.
-
-10.3 Essential Basis
-THE PARTIES ACKNOWLEDGE THAT THE LIMITATIONS OF LIABILITY IN THIS SECTION
-REFLECT A REASONABLE ALLOCATION OF RISK AND ARE AN ESSENTIAL ELEMENT OF THE
-BASIS OF THE BARGAIN BETWEEN THE PARTIES. THE DEVELOPER WOULD NOT HAVE ENTERED
-INTO THIS AGREEMENT WITHOUT THESE LIMITATIONS.
-
-10.4 Consumer Rights
-Nothing in this Agreement limits or excludes any liability that cannot be limited
-or excluded under applicable Indian consumer protection law or other mandatory
-applicable law.
-
-10.5 User Negligence and Misuse
-The Developer shall not be responsible or liable for any loss, damage, delay,
-data loss, security breach, operational failure, financial loss, or any other
-consequence — direct or indirect — arising from:
-
-(a) The Licensee&#x27;s or any Authorised User&#x27;s negligent, incorrect, or improper
-    use of the Software, including but not limited to incorrect deployment,
-    incorrect configuration, or failure to follow the provided Documentation;
-
-(b) Failure by the Licensee to set a strong HMAC_SECRET or to secure their
-    Google account with appropriate passwords and two-factor authentication;
-
-(c) Entry of incorrect, incomplete, or misleading data by any Authorised User
-    into the Official Memo HTML form, Call Memo HTML form, FROM sheet, TO sheet,
-    or DEPARTMENTS sheet;
-
-(d) Failure by the Licensee to redeploy the Software after receiving an update
-    or bug fix from the Developer;
-
-(e) Actions taken — or not taken — by an approver after receiving a valid
-    approval or rejection email link;
-
-(f) Submission of sensitive personal data (including health information,
-    financial data, or government identification numbers) by any Authorised
-    User into memo content fields, contrary to the warnings in this Agreement
-    and the Privacy Policy;
-
-(g) Loss or corruption of data resulting from the Licensee&#x27;s failure to maintain
-    adequate backups, to protect their Google account, or to comply with
-    Google&#x27;s Terms of Service;
-
-(h) Any delay in memo approval, escalation, or notification caused by the
-    Licensee&#x27;s MailApp quota being exhausted due to the Licensee&#x27;s own usage;
-
-(i) Any failure, outage, or change in Google&#x27;s platform, APIs, or services
-    that prevents the Software from functioning as expected, where the
-    Developer has no control over such changes;
-
-(j) Any accident, operational incident, business loss, or consequential harm
-    arising from the Licensee&#x27;s reliance on DMS-IA for time-critical decisions
-    without maintaining adequate alternative processes;
-
-(k) Any file access failure resulting from an Authorised User sharing a Drive
-    link with incorrect permissions, or a Drive file being deleted or moved
-    after a memo is submitted;
-
-(l) Any inability of a worker to submit a Call Memo or Official Memo due to
-    their registered email address being incorrect, inaccessible, or not
-    current in the TO or FROM sheet.
-
-The Licensee agrees that the Developer&#x27;s role is limited to providing the
-Software. The Licensee assumes full responsibility for all consequences arising
-from how the Software is used, configured, and maintained within their
-organisation.
-
-================================================================================
-11. INDEMNIFICATION
-================================================================================
-
-11.1 Licensee Indemnification
-The Licensee shall indemnify, defend, and hold harmless the Developer from and
-against any and all claims, demands, losses, liabilities, costs, damages, and
-expenses (including reasonable legal fees) arising out of or related to:
-
-(a) The Licensee&#x27;s use of the Software in violation of this Agreement;
-(b) The Licensee&#x27;s violation of any applicable law or regulation;
-(c) The Licensee&#x27;s breach of any representation, warranty, or obligation under
-    this Agreement;
-(d) Any data breach or data loss arising from the Licensee&#x27;s failure to secure
-    their Google account;
-(e) Any claim by a third party arising from the Licensee&#x27;s use of the Software;
-(f) The Licensee&#x27;s failure to comply with applicable data protection laws
-    including DPDPA 2023.
-
-================================================================================
-12. TERM AND TERMINATION
-================================================================================
-
-12.1 Term
-This Agreement commences on the Effective Date and continues until terminated
-in accordance with this Section.
-
-12.2 Termination by Licensee
-The Licensee may terminate this Agreement at any time by:
-(a) Ceasing all use of the Software;
-(b) Deleting all copies of the Software source code;
-(c) Deleting all deployments of the Software from their Google account.
-
-No refund is due upon termination by the Licensee unless required by applicable
-consumer protection law.
-
-12.3 Termination by Developer
-The Developer may terminate this Agreement with immediate effect by written
-notice to the Licensee if:
-(a) The Licensee materially breaches this Agreement and fails to cure the breach
-    within fourteen (14) days of written notice;
-(b) The Licensee violates Section 2.3 (Licence Restrictions);
-(c) The Licensee becomes insolvent, is placed in liquidation, or makes an
-    assignment for the benefit of creditors;
-(d) The Licensee uses the Software for any illegal purpose.
-
-12.4 Effect of Termination
-Upon termination of this Agreement:
-(a) All licence rights granted to the Licensee under Section 2.1 immediately
-    cease;
-(b) The Licensee must immediately cease all use of the Software;
-(c) The Licensee must delete all copies of the Software source code and all
-    deployments from their Google account;
-(d) Sections 1, 3, 7, 8, 9.4, 10, 11, 13, 14, and 15 survive termination.
-
-12.5 Survival
-The following Sections survive termination of this Agreement: Definitions (1),
-Intellectual Property Rights (3), Confidentiality (7), Data Protection (8),
-Disclaimer of Warranties (9.4), Limitation of Liability (10, including 10.5),
-Indemnification (11), Governing Law (13), Dispute Resolution (14), and General
-Provisions (15).
-
-================================================================================
-13. GOVERNING LAW AND JURISDICTION
-================================================================================
-
-13.1 Governing Law
-This Agreement shall be governed by and construed in accordance with the laws
-of India, without regard to its conflict of law principles.
-
-13.2 Jurisdiction
-The parties submit to the exclusive jurisdiction of the courts in Dharwad,
-Karnataka, India for the resolution of any dispute arising out of or related
-to this Agreement.
-
-13.3 Applicable Indian Laws
-This Agreement is subject to and the parties shall comply with:
-- Indian Copyright Act 1957
-- Indian Contract Act 1872
-- Information Technology Act 2000 and its amendments
-- Digital Personal Data Protection Act 2023
-- Consumer Protection Act 2019
-- Sale of Goods Act 1930
-- Any other applicable Indian law or regulation
-
-================================================================================
-14. DISPUTE RESOLUTION
-================================================================================
-
-14.1 Informal Resolution
-In the event of any dispute, controversy, or claim arising out of or related
-to this Agreement, the parties shall first attempt to resolve the matter through
-good faith negotiation. Either party may initiate informal resolution by sending
-written notice to the other party describing the dispute. The parties shall have
-thirty (30) days from the date of such notice to attempt resolution.
-
-14.2 Mediation
-If the dispute cannot be resolved through informal negotiation within 30 days,
-either party may refer the matter to mediation under the Mediation Act 2023
-(India) before initiating formal legal proceedings.
-
-14.3 Litigation
-If mediation fails or is not pursued, either party may initiate legal proceedings
-in the courts specified in Section 13.2.
-
-14.4 Injunctive Relief
-Nothing in this Section prevents the Developer from seeking immediate injunctive
-or other equitable relief in any court of competent jurisdiction to protect
-Intellectual Property Rights, Confidential Information, or to prevent irreparable
-harm.
-
-================================================================================
-15. GENERAL PROVISIONS
-================================================================================
-
-15.1 Entire Agreement
-This Agreement, together with the Privacy Policy incorporated by reference,
-constitutes the entire agreement between the parties regarding the Software and
-supersedes all prior agreements, representations, warranties, and understandings
-relating to the subject matter hereof.
-
-15.2 Amendments
-No amendment to this Agreement is valid unless made in writing and signed by
-both parties. The Developer may update this Agreement for future licences by
-posting an updated version. Existing Licensees will be notified of material
-changes.
-
-15.3 No Waiver
-The failure of either party to enforce any right or provision of this Agreement
-shall not constitute a waiver of that right or provision. A waiver is only
-effective if given in writing.
-
-15.4 Severability
-If any provision of this Agreement is found to be invalid, illegal, or
-unenforceable under applicable law, that provision shall be modified to the
-minimum extent necessary to make it valid, legal, and enforceable, and the
-remaining provisions shall continue in full force and effect.
-
-15.5 Assignment
-The Licensee may not assign, transfer, or sublicence this Agreement or any
-rights under it without the Developer&#x27;s prior written consent. Any purported
-assignment without consent is void. The Developer may assign this Agreement
-without restriction.
-
-15.6 Force Majeure
-Neither party shall be liable for any failure or delay in performance resulting
-from causes beyond their reasonable control, including but not limited to acts
-of God, natural disasters, government actions, changes to Google platform
-policies, internet outages, or power failures. The affected party shall promptly
-notify the other party of the force majeure event.
-
-15.7 Notices
-All notices under this Agreement must be in writing and sent to:
-
-Developer : Rohmit Neelakant Shirgoppi
-            romit232091@gmail.com
-            +91-9535835504
-            H.No. 522, Near CSI Church, Teachers Colony Road,
-            Township, Dandeli — 581325, Karnataka, India
-
-Licensee  : The email address and contact information provided at time
-            of purchase.
-
-Notices sent by email are effective on the date sent, provided no delivery
-failure notification is received. Notices sent by post are effective 7 days
-after posting.
-
-15.8 Relationship of the Parties
-The parties are independent contractors. Nothing in this Agreement creates a
-partnership, joint venture, agency, employment, or franchise relationship.
-The Developer is not an employee of the Licensee and the Licensee is not an
-employee of the Developer.
-
-15.9 Language
-This Agreement is written in English. In the event of any conflict between an
-English version and any translated version, the English version shall prevail.
-
-15.10 Headings
-Section headings are for convenience only and do not affect the interpretation
-of this Agreement.
-
-15.11 Counterparts
-This Agreement may be executed electronically and electronic signatures shall
-be treated as original signatures and be fully binding.
-
-================================================================================
-16. SPECIFIC PROVISIONS FOR GOOGLE WORKSPACE MARKETPLACE
-================================================================================
-
-16.1 Google Marketplace Distribution
-If the Software is obtained through the Google Workspace Marketplace, the
-following additional terms apply:
-
-(a) The Licensee must comply with Google Workspace Marketplace Terms of Service
-    in addition to this Agreement;
-(b) Google is not a party to this Agreement and has no responsibility for the
-    Software or any support;
-(c) The Licensee&#x27;s use of the Software is subject to Google&#x27;s policies for
-    installed applications;
-(d) The Developer may list, update, or remove the Software from Google
-    Marketplace at any time.
-
-16.2 Private Listing
-If the Software is obtained via a private Marketplace listing, the Licensee
-must not share the private listing link with any party outside their organisation
-without the Developer&#x27;s prior written consent.
-
-16.3 OAuth Permissions
-The Software requests the following Google API permissions (OAuth scopes),
-all of which are non-restricted and do not require CASA security assessment:
-
-  https://www.googleapis.com/auth/spreadsheets
-  — Required to read and write memo data, configuration, audit logs, and
-    all supporting sheets within the Licensee&#x27;s own spreadsheet.
-
-  https://www.googleapis.com/auth/script.send_mail
-  — Required to send all outbound emails via MailApp: approval requests,
-    rejection notifications, OTP magic links, escalation alerts, and
-    administrative health reports. No Gmail inbox access is used.
-
-  https://www.googleapis.com/auth/script.scriptapp
-  — Required to install and manage time-based triggers that process the memo
-    queue, check escalations, retry failed emails, run health checks, and
-    clean up expired OTP keys automatically without the owner being present.
-
-  https://www.googleapis.com/auth/script.external_request
-  — Required to fetch publicly-shared Drive file attachments via UrlFetchApp
-    for inclusion in approval emails, and to generate the QR code image from
-    api.qrserver.com (only the deployment URL is transmitted — no personal
-    data).
-
-  https://www.googleapis.com/auth/script.container.ui
-  — Required to create the DMS-IA custom menu in the Google Sheets toolbar
-    and to display setup and configuration alert dialogs.
-
-  https://www.googleapis.com/auth/userinfo.email
-  — Required to detect the admin email address automatically during initial
-    setup (selfSetup). Not used during normal operation.
-
-The Licensee acknowledges and accepts these permissions as necessary for the
-Software to function. The Developer&#x27;s use of these permissions is governed by
-Google&#x27;s API Services User Data Policy and the Developer&#x27;s Privacy Policy.
-None of these scopes grant access to Gmail inbox, Google Drive files, Google
-Contacts, Google Calendar, or any other sensitive Google service.
-
-================================================================================
-17. OPEN SOURCE COMPONENTS
-================================================================================
-
-DMS-IA does not incorporate any open source software. The Software is entirely
-original proprietary code authored by Rohmit Neelakant Shirgoppi. No open
-source licence obligations apply to this Software.
-
-================================================================================
-18. EXPORT CONTROLS
-================================================================================
-
-The Licensee shall comply with all applicable export control laws and regulations
-of India and any other jurisdiction in which the Software is used. The Licensee
-shall not export or re-export the Software to any country, entity, or individual
-prohibited under applicable export control laws.
-
-DMS-IA is a software product developed in India and intended primarily for use
-within India. International deployments are subject to applicable import
-regulations of the destination country. The Licensee is solely responsible for
-ensuring compliance with all export and import controls in any jurisdiction
-outside India, including but not limited to the Foreign Trade (Development and
-Regulation) Act 1992 (India) and any applicable regulations of the destination
-country.
-
-================================================================================
-19. ANTI-CORRUPTION
-================================================================================
-
-Each party represents and warrants that it has not and will not offer, promise,
-authorise, give, or take any payment, gift, or other advantage that would
-constitute a violation of the Prevention of Corruption Act 1988 (India) or any
-other applicable anti-corruption law.
-
-================================================================================
-21. IP BREACH REMEDY AND PENALTY CLAUSE
-================================================================================
-
-21.1 Acknowledgement of Irreparable Harm
-The Licensee acknowledges that any unauthorised copying, distribution,
-reverse engineering, decompilation, or disclosure of the Software source code
-would cause immediate and irreparable harm to the Developer for which monetary
-damages would be an inadequate remedy.
-
-21.2 Injunctive Relief
-In the event of any actual or threatened breach of Section 2.3 (Licence
-Restrictions) or Section 7 (Confidentiality), the Developer shall be entitled
-to seek immediate injunctive relief and specific performance from any court of
-competent jurisdiction without the obligation to prove actual damage, post a
-bond, or exhaust other remedies.
-
-21.3 Liquidated Damages
-In addition to injunctive relief and without prejudice to any other remedy,
-the Licensee agrees to pay the Developer liquidated damages of:
-(a) INR 5,00,000 (Five Lakh Rupees) per instance of unauthorised distribution
-    of the Software source code to a third party;
-(b) INR 2,00,000 (Two Lakh Rupees) per instance of unauthorised deployment
-    beyond the licensed number of instances;
-(c) INR 10,00,000 (Ten Lakh Rupees) if the Software is used to build a
-    competing product.
-
-The parties agree that these amounts represent a genuine pre-estimate of the
-Developer&#x27;s losses and are not a penalty. These amounts are in addition to
-any actual damages proven.
-
-21.4 Legal Costs
-In any successful action by the Developer to enforce IP rights or
-confidentiality obligations, the Licensee shall pay the Developer&#x27;s reasonable
-legal costs and expenses.
-
-================================================================================
-22. SOURCE CODE ESCROW
-================================================================================
-
-22.1 Escrow Option
-The Developer offers, on request and for an additional fee to be agreed, to
-deposit the Software source code with a mutually agreed escrow agent. Escrow
-provides the Licensee with access to the source code in the event that the
-Developer becomes permanently unable to support the Software due to death,
-incapacity, or cessation of business.
-
-22.2 Release Conditions
-Escrowed source code shall be released to the Licensee only upon:
-(a) Written certification from a licensed medical practitioner that the
-    Developer is permanently incapacitated; or
-(b) Death of the Developer, evidenced by death certificate; or
-(c) Written declaration by the Developer that they are ceasing the DMS-IA
-    business with no successor.
-
-22.3 Licence on Release
-Upon release from escrow, the Licensee receives a perpetual, royalty-free,
-non-transferable licence to use and maintain the source code solely for their
-own internal use within their existing deployment. The Licensee may not
-distribute, sell, or sublicence the escrowed source code.
-
-22.4 Requesting Escrow
-Licensees wishing to arrange source code escrow should contact the Developer
-at romit232091@gmail.com. Escrow is not automatic — it must be separately
-requested and agreed. Escrow fees are in addition to the licence fee.
-
-================================================================================
-23. MULTI-DEPLOYMENT VOLUME DISCOUNT POLICY
-================================================================================
-
-23.1 Volume Discount Eligibility
-Licensees purchasing two or more Additional Deployments simultaneously (i.e.
-multiple Google Workspace accounts for the same corporate group or organisation)
-are eligible for volume discounts on Additional Deployment fees as follows:
-
-Deployments 2–3   : 10% discount on Additional Deployment fee per deployment
-Deployments 4–6   : 20% discount on Additional Deployment fee per deployment
-Deployments 7–10  : 30% discount on Additional Deployment fee per deployment
-Deployments 11+   : By negotiation — contact romit232091@gmail.com
-
-23.2 Eligibility Conditions
-Volume discounts apply only where:
-(a) All deployments are for the same corporate group, parent, subsidiary, or
-    affiliated entity under common control;
-(b) All deployments are purchased in a single transaction or within 30 days;
-(c) The Licensee provides written confirmation of the organisational structure.
-
-23.3 AMC Volume Discounts
-AMC renewals for multiple deployments from the same organisation are eligible
-for the same volume discount as the original purchase tier.
-
-23.4 Discount Application
-Discounts are applied by the Developer at invoice stage. Retrospective discounts
-are not available. All discounts are exclusive of GST.
-
-================================================================================
-24. TRIAL AND EVALUATION LICENCE
-================================================================================
-
-24.1 Trial Licence Grant
-The Developer may, at their sole discretion, offer a Trial Licence to
-prospective Licensees. A Trial Licence permits the Licensee to install and
-use a single deployment of the Software for evaluation purposes only, for a
-period not exceeding thirty (30) calendar days from the date of delivery
-(&quot;Trial Period&quot;).
-
-24.2 Trial Licence Restrictions
-During the Trial Period:
-(a) The Software may be used for internal evaluation only — not for live
-    operational use;
-(b) No more than ten (10) Authorised Users may use the Software;
-(c) All other restrictions in Section 2.3 apply in full;
-(d) The Licensee may not use the Trial Licence as a basis for building a
-    competing product.
-
-24.3 Conversion
-Upon expiry of the Trial Period, the Licensee must either:
-(a) Purchase a full licence to continue using the Software; or
-(b) Cease using the Software and delete all copies.
-
-The Developer reserves the right to disable the Software at the end of the
-Trial Period if a full licence is not purchased.
-
-24.4 No Warranty During Trial
-The Software is provided &quot;AS IS&quot; during the Trial Period with no warranties
-of any kind. Section 9.1 (Limited Warranty) does not apply to Trial Licences.
-
-24.5 Trial Licence Fee
-Trial Licences may be provided at no charge or at a nominal fee at the
-Developer&#x27;s discretion. Trial fees are non-refundable.
-
-================================================================================
-25. ACKNOWLEDGEMENT
-================================================================================
-
-BY INSTALLING, DEPLOYING, OR USING DMS-IA, THE LICENSEE ACKNOWLEDGES THAT:
-
-(a) They have read and understood this entire Agreement;
-(b) They agree to be bound by all terms and conditions of this Agreement;
-(c) They have the authority to bind their organisation to this Agreement;
-(d) They understand that this Agreement is a legally binding contract;
-(e) The Software source code is protected by copyright and is confidential;
-(f) Any violation of this Agreement may result in legal action and liquidated
-    damages as set out in Section 21.
-
-================================================================================
-SCHEDULE A — LICENCE FEE TIERS
-================================================================================
-
-Licence fee tiers and pricing will be communicated by the Developer separately
-in the invoice or purchase confirmation issued at time of sale.
-Indicative pricing in Indian Rupees (INR), exclusive of GST. Final pricing is
-confirmed in the invoice at time of purchase. Contact romit232091@gmail.com.
-
-Base Licence:
-Users           : Up to 50 Authorised Users
-Support         : 30 days email support
-Updates         : Critical bug fixes only
-Indicative Price: INR 5,000 – 15,000 (one-time, excl. GST)
-
-Standard Licence:
-Users           : Up to 200 Authorised Users
-Support         : 90 days email support
-Updates         : All updates for 6 months
-Indicative Price: INR 15,000 – 35,000 (one-time, excl. GST)
-
-Premium Licence:
-Users           : Unlimited Authorised Users
-Support         : 12 months priority support (binding SLA — see Schedule C)
-Updates         : All updates for 12 months
-Indicative Price: INR 35,000 – 75,000 (one-time, excl. GST)
-
-Annual Maintenance Charge (AMC — from Year 2):
-Coverage        : Continued support and updates
-Indicative Price: 20–30% of original licence fee per annum (excl. GST)
-Note            : Entirely optional. Software functions without AMC.
-
-Additional Deployment:
-Coverage        : Each additional Google Workspace account / deployment
-Indicative Price: 50–70% of applicable licence tier fee
-Note            : Volume discounts available — see Section 23.
-
-Custom Enterprise:
-Indicative Price: By negotiation. Contact romit232091@gmail.com.
-
-================================================================================
-SCHEDULE B — ACCEPTABLE USE POLICY
-================================================================================
-
-The Software may be used only for the following permitted uses:
-- Internal memo submission and approval workflow management via the Official
-  Memo HTML web form (DP-01 validated, HMAC-secured approval links)
-- Internal escalation and notification management
-- Internal audit trail maintenance
-- Internal departmental communication management
-- Call Memo submission via QR code for internal overtime call management
-- OTP-authenticated worker identification for Call Memo submissions
-- Printing and displaying QR codes within the Licensee&#x27;s own premises
-- Sharing Google Drive file links as attachments in Official Memos, where the
-  file is stored in the Licensee&#x27;s own Google Drive
-
-The Software must NOT be used for:
-- Processing memos between different organisations (external use)
-- Storing or processing sensitive personal data such as health records,
-  financial data, or government identification numbers in any memo content
-  field (Subject, Context / Message, Reason for Overtime)
-- Any purpose that violates applicable law
-- Harassment, discrimination, or illegal activities
-- Commercial resale or redistribution
-- Any purpose that could damage the reputation of the Developer
-- Processing personal data in excess of what is described in the Privacy Policy
-- Distributing the QR code beyond the Licensee&#x27;s own premises or sharing it
-  with persons outside the Licensee&#x27;s organisation
-- Using the Call Memo Module to collect data from persons who are not
-  Authorised Users registered in the WORKER LIST and TO sheets
-- Using the Official Memo Module to submit memos on behalf of another person
-  or using another person&#x27;s DP-01 number
-- Attempting to bypass or circumvent OTP authentication or CC DP-01 validation
-- Sharing Google Drive attachment links with persons outside the Licensee&#x27;s
-  organisation without appropriate authorisation
-- Uploading files directly to DMS-IA — the Software only stores Drive URLs
-
-Violation of this Acceptable Use Policy is a material breach of this Agreement
-and may result in immediate termination.
-
-================================================================================
-SCHEDULE C — SERVICE LEVEL AGREEMENT
-================================================================================
-
-Service levels vary by licence tier:
-
-PREMIUM LICENCE — BINDING SLA:
-The following targets are binding contractual commitments for Premium Licensees.
-Failure to meet these targets entitles the Licensee to a pro-rata credit against
-their next AMC payment equivalent to 10% of the monthly licence value per
-business day of delay beyond the stated target, up to a maximum of 50% of the
-monthly licence value per incident.
-
-Support Acknowledgement  : Within 2 business days of email receipt
-Critical Bug Fix         : Within 10 business days of confirmed reproduction
-Non-Critical Bug Fix     : Within 30 business days of confirmed reproduction
-
-BASE AND STANDARD LICENCE — INDICATIVE TARGETS (non-binding):
-The following targets are indicative and do not constitute binding commitments.
-The Developer will use best efforts to meet these targets.
-
-Support Acknowledgement  : Within 7 business days of email receipt
-Critical Bug Fix         : Best effort within 14 business days
-Non-Critical Bug Fix     : Best effort within 30 business days
-
-ALL TIERS:
-Software Availability    : Subject to Google platform availability. The
-                           Developer cannot guarantee uptime or performance
-                           beyond what Google&#x27;s infrastructure provides.
-Quarterly Health Check   : Available on request for Premium Licensees.
-
-&quot;Critical Bug&quot; means a defect that prevents the core memo submission and
-approval workflow from functioning entirely. &quot;Non-Critical Bug&quot; means any
-other confirmed defect. Issues caused by Google platform changes, incorrect
-deployment, quota exhaustion, or incorrect Licensee configuration are excluded
-from SLA coverage.
-
-================================================================================
-SIGNATURE BLOCK
-================================================================================
-
-By accepting this Agreement (whether electronically, by installing the Software,
-or by signing below), the parties agree to be bound by its terms.
-
-DEVELOPER:
-
-Name    : Rohmit Neelakant Shirgoppi
-Role    : Developer and Licensor — DMS-IA
-Date    : 01 June 2026
-Email   : romit232091@gmail.com
-
-
-LICENSEE:
-
-Organisation  : _______________________________________________
-
-Authorised
-Signatory Name: _______________________________________________
-
-Designation   : _______________________________________________
-
-Date          : _______________________________________________
-
-Email         : _______________________________________________
-
-Signature     : _______________________________________________
-
-
-================================================================================
-DMS-IA — Digital Memo System Industrial Automation
-Software Licence Agreement and Terms of Service — Version 1.0
-Updated for current codebase. Full Legal and Commercial Compliance.
+Privacy Policy Version 1.0 — Updated for current codebase.
+Full DPDPA + GDPR + CCPA Compliance.
 Effective 01 June 2026 | Last Updated 29 June 2026
 
 Copyright © 2026 Rohmit Neelakant Shirgoppi (Aadhaar: Neelkant Shirgoppi)
@@ -1351,7 +1520,7 @@ romit232091@gmail.com | +91-9535835504
   Your Digi Employee &nbsp;|&nbsp; DMS-IA &mdash; Digital Memo System Industrial Automation<br>
   Diary No. SW-25725/2026-CO &nbsp;|&nbsp; Dandeli, Karnataka, India<br>
   <a href="/">Home</a> &nbsp;|&nbsp;
-  <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="/terms.html">Terms of Service</a> &nbsp;|&nbsp;
   <a href="mailto:romit232091@gmail.com">Contact</a>
 </footer>
 
