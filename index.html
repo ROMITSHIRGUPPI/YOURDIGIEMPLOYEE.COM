@@ -744,6 +744,7 @@ footer {
       <a href="#process">How it works</a>
       <a href="#features">Features</a>
       <a href="#security">Security</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
       <a href="https://workspace.google.com/marketplace" class="nav-cta" target="_blank">Get on Marketplace</a>
     </div>
@@ -1181,6 +1182,500 @@ footer {
   </div>
 </section>
 
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PRICING SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<style>
+/* ── PRICING ── */
+.pricing-section {
+  padding: var(--s12) var(--s5);
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.pricing-inner { max-width: var(--max); margin: 0 auto; }
+
+/* Trial badge */
+.trial-banner {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--green-dim);
+  border: 1px solid rgba(21,128,61,0.18);
+  color: var(--green);
+  font-size: 13.5px; font-weight: 500;
+  padding: 10px 20px; border-radius: var(--r);
+  margin-top: var(--s4);
+}
+.trial-banner strong { font-weight: 700; }
+
+/* Slider */
+.slider-wrap {
+  margin-top: var(--s8);
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: var(--s5);
+}
+.slider-label {
+  font-size: 13px; font-weight: 600;
+  color: var(--ink-3); margin-bottom: var(--s3);
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+.slider-label span {
+  font-size: 15px; font-weight: 700;
+  color: var(--blue);
+}
+.duration-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%; height: 5px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--blue) 0%, var(--blue) 50%, #e4e4e7 50%, #e4e4e7 100%);
+  outline: none; cursor: pointer;
+  transition: background 0.15s;
+}
+.duration-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(26,86,219,0.3);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.duration-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(26,86,219,0.4);
+}
+.duration-slider::-moz-range-thumb {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(26,86,219,0.3);
+  cursor: pointer;
+}
+.slider-ticks {
+  display: flex; justify-content: space-between;
+  margin-top: 10px;
+}
+.tick {
+  font-size: 11px; font-weight: 600;
+  color: var(--ink-4); cursor: pointer;
+  transition: color 0.15s;
+  text-align: center;
+}
+.tick.active { color: var(--blue); }
+.tick span { display: block; font-size: 10px; font-weight: 400; margin-top: 2px; }
+
+/* Pricing cards */
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+.pcard {
+  background: var(--surface);
+  border: 1.5px solid var(--rule);
+  border-radius: 16px;
+  padding: var(--s4);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.pcard::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--rule);
+  transition: background 0.3s;
+}
+.pcard.active {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(26,86,219,0.12);
+}
+.pcard.active::before { background: var(--blue); }
+
+.pcard-name {
+  font-size: 11px; font-weight: 700;
+  color: var(--ink-4); letter-spacing: 0.1em;
+  text-transform: uppercase; margin-bottom: var(--s2);
+}
+.pcard.active .pcard-name { color: var(--blue); }
+
+.pcard-duration {
+  font-family: var(--serif);
+  font-size: 28px; font-weight: 400;
+  color: var(--ink); line-height: 1;
+  margin-bottom: var(--s1);
+}
+.pcard-total {
+  font-size: 13px; color: var(--ink-4);
+  margin-bottom: var(--s3);
+}
+.pcard-total strong { color: var(--ink); font-weight: 600; }
+
+.pcard-price {
+  margin-bottom: var(--s1);
+  display: flex; align-items: baseline; gap: 4px;
+}
+.price-currency {
+  font-size: 18px; font-weight: 600;
+  color: var(--ink-3); margin-top: 4px;
+}
+.price-amount {
+  font-family: var(--serif);
+  font-size: 48px; font-weight: 400;
+  color: var(--ink); line-height: 1;
+  letter-spacing: -2px;
+  transition: all 0.3s ease;
+}
+.price-period {
+  font-size: 13px; color: var(--ink-4);
+  align-self: flex-end; padding-bottom: 6px;
+}
+.pcard-saving {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--green-dim);
+  color: var(--green);
+  font-size: 11px; font-weight: 700;
+  padding: 3px 10px; border-radius: 100px;
+  margin-bottom: var(--s3);
+  min-height: 20px;
+}
+
+.pcard-divider {
+  height: 1px; background: var(--rule);
+  margin: var(--s3) 0;
+}
+
+.pcard-features { list-style: none; }
+.pcard-features li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 12.5px; color: var(--ink-2);
+  padding: 5px 0; line-height: 1.45;
+}
+.feat-check {
+  color: var(--green); font-weight: 700;
+  font-size: 11px; margin-top: 2px; flex-shrink: 0;
+}
+
+.pcard-cta {
+  display: flex; align-items: center; justify-content: center;
+  height: 40px; border-radius: 10px;
+  font-size: 13px; font-weight: 600;
+  margin-top: var(--s3); cursor: pointer;
+  border: 1.5px solid var(--rule);
+  color: var(--ink-2);
+  background: var(--surface-2);
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.pcard-cta:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+  background: var(--surface);
+}
+.pcard.active .pcard-cta {
+  background: var(--blue); color: #fff;
+  border-color: var(--blue);
+}
+.pcard.active .pcard-cta:hover { opacity: 0.88; }
+
+/* Summary strip */
+.pricing-summary {
+  margin-top: var(--s5);
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--s2);
+}
+.psummary {
+  background: var(--surface-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--r);
+  padding: var(--s2) var(--s3);
+  text-align: center;
+}
+.psummary-val {
+  font-family: var(--serif);
+  font-size: 22px; font-weight: 400;
+  color: var(--blue); line-height: 1;
+  transition: all 0.3s ease;
+}
+.psummary-lbl {
+  font-size: 11px; color: var(--ink-4);
+  margin-top: 3px; font-weight: 500;
+}
+
+/* Trial note */
+.trial-note {
+  margin-top: var(--s5);
+  padding: var(--s3) var(--s4);
+  background: #fffbeb;
+  border: 1px solid rgba(180,83,9,0.15);
+  border-radius: var(--r);
+  font-size: 13px; color: var(--amber);
+  line-height: 1.6;
+}
+.trial-note strong { font-weight: 700; }
+
+/* Contact for pricing CTA */
+.pricing-contact {
+  margin-top: var(--s5);
+  text-align: center;
+  font-size: 14px; color: var(--ink-3);
+}
+.pricing-contact a { color: var(--blue); font-weight: 500; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pricing-cards { grid-template-columns: 1fr; }
+  .pcard.active { transform: none; }
+  .pricing-summary { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .pricing-section { padding: 56px var(--s2); }
+  .slider-wrap { padding: var(--s3); }
+  .pricing-summary { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="section-heading reveal">Simple, transparent pricing</h2>
+    <p class="section-body reveal">One product. Three commitment lengths. All features included in every plan — no hidden tiers, no feature gating. Choose how long you want to commit.</p>
+
+    <div class="trial-banner reveal">
+      <span>🎁</span>
+      <span><strong>Free trial included:</strong> Every plan comes with 1 month free. Still unsure? Get 1 extra month free — up to 2 months total, no payment needed.</span>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="slider-wrap reveal">
+      <div class="slider-label">
+        Drag to explore plans
+        <span id="slider-display">12 months</span>
+      </div>
+      <input
+        type="range"
+        class="duration-slider"
+        id="durationSlider"
+        min="0" max="2" step="1" value="1"
+      >
+      <div class="slider-ticks">
+        <div class="tick" data-val="0" onclick="setSlider(0)">6 months<span>Starter</span></div>
+        <div class="tick active" data-val="1" onclick="setSlider(1)">12 months<span>Standard</span></div>
+        <div class="tick" data-val="2" onclick="setSlider(2)">60 months<span>Professional</span></div>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="pricing-cards">
+
+      <!-- STARTER -->
+      <div class="pcard" id="card-0">
+        <div class="pcard-name">Starter</div>
+        <div class="pcard-duration">6 months</div>
+        <div class="pcard-total">Total: <strong>₹5,999</strong></div>
+        <div class="pcard-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount" id="price-0">1,000</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="pcard-saving" id="saving-0">&nbsp;</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li><span class="feat-check">✓</span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check">✓</span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check">✓</span>Unlimited memo submissions</li>
+          <li><span class="feat-check">✓</span>Auto-escalation and delegation</li>
+          <li><span class="feat-check">✓</span>Command Center dashboard</li>
+          <li><span class="feat-check">✓</span>30 days email support</li>
+          <li><span class="feat-check">✓</span>1 month free trial included</li>
+        </ul>
+        <a href="mailto:romit232091@gmail.com?subject=DMS-IA Starter Plan Enquiry" class="pcard-cta">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="pcard active" id="card-1">
+        <div class="pcard-name">Standard</div>
+        <div class="pcard-duration">12 months</div>
+        <div class="pcard-total">Total: <strong>₹9,999</strong></div>
+        <div class="pcard-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount" id="price-1">833</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="pcard-saving" id="saving-1">Save ₹2,004 vs Starter</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li><span class="feat-check">✓</span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check">✓</span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check">✓</span>Unlimited memo submissions</li>
+          <li><span class="feat-check">✓</span>Auto-escalation and delegation</li>
+          <li><span class="feat-check">✓</span>Command Center dashboard</li>
+          <li><span class="feat-check">✓</span>90 days email support</li>
+          <li><span class="feat-check">✓</span>1 month free trial included</li>
+        </ul>
+        <a href="mailto:romit232091@gmail.com?subject=DMS-IA Standard Plan Enquiry" class="pcard-cta">Get Started</a>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="pcard" id="card-2">
+        <div class="pcard-name">Professional</div>
+        <div class="pcard-duration">60 months</div>
+        <div class="pcard-total">Total: <strong>₹27,499</strong></div>
+        <div class="pcard-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount" id="price-2">458</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="pcard-saving" id="saving-2">Save ₹32,501 over 5 years</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li><span class="feat-check">✓</span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check">✓</span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check">✓</span>Unlimited memo submissions</li>
+          <li><span class="feat-check">✓</span>Auto-escalation and delegation</li>
+          <li><span class="feat-check">✓</span>Command Center dashboard</li>
+          <li><span class="feat-check">✓</span>12 months priority email support</li>
+          <li><span class="feat-check">✓</span>All updates for 12 months</li>
+          <li><span class="feat-check">✓</span>1 month free trial included</li>
+        </ul>
+        <a href="mailto:romit232091@gmail.com?subject=DMS-IA Professional Plan Enquiry" class="pcard-cta">Get Started</a>
+      </div>
+
+    </div>
+
+    <!-- SUMMARY STRIP -->
+    <div class="pricing-summary reveal">
+      <div class="psummary">
+        <div class="psummary-val" id="sum-total">₹9,999</div>
+        <div class="psummary-lbl">Total investment</div>
+      </div>
+      <div class="psummary">
+        <div class="psummary-val" id="sum-monthly">₹833/mo</div>
+        <div class="psummary-lbl">Monthly equivalent</div>
+      </div>
+      <div class="psummary">
+        <div class="psummary-val" id="sum-saving">₹2,004</div>
+        <div class="psummary-lbl">Saved vs Starter</div>
+      </div>
+    </div>
+
+    <!-- TRIAL NOTE -->
+    <div class="trial-note reveal">
+      <strong>🎁 Free trial policy:</strong> Every plan starts with <strong>1 month free</strong> — no payment required upfront. If you still have doubts after the first month, we give you <strong>1 additional month free</strong>. You only pay when you are fully satisfied. Maximum free trial period: <strong>2 months</strong>.
+    </div>
+
+    <div class="pricing-contact reveal">
+      Need a custom quote for multiple deployments or enterprise?
+      <a href="mailto:romit232091@gmail.com">Contact us directly →</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var plans = [
+    {
+      name: 'Starter',
+      months: 6,
+      total: 5999,
+      monthly: 1000,
+      saving: '',
+      savingVal: 0,
+      label: '6 months'
+    },
+    {
+      name: 'Standard',
+      months: 12,
+      total: 9999,
+      monthly: 833,
+      saving: 'Save ₹2,004 vs Starter',
+      savingVal: 2004,
+      label: '12 months'
+    },
+    {
+      name: 'Professional',
+      months: 60,
+      total: 27499,
+      monthly: 458,
+      saving: 'Save ₹32,501 over 5 years',
+      savingVal: 32501,
+      label: '60 months'
+    }
+  ];
+
+  var slider = document.getElementById('durationSlider');
+  var display = document.getElementById('slider-display');
+  var ticks = document.querySelectorAll('.tick');
+
+  function fmt(n) {
+    return n.toLocaleString('en-IN');
+  }
+
+  function updateSlider(val) {
+    // Update slider background fill
+    var pct = (val / 2) * 100;
+    slider.style.background =
+      'linear-gradient(to right, #1a56db 0%, #1a56db ' + pct + '%, #e4e4e7 ' + pct + '%, #e4e4e7 100%)';
+
+    // Update display label
+    display.textContent = plans[val].label;
+
+    // Update ticks
+    ticks.forEach(function(t) {
+      t.classList.toggle('active', parseInt(t.dataset.val) === val);
+    });
+
+    // Update cards — highlight selected
+    for (var i = 0; i < 3; i++) {
+      var card = document.getElementById('card-' + i);
+      card.classList.toggle('active', i === val);
+
+      // Animate price
+      var priceEl = document.getElementById('price-' + i);
+      priceEl.style.transform = 'scale(1.08)';
+      priceEl.style.color = i === val ? '#1a56db' : '#111112';
+      setTimeout(function(el) {
+        el.style.transform = 'scale(1)';
+      }, 200, priceEl);
+
+      // Update saving badge
+      var savingEl = document.getElementById('saving-' + i);
+      savingEl.textContent = plans[i].saving || ' ';
+    }
+
+    // Update summary strip
+    var p = plans[val];
+    document.getElementById('sum-total').textContent = '₹' + fmt(p.total);
+    document.getElementById('sum-monthly').textContent = '₹' + fmt(p.monthly) + '/mo';
+    document.getElementById('sum-saving').textContent =
+      p.savingVal > 0 ? '₹' + fmt(p.savingVal) : '—';
+  }
+
+  slider.addEventListener('input', function() {
+    updateSlider(parseInt(this.value));
+  });
+
+  window.setSlider = function(val) {
+    slider.value = val;
+    updateSlider(val);
+  };
+
+  // Init
+  updateSlider(1);
+})();
+</script>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="footer-inner">
@@ -1196,6 +1691,8 @@ footer {
         <a href="#process">How it works</a>
         <a href="#features">Features</a>
         <a href="#security">Security</a>
+        <a href="#pricing">Pricing</a>
+      <a href="#pricing">Pricing</a>
         <a href="#contact">Contact</a>
         <a href="/privacy.html">Privacy Policy</a>
         <a href="/terms.html">Terms of Service</a>
