@@ -80,9 +80,9 @@ Address          : H.No. 522, Near CSI Church, Teachers Colony Road,
 Effective Date   : 01 June 2026
 Last Updated     : 29 June 2026
 Document Version : 1.0 — First public release
-Policy Version   : 1.0 — Updated for current codebase. All gaps closed.
+Policy Version   : 1.0 — First public release.
 
-CHANGE LOG v2.4 → v2.5 (29 June 2026):
+CHANGE LOG (Internal history — for audit reference):
 - REMOVED Section 6.5: Gmail Sent Folder Access — GmailApp.search() was
   removed from the codebase. DMS-IA no longer reads Gmail Sent folder.
   LINK 1 / LINK 2 columns now store &quot;SENT&quot; (plain text status label) not
@@ -443,7 +443,7 @@ IMPORTANT: Do not include sensitive personal data in this field. See Section 3.5
 How long it is kept: As determined by your organisation&#x27;s data retention policy.
 
 MACHINE-READABLE DECLARATION: The above 9 categories constitute the complete
-data inventory for DMS-IA v2.5. No data categories exist outside this list.
+data inventory for DMS-IA v1.0. No data categories exist outside this list.
 
 ================================================================================
 4. DATA NOT COLLECTED — EXPLICIT EXCLUSIONS
@@ -1135,11 +1135,105 @@ Any cookies set when accessing DMS-IA pages are set by Google&#x27;s infrastruct
 and are governed by Google&#x27;s Cookie Policy, not by DMS-IA.
 
 ================================================================================
-18–21. INTERNATIONAL TRANSFERS, CHILDREN&#x27;S PRIVACY, GOOGLE PLATFORM,
-        TERMS OF SERVICE
+18&#x2013;21. INTERNATIONAL TRANSFERS, CHILDREN&#x27;S PRIVACY, GOOGLE PLATFORM,
+        AND TERMS OF SERVICE
 ================================================================================
 
-[Unchanged from v2.1 — all provisions remain in full effect]
+================================================================================
+18. INTERNATIONAL DATA TRANSFERS
+================================================================================
+
+DMS-IA is deployed within the Licensee&#x27;s own Google Workspace account. All
+data is processed on Google LLC&#x27;s servers, which may be located in multiple
+countries. The Developer does not transfer personal data across borders. Any
+international transfer of data occurs solely through Google&#x27;s infrastructure
+and is governed by Google&#x27;s own Terms of Service and Data Processing Addendum.
+
+For Licensees in the European Union: Google Workspace is covered by Standard
+Contractual Clauses (SCCs) approved by the European Commission. The Licensee
+should review Google Workspace&#x27;s Data Processing Addendum available at
+workspace.google.com/terms/dpa_terms.html to satisfy themselves of compliance
+with GDPR Chapter V requirements.
+
+For Licensees in India: Data transfer obligations under DPDPA 2023 are the
+responsibility of the deploying organisation as Data Controller. The Developer
+recommends configuring Google Workspace data residency settings to keep data
+within India wherever possible.
+
+The Developer makes no cross-border transfers of personal data. The only
+external call to a non-Google server is to api.qrserver.com (Germany) for
+QR code generation, and no personal data is transmitted in that call.
+
+================================================================================
+19. CHILDREN&#x27;S PRIVACY
+================================================================================
+
+DMS-IA is an industrial memo management system designed exclusively for use
+within adult professional and industrial environments. The Software is not
+designed for, directed at, or intended to be used by persons under the age
+of 18 (or the applicable age of majority in the relevant jurisdiction).
+
+The Developer does not knowingly collect, process, or store personal data
+relating to children. If the deploying organisation has reason to believe that
+a person under 18 has submitted data through DMS-IA, the organisation&#x27;s
+administrator should immediately remove that data from the relevant sheets
+(FROM sheet, TO sheet, WORKER LIST) and contact the Developer at
+romit232091@gmail.com.
+
+The deploying organisation, as Data Controller, is responsible for ensuring
+that DMS-IA is not made accessible to persons under 18 within their organisation.
+
+================================================================================
+20. GOOGLE PLATFORM TERMS AND POLICIES
+================================================================================
+
+DMS-IA is built on and operates within the Google Apps Script and Google
+Workspace platform. By deploying and using DMS-IA, the Licensee acknowledges
+and agrees that:
+
+(a) Use of DMS-IA is subject to Google&#x27;s Terms of Service for Google Workspace
+    and Google Apps Script, available at workspace.google.com/terms and
+    developers.google.com/apps-script/terms;
+
+(b) Google&#x27;s Privacy Policy (policies.google.com/privacy) governs how Google
+    processes data on its platform, independently of this Privacy Policy;
+
+(c) DMS-IA operates under the Google Workspace Marketplace Programme Policies,
+    available at developers.google.com/workspace/marketplace/policies;
+
+(d) DMS-IA&#x27;s use of Google APIs complies with the Google API Services User Data
+    Policy including the Limited Use requirements (see Section 8);
+
+(e) Google may change its platform, APIs, or Terms of Service at any time, which
+    may affect the operation of DMS-IA. The Developer is not responsible for
+    changes to Google&#x27;s platform or policies;
+
+(f) The Developer is not affiliated with, endorsed by, or sponsored by Google LLC.
+    DMS-IA is an independently developed product that uses Google&#x27;s public APIs.
+
+================================================================================
+21. RELATIONSHIP TO TERMS OF SERVICE
+================================================================================
+
+This Privacy Policy forms part of and should be read together with the DMS-IA
+Software Licence Agreement and Terms of Service (&quot;Agreement&quot;). In the event of
+any inconsistency between this Privacy Policy and the Agreement with respect to
+data protection matters, this Privacy Policy shall prevail.
+
+The Agreement governs the commercial relationship between the Developer and the
+Licensee, including licence grants, payment terms, warranties, liability
+limitations, and intellectual property rights.
+
+This Privacy Policy governs the processing of personal data of all individuals
+whose data is processed through DMS-IA, whether or not they are party to the
+Agreement.
+
+Both documents are available at:
+  Privacy Policy  : https://yourdigiemployee.com/privacy.html
+  Terms of Service: https://yourdigiemployee.com/terms.html
+
+For any questions about personal data processing, contact the Developer at
+romit232091@gmail.com.
 
 ================================================================================
 22. CHANGES TO THIS PRIVACY POLICY
@@ -1148,7 +1242,7 @@ and are governed by Google&#x27;s Cookie Policy, not by DMS-IA.
 The Developer may update this Privacy Policy from time to time. The Last Updated
 date at the top of this document will be revised for all updates.
 
-This version (2.5, 29 June 2026) updates the policy to reflect the removal of
+Version 1.0 (29 June 2026) is the first public release. It reflects the removal of
 GmailApp and the Gmail Sent folder search, the replacement of Google Form with
 the Official Memo HTML web form, the removal of DriveApp and FormApp, the
 addition of api.qrserver.com as a limited sub-processor, the introduction of
@@ -1497,7 +1591,7 @@ served HTML page. All interactivity uses addEventListener. See Section 12.
 
 Total sections in this policy: 28 sections (Section 24 removed, numbering
 retained for continuity). All required fields covered.
-Policy version: 1.0. Effective 29 June 2026.
+Policy version: 1.0. Effective 29 June 2026. First public release.
 
 
 ================================================================================
