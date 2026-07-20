@@ -1,82 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Terms of Service for DMS-IA — Digital Memo System Industrial Automation by Rohmit Neelakant Shirgoppi. Software Licence Agreement v1.0.">
-<title>Terms of Service v1.0 — DMS-IA | Your Digi Employee</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:Arial,sans-serif;color:#333;background:#f9f9f9;}
-header{background:linear-gradient(135deg,#0d47a1,#1a73e8);color:#fff;
-        padding:32px 20px;text-align:center;}
-header h1{font-size:1.7em;margin-bottom:6px;}
-header p{font-size:13px;opacity:0.9;}
-.topbar{background:#fff;border-bottom:1px solid #e0e0e0;
-         padding:10px 20px;font-size:13px;}
-.topbar a{color:#1a73e8;text-decoration:none;}
-.topbar a:hover{text-decoration:underline;}
-.container{max-width:900px;margin:30px auto;padding:0 20px 60px;}
-.card{background:#fff;border-radius:10px;padding:32px;
-       box-shadow:0 2px 8px rgba(0,0,0,0.08);}
-.badge-row{margin-bottom:20px;display:flex;flex-wrap:wrap;gap:8px;}
-.badge{background:#e8f0fe;color:#1a73e8;padding:4px 12px;
-        border-radius:20px;font-size:12px;font-weight:bold;}
-.badge.green{background:#e6f4ea;color:#1e8e3e;}
-.badge.red{background:#fce8e6;color:#c5221f;}
-.badge.orange{background:#fce8b2;color:#e37400;}
-.warning{background:#fff8e1;border-left:4px solid #f9a825;
-          padding:16px 20px;border-radius:0 8px 8px 0;
-          margin-bottom:20px;font-size:14px;line-height:1.6;}
-pre{white-space:pre-wrap;font-family:"Courier New",monospace;
-     font-size:13px;line-height:1.75;color:#333;
-     border-top:1px solid #e0e0e0;padding-top:24px;margin-top:8px;}
-footer{background:#0d47a1;color:#fff;text-align:center;
-        padding:28px 20px;font-size:13px;line-height:2;}
-footer a{color:#fff;text-decoration:underline;}
-@media(max-width:600px){
-  header h1{font-size:1.3em;}
-  .card{padding:20px;}
-  pre{font-size:12px;}
-}
-</style>
-</head>
-<body>
-
-<header>
-  <h1>&#128220; Terms of Service</h1>
-  <p>DMS-IA &mdash; Digital Memo System Industrial Automation &nbsp;|&nbsp; Version 1.0 &nbsp;|&nbsp; 29 June 2026</p>
-</header>
-
-<div class="topbar">
-  <a href="/">&#8592; Back to Home</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="/privacy.html">Privacy Policy</a>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <strong style="color:#333;">Terms of Service</strong>
-  &nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="mailto:romit232091@gmail.com">Contact Developer</a>
-</div>
-
-<div class="container">
-  <div class="card">
-
-    <div class="badge-row">
-      <span class="badge">Version 1.0</span>
-      <span class="badge green">Indian Copyright Act 1957</span>
-      <span class="badge green">DPDPA 2023</span>
-      <span class="badge green">IT Act 2000</span>
-      <span class="badge orange">Effective 29 June 2026</span>
-      <span class="badge red">Legally Binding</span>
-    </div>
-
-    <div class="warning">
-      &#9888;&#65039; <strong>IMPORTANT:</strong> By installing, deploying, or using DMS-IA in any way,
-      you confirm that you have read, understood, and agree to be bound by all terms
-      and conditions of this Agreement. Please read carefully before proceeding.
-    </div>
-
-    <pre>================================================================================
+================================================================================
 SOFTWARE LICENCE AGREEMENT AND TERMS OF SERVICE
 DMS-IA — Digital Memo System Industrial Automation
 ================================================================================
@@ -88,37 +10,73 @@ Contact Email    : romit232091@gmail.com
 Phone            : +91-9535835504
 Address          : H.No. 522, Near CSI Church, Teachers Colony Road,
                    Township, Dandeli — 581325, Karnataka, India
-Document Version : 1.0 — First public release.
+Document Version : 2.4 — Updated for current codebase.
 Effective Date   : 01 June 2026
-Last Updated     : 29 June 2026
+Last Updated     : 19 July 2026
+
+CHANGE LOG v2.3 → v2.4 (19 July 2026):
+- Updated Section 5.1: Disclosed admin@yourdigiemployee.com as the second,
+  equally-monitored contact address the Software itself uses for automated
+  licence/trial/renewal communications, correcting a prior gap where only
+  romit232091@gmail.com was documented while the product's own trial-ending
+  and licence-blocked messages actually directed Licensees elsewhere.
+- Updated Section 8.7: Added clause (f) disclosing that the shared vendor
+  Cloudinary account now separates every Licensee's attachments into a
+  distinct, non-reversible per-deployment folder, as a defense-in-depth
+  measure against one Licensee's files being confused with another's on
+  the shared account (corresponding code change in DMSLIB_1_v29).
+- Updated Section 8.9: Named admin@yourdigiemployee.com explicitly as the
+  address the automated new-installation notice is sent to.
+
+CHANGE LOG v2.2 → v2.3 (19 July 2026):
+- Updated Section 1 (Definitions): Added "Cloudinary" and "Licence Register"
+  definitions. Updated "Official Memo Module" definition — attachments are now
+  uploaded directly to Cloudinary by default, with legacy Google Drive links
+  still supported, rather than Drive links being the only supported method.
+- Updated Section 4.3(m): Corrected attachment description — DMS-IA now supports
+  direct file upload to Cloudinary (this was previously stated as unsupported).
+- Updated Section 8.7: Renamed to "Attachment Storage (Cloudinary) — Licensee
+  Responsibilities" and rewritten to reflect direct Cloudinary upload, automatic
+  3-day retention/deletion, the shared vendor account model, and the
+  per-Licensee Cloudinary override option.
+- Added Section 8.9: Licence Administration Data — discloses the limited data
+  (organisation name, administrator email, spreadsheet ID) transmitted to the
+  Developer at initial setup for licence tracking and renewal billing purposes,
+  correcting the prior implication that the Developer collects no data at all.
+- Updated Section 16.3: script.external_request description now also covers
+  Cloudinary Admin API deletion calls for expired attachments.
+- Updated Schedule B: Acceptable Use Policy attachment-related bullets updated
+  to reflect Cloudinary upload; removed the now-inaccurate statement that DMS-IA
+  does not support direct file uploads.
 
 CHANGE LOG v2.1 → v2.2 (29 June 2026):
 - Updated Section 1 (Definitions): Removed Google Forms and Google Drive
-  from the &quot;Google Workspace&quot; definition — FormApp and DriveApp are not
+  from the "Google Workspace" definition — FormApp and DriveApp are not
   used in the current codebase.
-- Updated Section 1 (Definitions): Added &quot;Official Memo Module&quot; definition
+- Updated Section 1 (Definitions): Added "Official Memo Module" definition
   — the Official Memo is now a built-in HTML web application served via
   HtmlService, not a Google Form.
-- Updated Section 1 (Definitions): Updated &quot;Google Workspace&quot; definition to
+- Updated Section 1 (Definitions): Updated "Google Workspace" definition to
   accurately reflect services DMS-IA actually uses.
-- Updated Section 4.2 (System Requirements): Removed &quot;Gmail access&quot; as a
+- Updated Section 4.2 (System Requirements): Removed "Gmail access" as a
   system requirement for full Gmail API — DMS-IA uses MailApp (send-only,
   script.send_mail scope) which does not require full Gmail access.
 - Updated Section 4.3 (Licensee Responsibilities): Replaced references to
-  &quot;Google Form&quot; with &quot;Official Memo HTML form&quot; throughout.
+  "Google Form" with "Official Memo HTML form" throughout.
 - Updated Section 4.3(c): Corrected HMAC_SECRET minimum length from 16+
   to 32+ characters — matches the code enforcement threshold.
 - Updated Section 4.3: Added responsibilities for Official Memo Module
   (CC DP-01 validation, mandatory Context / Message field, Drive link
   attachment model).
-- Updated Section 8.6: Renamed from &quot;OTP Authentication — Licensee
-  Responsibilities (Call Memo Module)&quot; to cover both modules.
-- Updated Section 10.5(c): &quot;Google Form&quot; replaced with &quot;Official Memo HTML
-  form&quot; and &quot;Call Memo HTML form&quot;.
+- Updated Section 8.6: Renamed from "OTP Authentication — Licensee
+  Responsibilities (Call Memo Module)" to cover both modules.
+- Updated Section 10.5(c): "Google Form" replaced with "Official Memo HTML
+  form" and "Call Memo HTML form".
 - Updated Section 16.3 (OAuth Permissions): Listed all 6 current OAuth
   scopes explicitly, confirmed all non-restricted.
-- Updated Schedule B (Acceptable Use): &quot;Google Form&quot; references replaced
-  with &quot;Official Memo HTML form&quot;. Added Drive link attachment policy.
+- Updated Schedule A: Indicative pricing brackets added
+- Updated Schedule B (Acceptable Use): "Google Form" references replaced
+  with "Official Memo HTML form". Added Drive link attachment policy.
   Confirmed no Google Forms or Google Drive API used.
 
 CHANGE LOG v2.0 → v2.1 (18 June 2026):
@@ -142,9 +100,9 @@ Applicable Acts  : Indian Copyright Act 1957 · Indian Contract Act 1872 ·
 IMPORTANT — READ BEFORE INSTALLING OR USING DMS-IA
 ================================================================================
 
-This Software Licence Agreement and Terms of Service (&quot;Agreement&quot;) is a legally
-binding contract between you or the organisation you represent (&quot;Licensee&quot;, &quot;you&quot;,
-&quot;your&quot;) and Rohmit Neelakant Shirgoppi (&quot;Developer&quot;, &quot;Licensor&quot;, &quot;we&quot;, &quot;us&quot;).
+This Software Licence Agreement and Terms of Service ("Agreement") is a legally
+binding contract between you or the organisation you represent ("Licensee", "you",
+"your") and Rohmit Neelakant Shirgoppi ("Developer", "Licensor", "we", "us").
 
 BY INSTALLING, COPYING, DEPLOYING, RUNNING, OR USING DMS-IA IN ANY WAY, YOU
 CONFIRM THAT YOU HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY ALL TERMS AND
@@ -163,81 +121,96 @@ that entity to this Agreement.
 
 In this Agreement, the following terms have the meanings given below:
 
-&quot;Software&quot; means DMS-IA — Digital Memo System Industrial Automation, including
+"Software" means DMS-IA — Digital Memo System Industrial Automation, including
 all source code (DMS-IA.gs), manifest files (appsscript.json), documentation,
 scripts, templates, email HTML, HTML web application pages, and any updates,
 patches, or new versions provided by the Developer.
 
-&quot;Developer&quot; means Rohmit Neelakant Shirgoppi, the sole author and owner of
+"Developer" means Rohmit Neelakant Shirgoppi, the sole author and owner of
 DMS-IA, residing at H.No. 522, Near CSI Church, Teachers Colony Road, Township,
 Dandeli — 581325, Karnataka, India.
 
-&quot;Licensee&quot; means the individual, company, organisation, or institution that
+"Licensee" means the individual, company, organisation, or institution that
 purchases a licence and deploys the Software.
 
-&quot;Deployment&quot; means a single installation of the Software within one Google
+"Deployment" means a single installation of the Software within one Google
 Workspace account (one Google Spreadsheet + one Google Apps Script project).
 
-&quot;Google Workspace&quot; means Google&#x27;s suite of cloud-based productivity and
+"Google Workspace" means Google's suite of cloud-based productivity and
 collaboration tools. For the purposes of this Agreement, DMS-IA uses and relies
 upon Google Sheets, Gmail (send-only via MailApp), and Google Apps Script.
 DMS-IA does not use Google Forms, Google Drive API (DriveApp), or any other
 Google Workspace service not listed in this definition.
 
-&quot;Authorised Users&quot; means employees, contractors, or representatives of the
+"Authorised Users" means employees, contractors, or representatives of the
 Licensee who are permitted to use the Software under this Agreement.
 
-&quot;Documentation&quot; means all technical documentation, user guides, privacy policy,
+"Documentation" means all technical documentation, user guides, privacy policy,
 and other written materials provided by the Developer in connection with the
 Software.
 
-&quot;Intellectual Property Rights&quot; means all copyright, trade secrets, patents,
+"Intellectual Property Rights" means all copyright, trade secrets, patents,
 trademarks, database rights, and all other proprietary rights worldwide.
 
-&quot;Confidential Information&quot; means the Software source code, algorithms, security
+"Confidential Information" means the Software source code, algorithms, security
 architecture, HMAC token implementation, self-healing mechanisms, and any other
 non-public information disclosed by the Developer.
 
-&quot;Official Memo Module&quot; means the Official Memo HTML web application component
+"Cloudinary" means Cloudinary Ltd., a third-party cloud media storage and
+delivery service used by the Software to store file attachments (photographs,
+videos, and other documents) uploaded by Authorised Users through the Official
+Memo Module. By default, all deployments use a single shared Developer-owned
+Cloudinary account; a Licensee may configure its own Cloudinary account instead,
+as described in the Documentation.
+
+"Licence Register" means the Developer-owned Google Sheet, accessible only to
+the Developer via a dedicated service account, used to record each Licensee's
+spreadsheet identifier, organisation name, administrator email address, licence
+tier, and licence expiry date for the sole purpose of licence administration and
+enforcement.
+
+"Official Memo Module" means the Official Memo HTML web application component
 of DMS-IA, served via Google Apps Script HtmlService, accessible via the Web
 App URL or QR code scan. It allows Authorised Users to submit official internal
 memos through a structured HTML form requiring DP-01 entry, live receiver and CC
 DP-01 validation, mandatory subject and context fields, priority and action
-selection, and an optional Google Drive link for attachments. The form includes
-a three-step flow: fill, preview, and confirm submission.
+selection, and an optional file attachment (photograph, video, or one other
+document, uploaded directly to Cloudinary, or alternatively a legacy Google
+Drive link). The form includes a three-step flow: fill, preview, and confirm
+submission.
 
-&quot;Call Memo Module&quot; means the Call Memo HTML web application component of DMS-IA,
+"Call Memo Module" means the Call Memo HTML web application component of DMS-IA,
 accessible via QR code, which allows Authorised Users to submit Call Memos
 through a mobile-friendly web page requiring OTP authentication.
 
-&quot;OTP&quot; means a one-time password — a 6-digit code generated by the Software and
-delivered to an Authorised User&#x27;s registered email address as a Magic Link, used
-to verify the user&#x27;s identity before granting access to the Call Memo form.
+"OTP" means a one-time password — a 6-digit code generated by the Software and
+delivered to an Authorised User's registered email address as a Magic Link, used
+to verify the user's identity before granting access to the Call Memo form.
 
-&quot;Magic Link&quot; means a unique, time-limited, single-use URL embedded in an OTP
+"Magic Link" means a unique, time-limited, single-use URL embedded in an OTP
 email that, when clicked, authenticates the Authorised User and opens the Call
 Memo submission form with their details pre-filled.
 
-&quot;QR Code&quot; means the machine-readable code generated by the Software and stored
+"QR Code" means the machine-readable code generated by the Software and stored
 in the QR CODE sheet, encoding the DMS-IA portal URL, intended to be printed
-and displayed at the Licensee&#x27;s premises to provide access to both the Official
+and displayed at the Licensee's premises to provide access to both the Official
 Memo and Call Memo modules.
 
-&quot;WORKER LIST&quot; means the Google Sheets tab within DMS-IA storing the Licensee&#x27;s
-workers&#x27; details (department, name, DP number, designation) from which the Call
+"WORKER LIST" means the Google Sheets tab within DMS-IA storing the Licensee's
+workers' details (department, name, DP number, designation) from which the Call
 Memo form populates worker selection lists server-side.
 
-&quot;CALL MEMO Sheet&quot; means the Google Sheets tab permanently storing all Call Memo
+"CALL MEMO Sheet" means the Google Sheets tab permanently storing all Call Memo
 submissions including submitter details, department, people selected, reason for
 overtime, and timestamp.
 
-&quot;QR CODE Sheet&quot; means the Google Sheets tab storing the QR code image for the
+"QR CODE Sheet" means the Google Sheets tab storing the QR code image for the
 DMS-IA portal URL. Contains no personal data.
 
-&quot;Update&quot; means any bug fix, patch, enhancement, or new version of the Software
+"Update" means any bug fix, patch, enhancement, or new version of the Software
 released by the Developer.
 
-&quot;Effective Date&quot; means the date on which the Licensee first installs, deploys,
+"Effective Date" means the date on which the Licensee first installs, deploys,
 or uses the Software, or the date of purchase, whichever is earlier.
 
 ================================================================================
@@ -252,9 +225,9 @@ non-exclusive, non-transferable, non-sublicensable, revocable licence to:
 (a) Install and deploy one (1) instance of the Software within one (1) Google
     Workspace account controlled by the Licensee;
 
-(b) Use the Software solely for the Licensee&#x27;s internal business operations —
+(b) Use the Software solely for the Licensee's internal business operations —
     specifically for the management of internal memo submissions and approvals
-    within the Licensee&#x27;s organisation;
+    within the Licensee's organisation;
 
 (c) Allow Authorised Users to interact with the Software for the purposes
     described in (b) above;
@@ -330,7 +303,7 @@ rejection form, OTP pages, print view), security architecture, self-healing
 mechanisms, and all Intellectual Property Rights therein, are and shall remain
 the exclusive property of the Developer, Rohmit Neelakant Shirgoppi.
 
-The Developer&#x27;s ownership is protected under:
+The Developer's ownership is protected under:
 - Indian Copyright Act 1957
 - Copyright Diary No. SW-25725/2026-CO (filed 01/06/2026)
 - All applicable international copyright treaties and conventions
@@ -341,9 +314,10 @@ Rights in the Software to the Licensee. The Licensee acquires only the limited
 licence rights expressly set out in Section 2.1.
 
 3.3 Licensee Data
-All data generated by the Licensee&#x27;s use of the Software (memo records, staff
+All data generated by the Licensee's use of the Software (memo records, staff
 directory, audit logs, etc.) remains the property of the Licensee. The Developer
-has no claim over Licensee data and no access to it.
+has no claim over Licensee data and no access to it, except for the limited
+Licence Administration Data described in Section 8.9.
 
 3.4 Feedback
 If the Licensee provides feedback, suggestions, or ideas regarding the Software,
@@ -377,20 +351,23 @@ The Software requires:
 - Sufficient MailApp quota for email operations (1,500/day for Workspace,
   100/day for free Gmail — Workspace strongly recommended for organisations)
 - A web browser to access the Google Apps Script editor
+- An internet connection sufficient for Authorised Users to upload photo,
+  video, or document attachments directly to Cloudinary from their browser,
+  where attachments are used
 
 For the Official Memo Module specifically:
 - A desktop or mobile browser capable of opening the Web App URL or scanning
   the QR code
 - The Receiver DP-01 and CC DP-01 (if applicable) must be registered in the
   TO sheet before submission for live validation to succeed
-- Workers&#x27; data (FROM sheet, TO sheet) must be populated before the module
+- Workers' data (FROM sheet, TO sheet) must be populated before the module
   is made available to users
 
 For the Call Memo Module specifically:
 - A mobile device or desktop browser capable of scanning QR codes
 - Gmail or any email client capable of rendering HTML emails and opening links
 - An internet connection at the point of QR code scan
-- Workers&#x27; DP numbers and email addresses entered into the TO sheet before use
+- Workers' DP numbers and email addresses entered into the TO sheet before use
 
 4.3 Licensee Responsibilities
 The Licensee is solely responsible for:
@@ -411,9 +388,13 @@ The Licensee is solely responsible for:
 (l) Informing Authorised Users that the Context / Message field is mandatory
     on the Official Memo HTML form and that submission will be blocked without
     it;
-(m) Informing Authorised Users that file attachments must be shared as a
-    Google Drive public link (&quot;Anyone with the link&quot;) in the attachment field —
-    DMS-IA does not support direct file uploads;
+(m) Informing Authorised Users that file attachments (photos, videos, or one
+    other document) are uploaded directly from the browser to Cloudinary, a
+    third-party storage provider, subject to the size and count limits stated
+    in the Documentation, and are automatically deleted from Cloudinary after
+    a 3-day retention period; legacy Google Drive sharing links remain
+    supported for backward compatibility but are no longer the primary
+    attachment method;
 (n) Informing Authorised Users that the CC DP-01 field on the Official Memo
     form is validated live — only registered DP numbers are accepted.
 
@@ -426,15 +407,15 @@ For the Call Memo Module:
     accessible location for workers to scan;
 (r) Informing workers that the OTP magic link sent to their registered email
     is single-use, expires in 5 minutes, and must not be shared with others;
-(s) Ensuring workers&#x27; registered email addresses in the TO sheet are current
+(s) Ensuring workers' registered email addresses in the TO sheet are current
     and accessible on their mobile devices at the point of QR code scan;
 (t) Regenerating the QR code via the provided menu option if the web app URL
     changes after redeployment.
 
 4.4 Google Account Terms
-The use of DMS-IA is subject to Google&#x27;s Terms of Service for Google Workspace.
+The use of DMS-IA is subject to Google's Terms of Service for Google Workspace.
 The Licensee must comply with all applicable Google policies. The Developer is
-not responsible for any actions taken by Google with respect to the Licensee&#x27;s
+not responsible for any actions taken by Google with respect to the Licensee's
 account.
 
 ================================================================================
@@ -444,6 +425,13 @@ account.
 5.1 Support
 Support is provided via email at romit232091@gmail.com. The Developer will
 respond within 7 business days (see Schedule C for service level targets).
+Automated licence, trial, and renewal communications generated by the
+Software itself (trial-ending reminders and the licence-expired message
+shown when a licence lapses) direct the Licensee to admin@yourdigiemployee.com
+instead — a second address also monitored by the Developer, used
+specifically for licence and renewal matters. Both addresses reach the
+Developer; general support and legal notices should use
+romit232091@gmail.com.
 Support covers:
 - Assistance with installation and initial setup
 - Bug fixes for confirmed defects in the Software
@@ -451,9 +439,9 @@ Support covers:
 
 Support does not cover:
 - Customisation or modification of the Software
-- Issues caused by the Licensee&#x27;s incorrect deployment or configuration
-- Issues caused by Google platform changes outside the Developer&#x27;s control
-- Issues caused by the Licensee&#x27;s Google account being suspended or restricted
+- Issues caused by the Licensee's incorrect deployment or configuration
+- Issues caused by Google platform changes outside the Developer's control
+- Issues caused by the Licensee's Google account being suspended or restricted
 - Training beyond the provided Documentation
 
 5.2 Updates
@@ -467,7 +455,7 @@ specific update, feature, or enhancement to the Software.
 
 5.4 End of Support
 The Developer may discontinue support for a version of the Software with 30
-days&#x27; written notice to the Licensee. The Software will continue to function
+days' written notice to the Licensee. The Software will continue to function
 after end of support, but no further bug fixes or updates will be provided.
 
 ================================================================================
@@ -475,7 +463,7 @@ after end of support, but no further bug fixes or updates will be provided.
 ================================================================================
 
 6.1 Licence Fee
-The licence fee applicable to the Licensee&#x27;s tier is as communicated separately
+The licence fee applicable to the Licensee's tier is as communicated separately
 by the Developer in the invoice or purchase confirmation. Pricing is not stated
 in this Agreement and will be confirmed at time of purchase. For pricing
 enquiries, contact romit232091@gmail.com.
@@ -517,7 +505,7 @@ Confidential Information of the Developer.
 The Licensee shall:
 (a) Keep all Confidential Information strictly confidential;
 (b) Not disclose Confidential Information to any third party without the
-    Developer&#x27;s prior written consent;
+    Developer's prior written consent;
 (c) Use Confidential Information only for the purpose of using the Software
     under this Agreement;
 (d) Restrict access to Confidential Information to Authorised Users who need
@@ -539,20 +527,21 @@ of five (5) years.
 ================================================================================
 
 8.1 Privacy Policy
-The Developer&#x27;s Privacy Policy (available at the URL provided in the Google
+The Developer's Privacy Policy (available at the URL provided in the Google
 Marketplace SDK listing) is incorporated into this Agreement by reference. The
 Licensee agrees to the Privacy Policy as a condition of using the Software.
 
 8.2 Data Controller
 As described in the Privacy Policy, the Licensee is the Data Controller for
 all personal data processed through the Software. The Developer is not a Data
-Controller or Data Processor in respect of end-user data.
+Controller or Data Processor in respect of end-user data, except to the limited
+extent described in Section 8.9 (Licence Administration Data).
 
-8.3 Licensee&#x27;s Data Protection Obligations
+8.3 Licensee's Data Protection Obligations
 The Licensee shall:
 (a) Comply with all applicable data protection laws including DPDPA 2023 and
     any other applicable data protection legislation;
-(b) Inform their employees and users about DMS-IA&#x27;s data processing as required
+(b) Inform their employees and users about DMS-IA's data processing as required
     by DPDPA 2023;
 (c) Implement appropriate technical and organisational measures to protect
     personal data;
@@ -568,12 +557,15 @@ The Licensee shall:
 The Software stores memo content as submitted without filtering. The Licensee
 is solely responsible for ensuring that Authorised Users do not submit sensitive
 personal data through any memo content field, including the Subject, Context /
-Message, and Reason for Overtime fields.
+Message, and Reason for Overtime fields, or through any uploaded attachment.
 
-8.5 Developer&#x27;s Data Access
-The Developer has no access to any data stored in the Licensee&#x27;s DMS-IA
-deployment. All data is stored exclusively within the Licensee&#x27;s own Google
-Workspace account.
+8.5 Developer's Data Access
+The Developer has no access to any memo, HR, or operational data stored in the
+Licensee's DMS-IA deployment. All such data is stored exclusively within the
+Licensee's own Google Workspace account. This is subject only to the limited
+Licence Administration Data described in Section 8.9 and the Cloudinary
+attachment storage described in Section 8.7, both of which are disclosed in
+full in the Privacy Policy.
 
 8.6 OTP Authentication — Licensee Responsibilities (Call Memo Module)
 The Call Memo Module uses OTP authentication to verify worker identity before
@@ -584,37 +576,64 @@ allowing form submission. The Licensee acknowledges and agrees that:
 (b) OTP magic links are delivered to the email address registered in the TO
     sheet. The Licensee is responsible for ensuring TO sheet data is accurate
     and current;
-(c) If a worker&#x27;s registered email is inaccessible at the point of QR scan
+(c) If a worker's registered email is inaccessible at the point of QR scan
     (e.g. no mobile data, incorrect email address), the Licensee is responsible
     for the resulting inability to submit;
 (d) The OTP magic link should not be shared with any other person. The
     Licensee is responsible for communicating this requirement to workers;
 (e) The Developer is not responsible for OTP delivery failures caused by the
-    worker&#x27;s email provider marking the OTP email as spam, the worker&#x27;s mailbox
+    worker's email provider marking the OTP email as spam, the worker's mailbox
     being full, or the registered email address being incorrect in the TO sheet;
 (f) The Software limits OTP sends to 1 per worker per 2 minutes and limits
     brute-force attempts to 5 per worker per 10 minutes. These security limits
     are by design and the Developer is not responsible for access issues
-    resulting from these limits being triggered by the worker&#x27;s own actions;
+    resulting from these limits being triggered by the worker's own actions;
 (g) For security, the OTP is stored as a SHA-256 cryptographic hash — never
     in plain text. A temporary verified session key is created upon successful
     OTP verification and expires automatically after 15 minutes. These are
     internal security measures — the Licensee has no obligation to disclose
     them to workers beyond stating that the link is single-use and time-limited.
 
-8.7 Drive Link Attachments — Licensee Responsibilities (Official Memo Module)
-The Official Memo Module allows Authorised Users to attach files via a Google
-Drive sharing link. The Licensee acknowledges and agrees that:
+8.7 Attachment Storage (Cloudinary) — Licensee Responsibilities (Official Memo
+Module)
+The Official Memo Module allows Authorised Users to attach a configured number
+of photos, one video, and one other document directly from their browser.
+Attachments are uploaded directly to Cloudinary, a third-party cloud storage
+provider, using the shared Developer-owned Cloudinary account by default (see
+the Privacy Policy, Section 9, for full sub-processor disclosure). The Licensee
+acknowledges and agrees that:
 
-(a) DMS-IA stores only the URL provided in the attachment field — it does not
-    upload, copy, or access the file itself;
-(b) The Licensee is responsible for informing Authorised Users that the shared
-    file must have &quot;Anyone with the link&quot; access set in Google Drive before
-    submitting, or the approver will not be able to open it;
-(c) The Developer is not responsible for any file access failures resulting from
-    incorrect sharing permissions, deleted files, or expired sharing links;
-(d) The Licensee is responsible for ensuring that no sensitive or confidential
-    files are shared via memo attachments in violation of applicable law.
+(a) Uploaded files are stored on Cloudinary's infrastructure, not within the
+    Licensee's own Google Workspace account, until automatically deleted;
+(b) Attachments are automatically deleted from Cloudinary approximately 3 days
+    after upload by an automated daily cleanup job; the Licensee should not
+    rely on DMS-IA for long-term file storage and should retain its own copies
+    of any file it needs beyond that period;
+(c) The Licensee may, at its own cost, configure its own Cloudinary account
+    (via Script Properties, as described in the Documentation) so that its
+    attachments are stored under that account instead of the shared vendor
+    account;
+(d) The Developer is not responsible for any file access failures, size-limit
+    rejections, or upload failures caused by Cloudinary service issues, network
+    conditions, or the Licensee exceeding Cloudinary's free-tier limits on the
+    shared vendor account;
+(e) The Licensee is responsible for ensuring that no sensitive, confidential,
+    or unlawful files are uploaded via memo attachments;
+(f) The shared vendor Cloudinary account is used by every Licensee who has not
+    configured its own Cloudinary account. Each Licensee's attachments are
+    uploaded under a distinct, non-reversible per-deployment folder within
+    that shared account, so that files are not commingled in a single flat
+    namespace; this is a technical safeguard, not a substitute for full
+    tenant isolation. A Licensee that requires full isolation of its
+    attachment files from every other Licensee should configure its own
+    Cloudinary account as described in (c) above;
+(g) Legacy Google Drive sharing links remain supported for backward
+    compatibility with memos submitted before this attachment method was
+    introduced, and for any manually-entered Drive link; where a Drive link is
+    used, the shared file must have "Anyone with the link" access set in
+    Google Drive, and the Developer is not responsible for file access failures
+    resulting from incorrect Drive sharing permissions, deleted files, or
+    expired sharing links.
 
 8.8 CC DP-01 Validation — Licensee Responsibilities (Official Memo Module)
 The Official Memo Module validates the CC DP-01 field live before allowing
@@ -625,22 +644,46 @@ submission. The Licensee acknowledges and agrees that:
 (c) Submission is blocked if an invalid CC DP-01 is entered — the submitter
     must either enter a valid DP number or leave the field blank.
 
+8.9 Licence Administration Data — Developer's Limited Data Collection
+Separately from the Licensee's operational memo/HR data (which the Developer
+never accesses, per Section 8.5), the Software transmits the following limited
+information to the Developer, once, at the time of initial setup (selfSetup()),
+for licence administration purposes only:
+
+(a) The Licensee's organisation/company name, as entered during setup;
+(b) The administrator's email address (ADMIN_EMAIL);
+(c) The unique identifier of the Licensee's Google Spreadsheet in which DMS-IA
+    is installed.
+
+This information is recorded in the Licence Register and is also sent once,
+by automated email, to admin@yourdigiemployee.com (the Developer's licence
+and renewal contact address — see Section 5.1), in order to track licence
+validity, trial periods, activation, and renewal billing. The Software also performs a
+periodic, cached (no more than once per 6 hours) automated check of the
+Licence Register — using only the Licensee's spreadsheet identifier as the
+lookup key — to confirm licence status; this check does not transmit any memo,
+HR, or other operational data. This Licence Administration Data is used solely
+for the purposes described in this Section, is not shared with any third party
+other than as necessary to operate the Licence Register itself, and is not
+used for marketing, profiling, or any purpose beyond licence administration
+and support. See the Privacy Policy, Section 8A, for full disclosure.
+
 ================================================================================
 9. WARRANTIES
 ================================================================================
 
-9.1 Developer&#x27;s Limited Warranty
+9.1 Developer's Limited Warranty
 The Developer warrants that:
 (a) The Software will substantially perform the functions described in the
     Documentation for a period of thirty (30) days from the Effective Date
-    (&quot;Warranty Period&quot;);
+    ("Warranty Period");
 (b) The Developer has the right to grant the licence in Section 2.1 and the
     Software does not infringe any third-party intellectual property rights
     known to the Developer.
 
 9.2 Warranty Remedy
 If the Software fails to comply with the warranty in Section 9.1(a) during
-the Warranty Period, the Developer will, at the Developer&#x27;s sole discretion,
+the Warranty Period, the Developer will, at the Developer's sole discretion,
 either repair or replace the defective Software at no charge.
 
 9.3 Warranty Exclusions
@@ -649,19 +692,19 @@ The warranty in Section 9.1 does not apply if:
 (b) The failure results from incorrect installation, deployment, or
     configuration by the Licensee;
 (c) The failure results from changes to the Google platform outside the
-    Developer&#x27;s control;
-(d) The failure results from the Licensee&#x27;s Google account being suspended,
+    Developer's control;
+(d) The failure results from the Licensee's Google account being suspended,
     restricted, or having insufficient quota;
 (e) The Licensee has not deployed the most recent version of the Software.
 
 9.4 DISCLAIMER OF WARRANTIES
 EXCEPT FOR THE EXPRESS LIMITED WARRANTY IN SECTION 9.1, THE SOFTWARE IS PROVIDED
-&quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+"AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
 LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE,
 TITLE, NON-INFRINGEMENT, ACCURACY, RELIABILITY, OR UNINTERRUPTED OPERATION.
 
 THE DEVELOPER DOES NOT WARRANT THAT:
-(a) THE SOFTWARE WILL MEET ALL OF THE LICENSEE&#x27;S REQUIREMENTS;
+(a) THE SOFTWARE WILL MEET ALL OF THE LICENSEE'S REQUIREMENTS;
 (b) THE SOFTWARE WILL OPERATE WITHOUT INTERRUPTION OR ERROR;
 (c) THE SOFTWARE WILL BE COMPATIBLE WITH FUTURE VERSIONS OF GOOGLE WORKSPACE;
 (d) ALL BUGS OR DEFECTS IN THE SOFTWARE WILL BE CORRECTED;
@@ -687,7 +730,7 @@ OTHER LEGAL THEORY, EVEN IF THE DEVELOPER HAS BEEN ADVISED OF THE POSSIBILITY
 OF SUCH DAMAGES.
 
 10.2 Cap on Liability
-TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER&#x27;S TOTAL
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE DEVELOPER'S TOTAL
 CUMULATIVE LIABILITY ARISING OUT OF OR RELATED TO THIS AGREEMENT — WHETHER
 IN CONTRACT, TORT, OR OTHERWISE — SHALL NOT EXCEED THE TOTAL LICENCE FEE PAID
 BY THE LICENSEE FOR THE SOFTWARE IN THE TWELVE (12) MONTHS IMMEDIATELY
@@ -709,7 +752,7 @@ The Developer shall not be responsible or liable for any loss, damage, delay,
 data loss, security breach, operational failure, financial loss, or any other
 consequence — direct or indirect — arising from:
 
-(a) The Licensee&#x27;s or any Authorised User&#x27;s negligent, incorrect, or improper
+(a) The Licensee's or any Authorised User's negligent, incorrect, or improper
     use of the Software, including but not limited to incorrect deployment,
     incorrect configuration, or failure to follow the provided Documentation;
 
@@ -728,33 +771,35 @@ consequence — direct or indirect — arising from:
 
 (f) Submission of sensitive personal data (including health information,
     financial data, or government identification numbers) by any Authorised
-    User into memo content fields, contrary to the warnings in this Agreement
-    and the Privacy Policy;
+    User into memo content fields or attachments, contrary to the warnings in
+    this Agreement and the Privacy Policy;
 
-(g) Loss or corruption of data resulting from the Licensee&#x27;s failure to maintain
+(g) Loss or corruption of data resulting from the Licensee's failure to maintain
     adequate backups, to protect their Google account, or to comply with
-    Google&#x27;s Terms of Service;
+    Google's Terms of Service;
 
 (h) Any delay in memo approval, escalation, or notification caused by the
-    Licensee&#x27;s MailApp quota being exhausted due to the Licensee&#x27;s own usage;
+    Licensee's MailApp quota being exhausted due to the Licensee's own usage;
 
-(i) Any failure, outage, or change in Google&#x27;s platform, APIs, or services
-    that prevents the Software from functioning as expected, where the
-    Developer has no control over such changes;
+(i) Any failure, outage, or change in Google's platform, Cloudinary's platform,
+    or any other third-party service or API that prevents the Software from
+    functioning as expected, where the Developer has no control over such
+    changes;
 
 (j) Any accident, operational incident, business loss, or consequential harm
-    arising from the Licensee&#x27;s reliance on DMS-IA for time-critical decisions
+    arising from the Licensee's reliance on DMS-IA for time-critical decisions
     without maintaining adequate alternative processes;
 
-(k) Any file access failure resulting from an Authorised User sharing a Drive
-    link with incorrect permissions, or a Drive file being deleted or moved
-    after a memo is submitted;
+(k) Any file access failure resulting from an Authorised User sharing a legacy
+    Drive link with incorrect permissions, a Drive file being deleted or moved
+    after a memo is submitted, or an attachment being automatically deleted
+    from Cloudinary after the 3-day retention period;
 
 (l) Any inability of a worker to submit a Call Memo or Official Memo due to
     their registered email address being incorrect, inaccessible, or not
     current in the TO or FROM sheet.
 
-The Licensee agrees that the Developer&#x27;s role is limited to providing the
+The Licensee agrees that the Developer's role is limited to providing the
 Software. The Licensee assumes full responsibility for all consequences arising
 from how the Software is used, configured, and maintained within their
 organisation.
@@ -768,14 +813,14 @@ The Licensee shall indemnify, defend, and hold harmless the Developer from and
 against any and all claims, demands, losses, liabilities, costs, damages, and
 expenses (including reasonable legal fees) arising out of or related to:
 
-(a) The Licensee&#x27;s use of the Software in violation of this Agreement;
-(b) The Licensee&#x27;s violation of any applicable law or regulation;
-(c) The Licensee&#x27;s breach of any representation, warranty, or obligation under
+(a) The Licensee's use of the Software in violation of this Agreement;
+(b) The Licensee's violation of any applicable law or regulation;
+(c) The Licensee's breach of any representation, warranty, or obligation under
     this Agreement;
-(d) Any data breach or data loss arising from the Licensee&#x27;s failure to secure
+(d) Any data breach or data loss arising from the Licensee's failure to secure
     their Google account;
-(e) Any claim by a third party arising from the Licensee&#x27;s use of the Software;
-(f) The Licensee&#x27;s failure to comply with applicable data protection laws
+(e) Any claim by a third party arising from the Licensee's use of the Software;
+(f) The Licensee's failure to comply with applicable data protection laws
     including DPDPA 2023.
 
 ================================================================================
@@ -899,7 +944,7 @@ remaining provisions shall continue in full force and effect.
 
 15.5 Assignment
 The Licensee may not assign, transfer, or sublicence this Agreement or any
-rights under it without the Developer&#x27;s prior written consent. Any purported
+rights under it without the Developer's prior written consent. Any purported
 assignment without consent is void. The Developer may assign this Agreement
 without restriction.
 
@@ -956,7 +1001,7 @@ following additional terms apply:
     in addition to this Agreement;
 (b) Google is not a party to this Agreement and has no responsibility for the
     Software or any support;
-(c) The Licensee&#x27;s use of the Software is subject to Google&#x27;s policies for
+(c) The Licensee's use of the Software is subject to Google's policies for
     installed applications;
 (d) The Developer may list, update, or remove the Software from Google
     Marketplace at any time.
@@ -964,7 +1009,7 @@ following additional terms apply:
 16.2 Private Listing
 If the Software is obtained via a private Marketplace listing, the Licensee
 must not share the private listing link with any party outside their organisation
-without the Developer&#x27;s prior written consent.
+without the Developer's prior written consent.
 
 16.3 OAuth Permissions
 The Software requests the following Google API permissions (OAuth scopes),
@@ -972,7 +1017,7 @@ all of which are non-restricted and do not require CASA security assessment:
 
   https://www.googleapis.com/auth/spreadsheets
   — Required to read and write memo data, configuration, audit logs, and
-    all supporting sheets within the Licensee&#x27;s own spreadsheet.
+    all supporting sheets within the Licensee's own spreadsheet.
 
   https://www.googleapis.com/auth/script.send_mail
   — Required to send all outbound emails via MailApp: approval requests,
@@ -981,14 +1026,18 @@ all of which are non-restricted and do not require CASA security assessment:
 
   https://www.googleapis.com/auth/script.scriptapp
   — Required to install and manage time-based triggers that process the memo
-    queue, check escalations, retry failed emails, run health checks, and
-    clean up expired OTP keys automatically without the owner being present.
+    queue, check escalations, retry failed emails, run health checks, clean up
+    expired OTP keys, and clean up expired Cloudinary attachments
+    automatically without the owner being present.
 
   https://www.googleapis.com/auth/script.external_request
-  — Required to fetch publicly-shared Drive file attachments via UrlFetchApp
-    for inclusion in approval emails, and to generate the QR code image from
-    api.qrserver.com (only the deployment URL is transmitted — no personal
-    data).
+  — Required to fetch publicly-shared legacy Drive file attachments via
+    UrlFetchApp for inclusion in approval emails; to generate the QR code
+    image from api.qrserver.com (only the deployment URL is transmitted — no
+    personal data); and to call Cloudinary's Admin API to delete expired memo
+    attachments after the 3-day retention period. Note: the initial upload of
+    an attachment to Cloudinary happens directly from the Authorised User's
+    browser and does not use this scope.
 
   https://www.googleapis.com/auth/script.container.ui
   — Required to create the DMS-IA custom menu in the Google Sheets toolbar
@@ -999,8 +1048,8 @@ all of which are non-restricted and do not require CASA security assessment:
     setup (selfSetup). Not used during normal operation.
 
 The Licensee acknowledges and accepts these permissions as necessary for the
-Software to function. The Developer&#x27;s use of these permissions is governed by
-Google&#x27;s API Services User Data Policy and the Developer&#x27;s Privacy Policy.
+Software to function. The Developer's use of these permissions is governed by
+Google's API Services User Data Policy and the Developer's Privacy Policy.
 None of these scopes grant access to Gmail inbox, Google Drive files, Google
 Contacts, Google Calendar, or any other sensitive Google service.
 
@@ -1066,12 +1115,12 @@ the Licensee agrees to pay the Developer liquidated damages of:
     competing product.
 
 The parties agree that these amounts represent a genuine pre-estimate of the
-Developer&#x27;s losses and are not a penalty. These amounts are in addition to
+Developer's losses and are not a penalty. These amounts are in addition to
 any actual damages proven.
 
 21.4 Legal Costs
 In any successful action by the Developer to enforce IP rights or
-confidentiality obligations, the Licensee shall pay the Developer&#x27;s reasonable
+confidentiality obligations, the Licensee shall pay the Developer's reasonable
 legal costs and expenses.
 
 ================================================================================
@@ -1142,7 +1191,7 @@ The Developer may, at their sole discretion, offer a Trial Licence to
 prospective Licensees. A Trial Licence permits the Licensee to install and
 use a single deployment of the Software for evaluation purposes only, for a
 period not exceeding thirty (30) calendar days from the date of delivery
-(&quot;Trial Period&quot;).
+("Trial Period").
 
 24.2 Trial Licence Restrictions
 During the Trial Period:
@@ -1162,12 +1211,12 @@ The Developer reserves the right to disable the Software at the end of the
 Trial Period if a full licence is not purchased.
 
 24.4 No Warranty During Trial
-The Software is provided &quot;AS IS&quot; during the Trial Period with no warranties
+The Software is provided "AS IS" during the Trial Period with no warranties
 of any kind. Section 9.1 (Limited Warranty) does not apply to Trial Licences.
 
 24.5 Trial Licence Fee
 Trial Licences may be provided at no charge or at a nominal fee at the
-Developer&#x27;s discretion. Trial fees are non-refundable.
+Developer's discretion. Trial fees are non-refundable.
 
 ================================================================================
 25. ACKNOWLEDGEMENT
@@ -1235,30 +1284,36 @@ The Software may be used only for the following permitted uses:
 - Internal departmental communication management
 - Call Memo submission via QR code for internal overtime call management
 - OTP-authenticated worker identification for Call Memo submissions
-- Printing and displaying QR codes within the Licensee&#x27;s own premises
-- Sharing Google Drive file links as attachments in Official Memos, where the
-  file is stored in the Licensee&#x27;s own Google Drive
+- Printing and displaying QR codes within the Licensee's own premises
+- Uploading photo, video, or document attachments in Official Memos via the
+  built-in Cloudinary upload, or sharing a legacy Google Drive file link,
+  where the file is stored in the Licensee's own Google Drive
 
 The Software must NOT be used for:
 - Processing memos between different organisations (external use)
 - Storing or processing sensitive personal data such as health records,
   financial data, or government identification numbers in any memo content
-  field (Subject, Context / Message, Reason for Overtime)
+  field (Subject, Context / Message, Reason for Overtime) or in any uploaded
+  attachment
 - Any purpose that violates applicable law
 - Harassment, discrimination, or illegal activities
 - Commercial resale or redistribution
 - Any purpose that could damage the reputation of the Developer
 - Processing personal data in excess of what is described in the Privacy Policy
-- Distributing the QR code beyond the Licensee&#x27;s own premises or sharing it
-  with persons outside the Licensee&#x27;s organisation
+- Distributing the QR code beyond the Licensee's own premises or sharing it
+  with persons outside the Licensee's organisation
 - Using the Call Memo Module to collect data from persons who are not
   Authorised Users registered in the WORKER LIST and TO sheets
 - Using the Official Memo Module to submit memos on behalf of another person
-  or using another person&#x27;s DP-01 number
+  or using another person's DP-01 number
 - Attempting to bypass or circumvent OTP authentication or CC DP-01 validation
-- Sharing Google Drive attachment links with persons outside the Licensee&#x27;s
+- Sharing Google Drive attachment links with persons outside the Licensee's
   organisation without appropriate authorisation
-- Uploading files directly to DMS-IA — the Software only stores Drive URLs
+- Uploading attachment files that exceed the configured size or count limits,
+  or attempting to bypass those limits
+- Attempting to access, download in bulk, or scrape attachment files stored
+  under the shared vendor Cloudinary account beyond the Licensee's own
+  submissions
 
 Violation of this Acceptable Use Policy is a material breach of this Agreement
 and may result in immediate termination.
@@ -1289,16 +1344,17 @@ Critical Bug Fix         : Best effort within 14 business days
 Non-Critical Bug Fix     : Best effort within 30 business days
 
 ALL TIERS:
-Software Availability    : Subject to Google platform availability. The
-                           Developer cannot guarantee uptime or performance
-                           beyond what Google&#x27;s infrastructure provides.
+Software Availability    : Subject to Google platform and Cloudinary
+                           availability. The Developer cannot guarantee
+                           uptime or performance beyond what these
+                           third-party platforms provide.
 Quarterly Health Check   : Available on request for Premium Licensees.
 
-&quot;Critical Bug&quot; means a defect that prevents the core memo submission and
-approval workflow from functioning entirely. &quot;Non-Critical Bug&quot; means any
-other confirmed defect. Issues caused by Google platform changes, incorrect
-deployment, quota exhaustion, or incorrect Licensee configuration are excluded
-from SLA coverage.
+"Critical Bug" means a defect that prevents the core memo submission and
+approval workflow from functioning entirely. "Non-Critical Bug" means any
+other confirmed defect. Issues caused by Google platform changes, Cloudinary
+platform changes, incorrect deployment, quota exhaustion, or incorrect
+Licensee configuration are excluded from SLA coverage.
 
 ================================================================================
 SIGNATURE BLOCK
@@ -1333,9 +1389,9 @@ Signature     : _______________________________________________
 
 ================================================================================
 DMS-IA — Digital Memo System Industrial Automation
-Software Licence Agreement and Terms of Service — Version 1.0
+Software Licence Agreement and Terms of Service — Version 2.4
 Updated for current codebase. Full Legal and Commercial Compliance.
-Effective 01 June 2026 | Last Updated 29 June 2026
+Effective 01 June 2026 | Last Updated 19 July 2026
 
 Copyright © 2026 Rohmit Neelakant Shirgoppi (Aadhaar: Neelkant Shirgoppi)
 All Rights Reserved
@@ -1343,20 +1399,3 @@ Protected under the Indian Copyright Act 1957
 Diary No. SW-25725/2026-CO
 romit232091@gmail.com | +91-9535835504
 ================================================================================
-</pre>
-
-  </div>
-</div>
-
-<footer>
-  Copyright &copy; 2026 Rohmit Neelakant Shirgoppi. All Rights Reserved.<br>
-  Your Digi Employee &nbsp;|&nbsp; DMS-IA &mdash; Digital Memo System Industrial Automation<br>
-  Diary No. SW-25725/2026-CO &nbsp;|&nbsp; Dandeli, Karnataka, India<br>
-  <a href="/">Home</a> &nbsp;|&nbsp;
-  <a href="/privacy.html">Privacy Policy</a> &nbsp;|&nbsp;
-  <strong style="color:#888;">Terms of Service</strong> &nbsp;|&nbsp;
-  <a href="mailto:romit232091@gmail.com">Contact</a>
-</footer>
-
-</body>
-</html>
