@@ -355,6 +355,22 @@ nav.scrolled { box-shadow: var(--e1); }
 .ha-yes { background: var(--green-dim); color: var(--green); }
 .ha-no  { background: var(--red-dim);   color: var(--red); }
 
+.solve-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 14px;
+  padding: 4px 2px;
+}
+.solve-item {
+  display: flex; align-items: flex-start; gap: 6px;
+  font-size: 12px; font-weight: 500;
+  color: var(--ink-2); line-height: 1.35;
+}
+.solve-item .material-symbols-outlined {
+  font-size: 15px; color: var(--green);
+  flex-shrink: 0; margin-top: 1px;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    TICKER
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -912,44 +928,22 @@ footer {
           <div class="hc-dot" style="background:var(--red);"></div>
           <div class="hc-dot" style="background:var(--yellow);"></div>
           <div class="hc-dot" style="background:var(--green);"></div>
-          <div class="hc-label">DMS-IA · COMMAND CENTER</div>
+          <div class="hc-label">WHAT DMS-IA SOLVES</div>
         </div>
         <div class="hcard-body">
-          <div class="hstats">
-            <div class="hstat">
-              <div class="hstat-n">24</div>
-              <div class="hstat-l">Pending</div>
-            </div>
-            <div class="hstat">
-              <div class="hstat-n">148</div>
-              <div class="hstat-l">Approved</div>
-            </div>
-            <div class="hstat">
-              <div class="hstat-n">3</div>
-              <div class="hstat-l">Escalated</div>
-            </div>
-          </div>
-          <div class="hmemo">
-            <div class="hrow">
-              <span class="hl">Memo #DMS-2406</span>
-              <span class="pill pill-amber"><span class="material-symbols-outlined">schedule</span> Pending</span>
-            </div>
-            <div class="hrow">
-              <span class="hl">Subject</span>
-              <span class="hv">OT Request — Shift B</span>
-            </div>
-            <div class="hrow">
-              <span class="hl">Priority</span>
-              <span class="pill pill-blue"><span class="material-symbols-outlined">priority_high</span> HIGH</span>
-            </div>
-            <div class="hrow">
-              <span class="hl">Department</span>
-              <span class="hv">Electrical</span>
-            </div>
-          </div>
-          <div class="hactions">
-            <div class="ha ha-yes"><span class="material-symbols-outlined">check_circle</span> Approve</div>
-            <div class="ha ha-no"><span class="material-symbols-outlined">cancel</span> Reject</div>
+          <div class="solve-grid">
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>No hand-delivery delays</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Under 60-second approvals</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>OTP + QR code login</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Unique trackable memo ID</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Blocks unauthorised submissions</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>No memo books or files</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Auto timestamp & priority tags</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Digital safety audit trail</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Photo, PDF & video attachments</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>20-min setup, zero training</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>No personal data required</div>
+            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Fully mobile-friendly</div>
           </div>
         </div>
       </div>
