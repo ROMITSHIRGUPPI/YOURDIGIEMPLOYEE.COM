@@ -65,6 +65,13 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
+*:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+::selection { background: var(--blue-dim); color: var(--blue); }
+
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   vertical-align: middle;
@@ -119,10 +126,11 @@ nav.scrolled { box-shadow: var(--e1); }
 .nav-links a:not(.nav-cta) {
   font-size: 14px; font-weight: 500;
   color: var(--ink-3);
-  transition: color 0.15s;
-  padding: 8px 4px;
+  transition: color 0.15s, background 0.15s;
+  padding: 8px 12px;
+  border-radius: var(--r-pill);
 }
-.nav-links a:not(.nav-cta):hover { color: var(--blue); }
+.nav-links a:not(.nav-cta):hover { color: var(--blue); background: var(--blue-dim); }
 .nav-cta {
   height: 40px;
   padding: 0 var(--s3);
@@ -137,6 +145,7 @@ nav.scrolled { box-shadow: var(--e1); }
   box-shadow: var(--e1);
 }
 .nav-cta:hover { background: #1765cc; box-shadow: var(--e2); transform: translateY(-1px); }
+.nav-cta:active { transform: scale(0.97); }
 .nav-cta .material-symbols-outlined { font-size: 18px; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -243,6 +252,7 @@ nav.scrolled { box-shadow: var(--e1); }
   box-shadow: var(--e1);
 }
 .btn-ink:hover { background: #1765cc; box-shadow: var(--e2); transform: translateY(-1px); }
+.btn-ink:active { transform: scale(0.97); }
 .btn-ink .material-symbols-outlined { font-size: 18px; }
 .btn-ghost {
   height: 48px; padding: 0 var(--s3);
@@ -257,6 +267,7 @@ nav.scrolled { box-shadow: var(--e1); }
   white-space: nowrap;
 }
 .btn-ghost:hover { background: var(--blue-dim); border-color: var(--blue-dim); }
+.btn-ghost:active { transform: scale(0.97); }
 .btn-ghost .material-symbols-outlined { font-size: 18px; }
 
 .hero-trust {
@@ -388,8 +399,9 @@ nav.scrolled { box-shadow: var(--e1); }
 }
 .metrics-inner {
   max-width: var(--max); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4,1fr);
+  display: grid; grid-template-columns: repeat(2,1fr);
   gap: 0;
+  max-width: 560px;
 }
 .metric {
   padding: 0 var(--s5);
@@ -404,9 +416,7 @@ nav.scrolled { box-shadow: var(--e1); }
   color: var(--blue); letter-spacing: -1px;
   font-weight: 700;
 }
-.metric:nth-child(2) .metric-n { color: var(--red); }
-.metric:nth-child(3) .metric-n { color: #a15c00; }
-.metric:nth-child(4) .metric-n { color: var(--green); }
+.metric:nth-child(2) .metric-n { color: var(--green); }
 .metric-n sup {
   font-family: var(--sans);
   font-size: 20px;
@@ -955,21 +965,15 @@ footer {
     <div class="ticker-item"><span class="ticker-sep"></span>Runs on <b>Google Workspace</b></div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>HMAC-SHA256</b> approval security</div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>OTP-authenticated</b> Call Memos</div>
-    <div class="ticker-item"><span class="ticker-sep"></span>Auto-escalation at <b>24h and 48h</b></div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>3,000 workers</b> supported</div>
-    <div class="ticker-item"><span class="ticker-sep"></span><b>CASA verified</b> — all tiers clean</div>
     <div class="ticker-item"><span class="ticker-sep"></span>Made in <b>India 🇮🇳</b></div>
-    <div class="ticker-item"><span class="ticker-sep"></span><b>133 functions</b> in codebase</div>
     <div class="ticker-item"><span class="ticker-sep"></span>Installs in <b>30 minutes</b></div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>Zero servers</b> required</div>
     <div class="ticker-item"><span class="ticker-sep"></span>Runs on <b>Google Workspace</b></div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>HMAC-SHA256</b> approval security</div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>OTP-authenticated</b> Call Memos</div>
-    <div class="ticker-item"><span class="ticker-sep"></span>Auto-escalation at <b>24h and 48h</b></div>
     <div class="ticker-item"><span class="ticker-sep"></span><b>3,000 workers</b> supported</div>
-    <div class="ticker-item"><span class="ticker-sep"></span><b>CASA verified</b> — all tiers clean</div>
     <div class="ticker-item"><span class="ticker-sep"></span>Made in <b>India 🇮🇳</b></div>
-    <div class="ticker-item"><span class="ticker-sep"></span><b>133 functions</b> in codebase</div>
     <div class="ticker-item"><span class="ticker-sep"></span>Installs in <b>30 minutes</b></div>
   </div>
 </div>
@@ -982,16 +986,8 @@ footer {
       <div class="metric-label">Workers per deployment</div>
     </div>
     <div class="metric reveal reveal-delay-1">
-      <div class="metric-n">133</div>
-      <div class="metric-label">Functions in codebase</div>
-    </div>
-    <div class="metric reveal reveal-delay-2">
       <div class="metric-n">0</div>
       <div class="metric-label">Servers required</div>
-    </div>
-    <div class="metric reveal reveal-delay-3">
-      <div class="metric-n">48<sup>h</sup></div>
-      <div class="metric-label">Auto-escalation window</div>
     </div>
   </div>
 </div>
@@ -1196,11 +1192,7 @@ footer {
       <div>
         <div class="section-label reveal">Security</div>
         <h2 class="section-heading reveal">Cryptographic security.<br>No extras needed.</h2>
-        <p class="section-body reveal">Every link is signed. Every OTP is hashed. Verified by Google's CASA security programme. Your memo and HR data stays inside your own Google account — the developer has no access to it.</p>
-        <div class="casa-badge reveal">
-          <span class="material-symbols-outlined">verified</span>
-          CASA Security Verified — Tier 1 passed · Tier 2 not triggered · Tier 3 not triggered
-        </div>
+        <p class="section-body reveal">Every link is signed. Every OTP is hashed. Your memo and HR data stays inside your own Google account — the developer has no access to it.</p>
       </div>
       <div class="security-grid reveal">
         <div class="sec-card">
@@ -1430,6 +1422,7 @@ footer {
   box-shadow: var(--e1);
 }
 .pcard.active .pcard-cta:hover { background: #1765cc; }
+.pcard-cta:active { transform: scale(0.97); }
 
 .pricing-summary {
   margin-top: var(--s5);
@@ -1791,7 +1784,7 @@ footer {
         <a href="/terms.html">Terms of Service</a>
       </nav>
       <div class="footer-copy">
-        Built on Google Workspace · CASA Security Verified · Made in India
+        Built on Google Workspace · Made in India
       </div>
     </div>
   </div>
