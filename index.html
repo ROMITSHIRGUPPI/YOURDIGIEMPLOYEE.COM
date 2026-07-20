@@ -7,16 +7,15 @@
 <title>Your Digi Employee — Digital Memo System</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Google+Sans:wght@400;500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
 <style>
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   DESIGN SYSTEM — Google Material Design 3
-   Roboto everywhere, pill buttons, 4-color brand accents,
-   Material elevation shadows, generous rounding, calm whitespace.
+   DESIGN SYSTEM — Google Material Design 3, v2
+   Roboto + Material Symbols, pill buttons, 4-color brand accents,
+   Material elevation shadows, soft gradient blobs, generous rounding.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
 :root {
-  /* Google neutrals */
   --ink:        #202124;
   --ink-2:      #3c4043;
   --ink-3:      #5f6368;
@@ -26,7 +25,6 @@
   --surface:    #ffffff;
   --surface-2:  #f8f9fa;
 
-  /* Google 4-color brand palette */
   --blue:       #1a73e8;
   --blue-2:     #4285f4;
   --blue-dim:   #e8f0fe;
@@ -49,7 +47,6 @@
   --r-lg: 24px;
   --r-pill: 100px;
 
-  /* Google Material elevation tokens */
   --e1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
   --e2: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
   --e3: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
@@ -68,6 +65,12 @@ body {
 }
 a { text-decoration: none; color: inherit; }
 
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    NAV
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -78,7 +81,9 @@ nav {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--rule-2);
+  transition: box-shadow 0.2s;
 }
+nav.scrolled { box-shadow: var(--e1); }
 .nav-inner {
   height: 100%;
   max-width: var(--max); margin: 0 auto;
@@ -127,21 +132,40 @@ nav {
   font-family: var(--sans);
   font-size: 14px !important;
   font-weight: 500 !important;
-  display: flex; align-items: center;
-  transition: box-shadow 0.15s, background 0.15s;
+  display: flex; align-items: center; gap: 6px;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.15s;
   box-shadow: var(--e1);
 }
-.nav-cta:hover { background: #1765cc; box-shadow: var(--e2); }
+.nav-cta:hover { background: #1765cc; box-shadow: var(--e2); transform: translateY(-1px); }
+.nav-cta .material-symbols-outlined { font-size: 18px; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   HERO
+   HERO — with soft Google-style gradient blob field
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .hero {
+  position: relative;
   padding: calc(64px + var(--s12)) var(--s5) var(--s12);
   background: var(--surface-2);
   border-bottom: 1px solid var(--rule-2);
+  overflow: hidden;
 }
+.hero-blobs {
+  position: absolute; inset: 0;
+  z-index: 0; pointer-events: none;
+  opacity: 0.55;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+.blob-1 { width: 420px; height: 420px; top: -160px; right: 6%; background: radial-gradient(circle, var(--blue-2), transparent 70%); }
+.blob-2 { width: 340px; height: 340px; top: 120px; right: -80px; background: radial-gradient(circle, var(--red), transparent 70%); opacity: 0.5; }
+.blob-3 { width: 300px; height: 300px; bottom: -140px; left: 8%; background: radial-gradient(circle, var(--yellow), transparent 70%); opacity: 0.55; }
+.blob-4 { width: 260px; height: 260px; bottom: 40px; right: 30%; background: radial-gradient(circle, var(--green), transparent 70%); opacity: 0.4; }
+
 .hero-inner {
+  position: relative; z-index: 1;
   max-width: var(--max); margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 440px;
@@ -154,9 +178,11 @@ nav {
   color: var(--blue);
   letter-spacing: 0.02em;
   margin-bottom: var(--s3);
-  background: var(--blue-dim);
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
   padding: 6px 14px 6px 10px;
   border-radius: var(--r-pill);
+  box-shadow: var(--e1);
 }
 .eyebrow-dots { display: inline-flex; gap: 3px; }
 .eyebrow-dots span {
@@ -212,11 +238,12 @@ nav {
   font-family: var(--sans);
   font-size: 14px; font-weight: 500;
   display: inline-flex; align-items: center; gap: 8px;
-  transition: box-shadow 0.15s, background 0.15s;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.15s;
   white-space: nowrap;
   box-shadow: var(--e1);
 }
-.btn-ink:hover { background: #1765cc; box-shadow: var(--e2); }
+.btn-ink:hover { background: #1765cc; box-shadow: var(--e2); transform: translateY(-1px); }
+.btn-ink .material-symbols-outlined { font-size: 18px; }
 .btn-ghost {
   height: 48px; padding: 0 var(--s3);
   color: var(--blue);
@@ -225,10 +252,12 @@ nav {
   display: inline-flex; align-items: center; gap: 6px;
   border-radius: var(--r-pill);
   border: 1px solid var(--rule);
+  background: var(--surface);
   transition: background 0.15s, border-color 0.15s;
   white-space: nowrap;
 }
 .btn-ghost:hover { background: var(--blue-dim); border-color: var(--blue-dim); }
+.btn-ghost .material-symbols-outlined { font-size: 18px; }
 
 .hero-trust {
   display: flex; align-items: center; gap: var(--s2);
@@ -298,6 +327,7 @@ nav {
   font-size: 10.5px; font-weight: 600;
   padding: 3px 10px; border-radius: var(--r-pill);
 }
+.pill .material-symbols-outlined { font-size: 13px; }
 .pill-amber { background: var(--yellow-dim); color: #a15c00; }
 .pill-blue  { background: var(--blue-dim);  color: var(--blue); }
 .pill-green { background: var(--green-dim); color: var(--green); }
@@ -308,7 +338,9 @@ nav {
   padding: 11px; border-radius: var(--r-pill);
   font-size: 11.5px; font-weight: 600;
   text-align: center; letter-spacing: 0.01em;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
 }
+.ha .material-symbols-outlined { font-size: 15px; }
 .ha-yes { background: var(--green-dim); color: var(--green); }
 .ha-no  { background: var(--red-dim);   color: var(--red); }
 
@@ -373,7 +405,6 @@ nav {
   font-weight: 700;
 }
 .metric:nth-child(2) .metric-n { color: var(--red); }
-.metric:nth-child(3) .metric-n { color: var(--yellow); text-shadow: 0 0 0 var(--yellow); }
 .metric:nth-child(3) .metric-n { color: #a15c00; }
 .metric:nth-child(4) .metric-n { color: var(--green); }
 .metric-n sup {
@@ -475,11 +506,12 @@ nav {
 .step-icon-wrap {
   width: 48px; height: 48px; border-radius: var(--r);
   display: flex; align-items: center; justify-content: center;
-  font-size: 22px; margin-bottom: var(--s2);
+  margin-bottom: var(--s2);
 }
-.step-card:nth-child(1) .step-icon-wrap { background: var(--blue-dim); }
-.step-card:nth-child(2) .step-icon-wrap { background: var(--red-dim); }
-.step-card:nth-child(3) .step-icon-wrap { background: var(--green-dim); }
+.step-icon-wrap .material-symbols-outlined { font-size: 24px; }
+.step-card:nth-child(1) .step-icon-wrap { background: var(--blue-dim); color: var(--blue); }
+.step-card:nth-child(2) .step-icon-wrap { background: var(--red-dim); color: var(--red); }
+.step-card:nth-child(3) .step-icon-wrap { background: var(--green-dim); color: var(--green); }
 .step-title {
   font-family: var(--sans);
   font-size: 16px; font-weight: 500;
@@ -510,14 +542,15 @@ nav {
 .feat-icon {
   width: 44px; height: 44px; border-radius: var(--r);
   display: flex; align-items: center; justify-content: center;
-  font-size: 20px; margin-bottom: var(--s2);
+  margin-bottom: var(--s2);
 }
-.feat-card:nth-child(6n+1) .feat-icon { background: var(--blue-dim); }
-.feat-card:nth-child(6n+2) .feat-icon { background: var(--red-dim); }
-.feat-card:nth-child(6n+3) .feat-icon { background: var(--yellow-dim); }
-.feat-card:nth-child(6n+4) .feat-icon { background: var(--green-dim); }
-.feat-card:nth-child(6n+5) .feat-icon { background: var(--blue-dim); }
-.feat-card:nth-child(6n+6) .feat-icon { background: var(--red-dim); }
+.feat-icon .material-symbols-outlined { font-size: 22px; }
+.feat-card:nth-child(6n+1) .feat-icon { background: var(--blue-dim); color: var(--blue); }
+.feat-card:nth-child(6n+2) .feat-icon { background: var(--red-dim); color: var(--red); }
+.feat-card:nth-child(6n+3) .feat-icon { background: var(--yellow-dim); color: #a15c00; }
+.feat-card:nth-child(6n+4) .feat-icon { background: var(--green-dim); color: var(--green); }
+.feat-card:nth-child(6n+5) .feat-icon { background: var(--blue-dim); color: var(--blue); }
+.feat-card:nth-child(6n+6) .feat-icon { background: var(--red-dim); color: var(--red); }
 .feat-title {
   font-family: var(--sans);
   font-size: 15px; font-weight: 500;
@@ -545,9 +578,10 @@ nav {
   width: 20px; height: 20px; border-radius: 50%;
   background: var(--green-dim);
   display: flex; align-items: center; justify-content: center;
-  font-size: 10px; color: var(--green);
-  font-weight: 700; flex-shrink: 0; margin-top: 2px;
+  color: var(--green);
+  flex-shrink: 0; margin-top: 2px;
 }
+.check-icon .material-symbols-outlined { font-size: 15px; }
 .chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--s3); }
 .chip {
   display: inline-flex; align-items: center; gap: 6px;
@@ -556,6 +590,7 @@ nav {
   font-size: 12.5px; font-weight: 500; color: var(--ink-2);
   background: var(--surface-2);
 }
+.chip .material-symbols-outlined { font-size: 16px; }
 
 .product-panel {
   background: var(--surface);
@@ -586,7 +621,7 @@ nav {
 .pr-sub  { font-size: 11.5px; color: var(--ink-4); }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   SECURITY — light Google Safety Center style
+   SECURITY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .security-intro {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -601,6 +636,7 @@ nav {
   padding: 12px 20px; border-radius: var(--r-pill);
   margin-top: var(--s4);
 }
+.casa-badge .material-symbols-outlined { font-size: 18px; }
 .security-grid {
   display: grid; grid-template-columns: repeat(2,1fr);
   gap: var(--s2);
@@ -615,12 +651,13 @@ nav {
 .sec-card-icon {
   width: 40px; height: 40px; border-radius: var(--r);
   display: flex; align-items: center; justify-content: center;
-  font-size: 19px; margin-bottom: var(--s2);
+  margin-bottom: var(--s2);
 }
-.sec-card:nth-child(1) .sec-card-icon { background: var(--blue-dim); }
-.sec-card:nth-child(2) .sec-card-icon { background: var(--yellow-dim); }
-.sec-card:nth-child(3) .sec-card-icon { background: var(--red-dim); }
-.sec-card:nth-child(4) .sec-card-icon { background: var(--green-dim); }
+.sec-card-icon .material-symbols-outlined { font-size: 21px; }
+.sec-card:nth-child(1) .sec-card-icon { background: var(--blue-dim); color: var(--blue); }
+.sec-card:nth-child(2) .sec-card-icon { background: var(--yellow-dim); color: #a15c00; }
+.sec-card:nth-child(3) .sec-card-icon { background: var(--red-dim); color: var(--red); }
+.sec-card:nth-child(4) .sec-card-icon { background: var(--green-dim); color: var(--green); }
 .sec-card-title {
   font-family: var(--sans);
   font-size: 15px; font-weight: 500;
@@ -655,8 +692,10 @@ nav {
   width: 36px; height: 36px; border-radius: var(--r);
   background: var(--surface-2);
   display: flex; align-items: center; justify-content: center;
-  font-size: 15px; flex-shrink: 0;
+  color: var(--ink-3);
+  flex-shrink: 0;
 }
+.contact-icon .material-symbols-outlined { font-size: 18px; }
 .contact-lbl { font-size: 10.5px; color: var(--ink-4); font-weight: 500; }
 .contact-val { font-size: 13.5px; font-weight: 500; color: var(--ink); }
 .contact-val a { color: var(--blue); }
@@ -672,7 +711,9 @@ nav {
   font-family: var(--sans);
   font-size: 19px; font-weight: 500;
   color: var(--ink); margin-bottom: var(--s2);
+  display: flex; align-items: center; gap: 8px;
 }
+.ip-title .material-symbols-outlined { font-size: 22px; color: var(--blue); }
 .ip-body {
   font-size: 13.5px; color: var(--ink-2);
   line-height: 1.8; font-weight: 400;
@@ -688,7 +729,7 @@ nav {
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   FOOTER — light Google style
+   FOOTER
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 footer {
   background: var(--surface-2);
@@ -787,7 +828,7 @@ footer {
 <body>
 
 <!-- ── NAV ── -->
-<nav>
+<nav id="mainNav">
   <div class="nav-inner">
     <a href="/" class="logo">
       <div class="logo-mark"><span class="logo-mark-letter">Y</span></div>
@@ -799,13 +840,22 @@ footer {
       <a href="#security">Security</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
-      <a href="https://workspace.google.com/marketplace" class="nav-cta" target="_blank">Get on Marketplace</a>
+      <a href="https://workspace.google.com/marketplace" class="nav-cta" target="_blank">
+        <span class="material-symbols-outlined">open_in_new</span>
+        Get on Marketplace
+      </a>
     </div>
   </div>
 </nav>
 
 <!-- ── HERO ── -->
 <section class="hero">
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
   <div class="hero-inner">
 
     <div>
@@ -827,8 +877,12 @@ footer {
       <div class="hero-actions reveal reveal-delay-3">
         <a href="https://workspace.google.com/marketplace" class="btn-ink" target="_blank">
           Install Free on Google Workspace
+          <span class="material-symbols-outlined">arrow_forward</span>
         </a>
-        <a href="#process" class="btn-ghost">See how it works</a>
+        <a href="#process" class="btn-ghost">
+          See how it works
+          <span class="material-symbols-outlined">play_circle</span>
+        </a>
       </div>
 
       <div class="hero-trust reveal reveal-delay-3">
@@ -868,7 +922,7 @@ footer {
           <div class="hmemo">
             <div class="hrow">
               <span class="hl">Memo #DMS-2406</span>
-              <span class="pill pill-amber">⏳ Pending</span>
+              <span class="pill pill-amber"><span class="material-symbols-outlined">schedule</span> Pending</span>
             </div>
             <div class="hrow">
               <span class="hl">Subject</span>
@@ -876,7 +930,7 @@ footer {
             </div>
             <div class="hrow">
               <span class="hl">Priority</span>
-              <span class="pill pill-blue">🔴 HIGH</span>
+              <span class="pill pill-blue"><span class="material-symbols-outlined">priority_high</span> HIGH</span>
             </div>
             <div class="hrow">
               <span class="hl">Department</span>
@@ -884,8 +938,8 @@ footer {
             </div>
           </div>
           <div class="hactions">
-            <div class="ha ha-yes">✓ Approve</div>
-            <div class="ha ha-no">✕ Reject</div>
+            <div class="ha ha-yes"><span class="material-symbols-outlined">check_circle</span> Approve</div>
+            <div class="ha ha-no"><span class="material-symbols-outlined">cancel</span> Reject</div>
           </div>
         </div>
       </div>
@@ -1013,19 +1067,19 @@ footer {
     <div class="steps-grid reveal">
       <div class="step-card">
         <div class="step-num">STEP 01</div>
-        <div class="step-icon-wrap">⚡</div>
+        <div class="step-icon-wrap"><span class="material-symbols-outlined">bolt</span></div>
         <div class="step-title">Run selfSetup() once</div>
         <div class="step-desc">One click from the ⚙ DMS-IA menu creates all 12 sheets, installs 5 time-based triggers, generates the unified portal QR code, and builds the SETTINGS dashboard. Zero manual configuration.</div>
       </div>
       <div class="step-card">
         <div class="step-num">STEP 02</div>
-        <div class="step-icon-wrap">📱</div>
+        <div class="step-icon-wrap"><span class="material-symbols-outlined">qr_code_2</span></div>
         <div class="step-title">Staff and workers submit via QR</div>
         <div class="step-desc">One QR code on the factory noticeboard opens a choice screen. Official Memo for staff (OTP-authenticated HTML form). Call Memo for workers (designation-filtered list, up to 30 people). No app download required.</div>
       </div>
       <div class="step-card">
         <div class="step-num">STEP 03</div>
-        <div class="step-icon-wrap">✅</div>
+        <div class="step-icon-wrap"><span class="material-symbols-outlined">task_alt</span></div>
         <div class="step-title">Approvals happen in email</div>
         <div class="step-desc">Approver clicks Approve or Reject in their email. Decision recorded, submitter notified, AUDIT LOG updated — immediately. If no action: auto-escalation fires at 24h, then HOD is alerted at 48h.</div>
       </div>
@@ -1041,32 +1095,32 @@ footer {
     <p class="section-body reveal">Built for industrial organisations where reliability, traceability, and zero downtime are non-negotiable requirements.</p>
     <div class="features-grid">
       <div class="feat-card reveal">
-        <div class="feat-icon">📋</div>
+        <div class="feat-icon"><span class="material-symbols-outlined">description</span></div>
         <div class="feat-title">Official Memo Form</div>
         <div class="feat-desc">Material Design 3 HTML form — priority chips, live DP-01 validation, CC support, direct photo/video attachment upload, 3-step preview and confirm flow.</div>
       </div>
       <div class="feat-card reveal reveal-delay-1">
-        <div class="feat-icon">📱</div>
+        <div class="feat-icon"><span class="material-symbols-outlined">qr_code_scanner</span></div>
         <div class="feat-title">Call Memo via QR</div>
         <div class="feat-desc">Workers scan QR → enter DP → receive OTP magic link → select from designation-filtered worker list → submit. Up to 30 workers per memo, server-side enforced.</div>
       </div>
       <div class="feat-card reveal reveal-delay-2">
-        <div class="feat-icon">⏰</div>
+        <div class="feat-icon"><span class="material-symbols-outlined">schedule</span></div>
         <div class="feat-title">Automatic Escalation</div>
         <div class="feat-desc">Stage 1 reminder to approver at 24h. Stage 2 HOD alert at 48h. Configurable per deployment from SETTINGS sheet. Completely unattended.</div>
       </div>
       <div class="feat-card reveal">
-        <div class="feat-icon">📊</div>
+        <div class="feat-icon"><span class="material-symbols-outlined">dashboard</span></div>
         <div class="feat-title">Command Center</div>
         <div class="feat-desc">Live dashboard — pending, approved, rejected, and escalated memo counts by department. Daily health report emailed to admin every morning automatically.</div>
       </div>
       <div class="feat-card reveal reveal-delay-1">
-        <div class="feat-icon">🔄</div>
+        <div class="feat-icon"><span class="material-symbols-outlined">autorenew</span></div>
         <div class="feat-title">Retry Queue</div>
         <div class="feat-desc">Failed email sends retry with exponential backoff — 1 min, 2 min, 4 min — before alerting the admin. Zero silent failures, ever.</div>
       </div>
       <div class="feat-card reveal reveal-delay-2">
-        <div class="feat-icon">🖨️</div>
+        <div class="feat-icon"><span class="material-symbols-outlined">print</span></div>
         <div class="feat-title">PDF Print View</div>
         <div class="feat-desc">Every approved memo has a branded print view for physical filing. Full memo details, company name, department, decision, and timestamp. Professionally formatted.</div>
       </div>
@@ -1083,22 +1137,22 @@ footer {
       <div class="reveal">
         <p class="section-body">The first product in the Your Digi Employee suite. Built specifically for factories, plants, and industrial organisations managing internal memo workflows across departments.</p>
         <ul class="check-list">
-          <li><span class="check-icon">✓</span>Official Memo HTML form with HMAC-secured approval links</li>
-          <li><span class="check-icon">✓</span>Call Memo QR page with OTP authentication for workers</li>
-          <li><span class="check-icon">✓</span>Trigger-based queue processing every 1 minute</li>
-          <li><span class="check-icon">✓</span>Escalation: Stage 1 (24h) and Stage 2 HOD (48h)</li>
-          <li><span class="check-icon">✓</span>Delegation to backup approver if primary is unavailable</li>
-          <li><span class="check-icon">✓</span>Memo recall and withdrawal before approval</li>
-          <li><span class="check-icon">✓</span>PDF print view for physical archiving</li>
-          <li><span class="check-icon">✓</span>12-test automated test suite built in</li>
-          <li><span class="check-icon">✓</span>Supports up to 3,000 workers in WORKER LIST</li>
-          <li><span class="check-icon">✓</span>Listed on Google Workspace Marketplace</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Official Memo HTML form with HMAC-secured approval links</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Call Memo QR page with OTP authentication for workers</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Trigger-based queue processing every 1 minute</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Escalation: Stage 1 (24h) and Stage 2 HOD (48h)</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Delegation to backup approver if primary is unavailable</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Memo recall and withdrawal before approval</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>PDF print view for physical archiving</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>12-test automated test suite built in</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Supports up to 3,000 workers in WORKER LIST</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Listed on Google Workspace Marketplace</li>
         </ul>
         <div class="chip-row">
           <span class="chip">🇮🇳 Made in India</span>
-          <span class="chip">⚡ Google Apps Script</span>
-          <span class="chip">📊 Google Sheets</span>
-          <span class="chip">🆓 Free to install</span>
+          <span class="chip"><span class="material-symbols-outlined">bolt</span> Google Apps Script</span>
+          <span class="chip"><span class="material-symbols-outlined">table_chart</span> Google Sheets</span>
+          <span class="chip"><span class="material-symbols-outlined">redeem</span> Free to install</span>
         </div>
       </div>
       <div class="reveal reveal-delay-1">
@@ -1144,27 +1198,28 @@ footer {
         <h2 class="section-heading reveal">Cryptographic security.<br>No extras needed.</h2>
         <p class="section-body reveal">Every link is signed. Every OTP is hashed. Verified by Google's CASA security programme. Your memo and HR data stays inside your own Google account — the developer has no access to it.</p>
         <div class="casa-badge reveal">
-          ✓ CASA Security Verified — Tier 1 passed · Tier 2 not triggered · Tier 3 not triggered
+          <span class="material-symbols-outlined">verified</span>
+          CASA Security Verified — Tier 1 passed · Tier 2 not triggered · Tier 3 not triggered
         </div>
       </div>
       <div class="security-grid reveal">
         <div class="sec-card">
-          <div class="sec-card-icon">🔐</div>
+          <div class="sec-card-icon"><span class="material-symbols-outlined">lock</span></div>
           <div class="sec-card-title">HMAC-SHA256 Signing</div>
           <div class="sec-card-body">Every approval link is cryptographically bound to the approver's email, memo ID, and timestamp. Tampering invalidates it immediately.</div>
         </div>
         <div class="sec-card">
-          <div class="sec-card-icon">🔑</div>
+          <div class="sec-card-icon"><span class="material-symbols-outlined">key</span></div>
           <div class="sec-card-title">OTP — SHA-256 Hashed</div>
           <div class="sec-card-body">Raw OTP never stored. SHA-256 hash only. Expires in 5 minutes. Single-use. 5-attempt brute-force limit per 10 minutes.</div>
         </div>
         <div class="sec-card">
-          <div class="sec-card-icon">🛡️</div>
+          <div class="sec-card-icon"><span class="material-symbols-outlined">shield</span></div>
           <div class="sec-card-title">Zero Restricted Scopes</div>
           <div class="sec-card-body">No GmailApp. No DriveApp. No CardService. Six non-restricted OAuth scopes only. CSP-compliant HTML throughout.</div>
         </div>
         <div class="sec-card">
-          <div class="sec-card-icon">🏢</div>
+          <div class="sec-card-icon"><span class="material-symbols-outlined">domain</span></div>
           <div class="sec-card-title">Data Stays Yours</div>
           <div class="sec-card-body">Your memo and HR records live entirely in your own Google Sheets — never on our servers. Optional attachments are stored via Cloudinary with automatic 3-day deletion, and can be moved to your own Cloudinary account any time. Full details in our <a href="/privacy.html">Privacy Policy</a>.</div>
         </div>
@@ -1194,6 +1249,7 @@ footer {
   margin-top: var(--s4);
 }
 .trial-banner strong { font-weight: 700; }
+.trial-banner .material-symbols-outlined { font-size: 18px; }
 
 .slider-wrap {
   margin-top: var(--s8);
@@ -1348,9 +1404,9 @@ footer {
   padding: 5px 0; line-height: 1.45;
 }
 .feat-check {
-  color: var(--green); font-weight: 700;
-  font-size: 11px; margin-top: 2px; flex-shrink: 0;
+  color: var(--green); flex-shrink: 0;
 }
+.feat-check .material-symbols-outlined { font-size: 15px; }
 
 .pcard-cta {
   display: flex; align-items: center; justify-content: center;
@@ -1435,7 +1491,7 @@ footer {
     <p class="section-body reveal">One product. Three commitment lengths. All features included in every plan — no hidden tiers, no feature gating. Choose how long you want to commit.</p>
 
     <div class="trial-banner reveal">
-      <span>🎁</span>
+      <span class="material-symbols-outlined">redeem</span>
       <span><strong>Free trial included:</strong> Every plan comes with 1 month free. Still unsure? Get 1 extra month free — up to 2 months total, no payment needed.</span>
     </div>
 
@@ -1474,15 +1530,15 @@ footer {
         <div class="pcard-saving" id="saving-0">&nbsp;</div>
         <div class="pcard-divider"></div>
         <ul class="pcard-features">
-          <li><span class="feat-check">✓</span>All features — Official Memo + Call Memo</li>
-          <li><span class="feat-check">✓</span>Up to 3,000 workers in WORKER LIST</li>
-          <li><span class="feat-check">✓</span>Unlimited memo submissions</li>
-          <li><span class="feat-check">✓</span>Auto-escalation and delegation</li>
-          <li><span class="feat-check">✓</span>Command Center dashboard</li>
-          <li><span class="feat-check">✓</span>30 days email support</li>
-          <li><span class="feat-check">✓</span>1 month free trial included</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Unlimited memo submissions</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Auto-escalation and delegation</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Command Center dashboard</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>30 days email support</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>1 month free trial included</li>
         </ul>
-        <a href="mailto:romit232091@gmail.com?subject=DMS-IA Starter Plan Enquiry" class="pcard-cta">Get Started</a>
+        <a href="mailto:admin@yourdigiemployee.com?subject=DMS-IA Starter Plan Enquiry" class="pcard-cta">Get Started</a>
       </div>
 
       <!-- STANDARD -->
@@ -1498,15 +1554,15 @@ footer {
         <div class="pcard-saving" id="saving-1">Save ₹2,004 vs Starter</div>
         <div class="pcard-divider"></div>
         <ul class="pcard-features">
-          <li><span class="feat-check">✓</span>All features — Official Memo + Call Memo</li>
-          <li><span class="feat-check">✓</span>Up to 3,000 workers in WORKER LIST</li>
-          <li><span class="feat-check">✓</span>Unlimited memo submissions</li>
-          <li><span class="feat-check">✓</span>Auto-escalation and delegation</li>
-          <li><span class="feat-check">✓</span>Command Center dashboard</li>
-          <li><span class="feat-check">✓</span>90 days email support</li>
-          <li><span class="feat-check">✓</span>1 month free trial included</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Unlimited memo submissions</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Auto-escalation and delegation</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Command Center dashboard</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>90 days email support</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>1 month free trial included</li>
         </ul>
-        <a href="mailto:romit232091@gmail.com?subject=DMS-IA Standard Plan Enquiry" class="pcard-cta">Get Started</a>
+        <a href="mailto:admin@yourdigiemployee.com?subject=DMS-IA Standard Plan Enquiry" class="pcard-cta">Get Started</a>
       </div>
 
       <!-- PROFESSIONAL -->
@@ -1522,16 +1578,16 @@ footer {
         <div class="pcard-saving" id="saving-2">Save ₹32,501 over 5 years</div>
         <div class="pcard-divider"></div>
         <ul class="pcard-features">
-          <li><span class="feat-check">✓</span>All features — Official Memo + Call Memo</li>
-          <li><span class="feat-check">✓</span>Up to 3,000 workers in WORKER LIST</li>
-          <li><span class="feat-check">✓</span>Unlimited memo submissions</li>
-          <li><span class="feat-check">✓</span>Auto-escalation and delegation</li>
-          <li><span class="feat-check">✓</span>Command Center dashboard</li>
-          <li><span class="feat-check">✓</span>12 months priority email support</li>
-          <li><span class="feat-check">✓</span>All updates for 12 months</li>
-          <li><span class="feat-check">✓</span>1 month free trial included</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Unlimited memo submissions</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Auto-escalation and delegation</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Command Center dashboard</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>12 months priority email support</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All updates for 12 months</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>1 month free trial included</li>
         </ul>
-        <a href="mailto:romit232091@gmail.com?subject=DMS-IA Professional Plan Enquiry" class="pcard-cta">Get Started</a>
+        <a href="mailto:admin@yourdigiemployee.com?subject=DMS-IA Professional Plan Enquiry" class="pcard-cta">Get Started</a>
       </div>
 
     </div>
@@ -1559,7 +1615,7 @@ footer {
 
     <div class="pricing-contact reveal">
       Need a custom quote for multiple deployments or enterprise?
-      <a href="mailto:romit232091@gmail.com">Contact us directly →</a>
+      <a href="mailto:admin@yourdigiemployee.com">Contact us directly →</a>
     </div>
 
   </div>
@@ -1659,35 +1715,35 @@ footer {
     <div class="contact-grid">
       <div class="contact-card reveal">
         <div class="contact-row">
-          <div class="contact-icon">👤</div>
+          <div class="contact-icon"><span class="material-symbols-outlined">person</span></div>
           <div>
             <div class="contact-lbl">Developer</div>
-            <div class="contact-val">Rohmit Neelakant Shirgoppi</div>
+            <div class="contact-val">Romit Shirguppi</div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">📧</div>
+          <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
           <div>
             <div class="contact-lbl">Email</div>
-            <div class="contact-val"><a href="mailto:romit232091@gmail.com">romit232091@gmail.com</a></div>
+            <div class="contact-val"><a href="mailto:admin@yourdigiemployee.com">admin@yourdigiemployee.com</a></div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">📱</div>
+          <div class="contact-icon"><span class="material-symbols-outlined">call</span></div>
           <div>
             <div class="contact-lbl">Phone</div>
             <div class="contact-val">+91-9535835504</div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon"><span class="material-symbols-outlined">location_on</span></div>
           <div>
             <div class="contact-lbl">Location</div>
             <div class="contact-val">Dandeli, Karnataka, India</div>
           </div>
         </div>
         <div class="contact-row">
-          <div class="contact-icon">🔗</div>
+          <div class="contact-icon"><span class="material-symbols-outlined">link</span></div>
           <div>
             <div class="contact-lbl">Legal</div>
             <div class="contact-val">
@@ -1700,9 +1756,9 @@ footer {
       </div>
       <div class="ip-card reveal reveal-delay-1">
         <div>
-          <div class="ip-title">Intellectual Property</div>
+          <div class="ip-title"><span class="material-symbols-outlined">gavel</span>Intellectual Property</div>
           <p class="ip-body">
-            DMS-IA — Digital Memo System Industrial Automation is original software protected under the Indian Copyright Act 1957. All source code, algorithms, HTML pages, email templates, and documentation are the exclusive property of Rohmit Neelakant Shirgoppi.
+            DMS-IA — Digital Memo System Industrial Automation is original software protected under the Indian Copyright Act 1957. All source code, algorithms, HTML pages, email templates, and documentation are the exclusive property of Romit Shirguppi.
             <br><br>
             Unauthorised copying, distribution, reverse engineering, or resale is prohibited under the Software Licence Agreement and subject to legal action.
           </p>
@@ -1721,7 +1777,7 @@ footer {
       <div class="footer-brand"><span class="fb-mark"></span>Your Digi Employee</div>
       <div class="footer-sub">
         DMS-IA — Digital Memo System Industrial Automation<br>
-        © 2026 Rohmit Neelakant Shirgoppi · Dandeli, Karnataka, India
+        © 2026 Romit Shirguppi · Dandeli, Karnataka, India
       </div>
     </div>
     <div class="footer-links">
@@ -1746,17 +1802,26 @@ footer {
   var els = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window)) {
     els.forEach(function(el) { el.classList.add('visible'); });
-    return;
+  } else {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    els.forEach(function(el) { io.observe(el); });
   }
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
-  els.forEach(function(el) { io.observe(el); });
+
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 8) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
 })();
 </script>
 
