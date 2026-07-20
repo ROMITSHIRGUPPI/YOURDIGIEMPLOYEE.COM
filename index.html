@@ -278,6 +278,29 @@ nav.scrolled { box-shadow: var(--e1); }
 }
 .trust-sep { color: var(--rule); }
 
+.hero-tagline {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--surface);
+  border: 1px solid rgba(26,115,232,0.15);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  margin-bottom: var(--s5);
+  max-width: 500px;
+  box-shadow: var(--e1);
+}
+.hero-tagline-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--blue-dim);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-tagline-icon .material-symbols-outlined { font-size: 18px; color: var(--blue); }
+.hero-tagline p {
+  font-size: 14.5px; font-weight: 500;
+  color: var(--ink-2); line-height: 1.5;
+}
+.hero-tagline p strong { color: var(--ink); font-weight: 700; }
+
 /* ── HERO CARD ── */
 .hcard {
   background: var(--surface);
@@ -899,6 +922,11 @@ footer {
       <p class="hero-sub reveal reveal-delay-2">
         <strong>DMS-IA</strong> automates your entire internal memo system — submission, routing, approval, escalation — inside your existing Google account. No server. No installation. No paper.
       </p>
+
+      <div class="hero-tagline reveal reveal-delay-2">
+        <div class="hero-tagline-icon"><span class="material-symbols-outlined">record_voice_over</span></div>
+        <p><strong>Your memo speaks for itself now</strong> — attach any photo, video, or document, and every safety detail stays on the record.</p>
+      </div>
 
       <div class="hero-actions reveal reveal-delay-3">
         <a href="https://workspace.google.com/marketplace" class="btn-ink" target="_blank">
