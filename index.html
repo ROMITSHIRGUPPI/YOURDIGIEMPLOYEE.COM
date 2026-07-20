@@ -585,6 +585,8 @@ nav {
   font-size: 12.5px; color: rgba(255,255,255,0.38);
   line-height: 1.7;
 }
+.sec-card-body a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+.sec-card-body a:hover { color: #fff; }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    CONTACT
@@ -990,7 +992,7 @@ footer {
       <div class="feat-card reveal">
         <div class="feat-icon">📋</div>
         <div class="feat-title">Official Memo Form</div>
-        <div class="feat-desc">Material Design 3 HTML form — priority chips, live DP-01 validation, CC support, Google Drive attachment links, 3-step preview and confirm flow.</div>
+        <div class="feat-desc">Material Design 3 HTML form — priority chips, live DP-01 validation, CC support, direct photo/video attachment upload, 3-step preview and confirm flow.</div>
       </div>
       <div class="feat-card reveal reveal-delay-1">
         <div class="feat-icon">📱</div>
@@ -1089,7 +1091,7 @@ footer {
       <div>
         <div class="section-label reveal">Security</div>
         <h2 class="section-heading reveal">Cryptographic security.<br>No extras needed.</h2>
-        <p class="section-body reveal">Every link is signed. Every OTP is hashed. Verified by Google's CASA security programme. All data stays inside your own Google account — the developer has zero access.</p>
+        <p class="section-body reveal">Every link is signed. Every OTP is hashed. Verified by Google's CASA security programme. Your memo and HR data stays inside your own Google account — the developer has no access to it.</p>
         <div class="casa-badge reveal">
           ✓ CASA Security Verified — Tier 1 passed · Tier 2 not triggered · Tier 3 not triggered
         </div>
@@ -1113,7 +1115,7 @@ footer {
         <div class="sec-card">
           <div class="sec-card-icon">🏢</div>
           <div class="sec-card-title">Data Stays Yours</div>
-          <div class="sec-card-body">All data lives in your own Google Sheets. No backend. No external server. The developer cannot access any deployment data.</div>
+          <div class="sec-card-body">Your memo and HR records live entirely in your own Google Sheets — never on our servers. Optional attachments are stored via Cloudinary with automatic 3-day deletion, and can be moved to your own Cloudinary account any time. Full details in our <a href="/privacy.html">Privacy Policy</a>.</div>
         </div>
       </div>
     </div>
@@ -1588,7 +1590,7 @@ footer {
 
       // Update saving badge
       var savingEl = document.getElementById('saving-' + i);
-      savingEl.textContent = plans[i].saving || ' ';
+      savingEl.textContent = plans[i].saving || ' ';
     }
 
     // Update summary strip
