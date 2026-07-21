@@ -148,6 +148,68 @@ nav.scrolled { box-shadow: var(--e1); }
 .nav-cta:active { transform: scale(0.97); }
 .nav-cta .material-symbols-outlined { font-size: 18px; }
 
+.menu-btn {
+  display: none;
+  width: 40px; height: 40px;
+  align-items: center; justify-content: center;
+  border-radius: 50%;
+  border: none; background: transparent;
+  color: var(--ink-2);
+  cursor: pointer;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.menu-btn:hover { background: var(--surface-2); }
+.menu-btn:active { transform: scale(0.92); }
+.menu-btn .material-symbols-outlined { font-size: 24px; }
+
+/* ── MOBILE NAV DRAWER ── */
+.mobile-nav-scrim {
+  position: fixed; inset: 0;
+  background: rgba(32,33,36,0.45);
+  z-index: 150;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.mobile-nav-scrim.open { opacity: 1; pointer-events: auto; }
+.mobile-nav-panel {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(320px, 84vw);
+  background: var(--surface);
+  z-index: 151;
+  box-shadow: var(--e3);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.2,0,0,1);
+  display: flex; flex-direction: column;
+}
+.mobile-nav-panel.open { transform: translateX(0); }
+.mobile-nav-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: var(--s2) var(--s3);
+  border-bottom: 1px solid var(--rule-2);
+  flex-shrink: 0;
+}
+.mobile-nav-head .logo { font-size: 15px; }
+.mobile-nav-links {
+  display: flex; flex-direction: column;
+  padding: var(--s1); overflow-y: auto;
+}
+.mobile-nav-links a {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px;
+  border-radius: var(--r);
+  font-size: 15px; font-weight: 500;
+  color: var(--ink-2);
+  transition: background 0.15s, color 0.15s;
+}
+.mobile-nav-links a:hover, .mobile-nav-links a:active { background: var(--blue-dim); color: var(--blue); }
+.mobile-nav-links a .material-symbols-outlined { font-size: 20px; color: var(--ink-4); flex-shrink: 0; }
+.mobile-nav-links a:hover .material-symbols-outlined,
+.mobile-nav-links a:active .material-symbols-outlined { color: var(--blue); }
+.mobile-nav-cta-wrap { padding: var(--s3); border-top: 1px solid var(--rule-2); flex-shrink: 0; }
+.mobile-nav-cta-wrap .nav-cta { width: 100%; justify-content: center; }
+body.no-scroll { overflow: hidden; }
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    HERO — with soft Google-style gradient blob field
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -543,6 +605,10 @@ nav.scrolled { box-shadow: var(--e1); }
    COMPARISON
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .comparison { margin-top: var(--s8); }
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 .comp-table {
   width: 100%; border-collapse: collapse;
   background: var(--surface);
@@ -916,6 +982,8 @@ footer {
 }
 @media (max-width: 640px) {
   .nav-links a:not(.nav-cta) { display: none; }
+  .nav-links .nav-cta { display: none; }
+  .menu-btn { display: flex; }
   .hero { padding: calc(64px + 56px) var(--s2) 56px; }
   .hero-h { font-size: 34px; }
   .hero-sub { font-size: 15px; }
@@ -927,7 +995,18 @@ footer {
   .features-grid { grid-template-columns: 1fr; }
   .security-grid { grid-template-columns: 1fr; }
   footer { padding: var(--s5) var(--s2); }
-  .comp-table td, .comp-table th { padding: 10px 12px; font-size: 12px; }
+  .table-scroll { margin: 0 calc(-1 * var(--s2)); padding: 0 var(--s2); }
+  .comp-table { min-width: 640px; }
+  .comp-table td, .comp-table th { padding: 10px 12px; font-size: 12.5px; }
+  .table-scroll-hint {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--ink-4);
+    margin-bottom: 10px;
+  }
+  .table-scroll-hint .material-symbols-outlined { font-size: 16px; }
+}
+@media (min-width: 641px) {
+  .table-scroll-hint { display: none; }
 }
 </style>
 </head>
@@ -952,8 +1031,39 @@ footer {
         Get on Marketplace
       </a>
     </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
   </div>
 </nav>
+
+<!-- ── MOBILE NAV DRAWER ── -->
+<div class="mobile-nav-scrim" id="mobileScrim"></div>
+<div class="mobile-nav-panel" id="mobilePanel" role="dialog" aria-label="Site navigation">
+  <div class="mobile-nav-head">
+    <a href="/" class="logo">
+      <div class="logo-mark"><span class="logo-mark-letter">Y</span></div>
+      Your Digi Employee
+    </a>
+    <button class="menu-btn" id="menuCloseBtn" aria-label="Close menu">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  <div class="mobile-nav-links">
+    <a href="#process"><span class="material-symbols-outlined">bolt</span>How it works</a>
+    <a href="#demo"><span class="material-symbols-outlined">play_circle</span>Demo</a>
+    <a href="#features"><span class="material-symbols-outlined">dashboard</span>Features</a>
+    <a href="#security"><span class="material-symbols-outlined">lock</span>Security</a>
+    <a href="#pricing"><span class="material-symbols-outlined">payments</span>Pricing</a>
+    <a href="#contact"><span class="material-symbols-outlined">mail</span>Contact</a>
+  </div>
+  <div class="mobile-nav-cta-wrap">
+    <a href="https://workspace.google.com/marketplace" class="nav-cta" target="_blank">
+      <span class="material-symbols-outlined">open_in_new</span>
+      Get on Marketplace
+    </a>
+  </div>
+</div>
 
 <!-- ── HERO ── -->
 <section class="hero">
@@ -1074,6 +1184,11 @@ footer {
     <h2 class="section-heading reveal">Why the paper memo system fails every factory</h2>
     <p class="section-body reveal">This is the reality of how most Indian industrial organisations handle memos today — and why it costs time, money, and accountability.</p>
     <div class="comparison reveal">
+      <div class="table-scroll-hint">
+        <span class="material-symbols-outlined">swipe</span>
+        Swipe to see the full comparison
+      </div>
+      <div class="table-scroll">
       <table class="comp-table">
         <thead>
           <tr>
@@ -1125,6 +1240,7 @@ footer {
           </tr>
         </tbody>
       </table>
+      </div>
     </div>
   </div>
 </section>
@@ -1913,6 +2029,36 @@ footer {
       nav.classList.remove('scrolled');
     }
   });
+
+  // Mobile nav drawer
+  var menuBtn = document.getElementById('menuBtn');
+  var closeBtn = document.getElementById('menuCloseBtn');
+  var scrim = document.getElementById('mobileScrim');
+  var panel = document.getElementById('mobilePanel');
+
+  function openMenu() {
+    scrim.classList.add('open');
+    panel.classList.add('open');
+    document.body.classList.add('no-scroll');
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    scrim.classList.remove('open');
+    panel.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+  if (menuBtn) {
+    menuBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    scrim.addEventListener('click', closeMenu);
+    panel.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
 })();
 </script>
 
