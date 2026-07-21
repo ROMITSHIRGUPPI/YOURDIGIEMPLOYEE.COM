@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Your Digi Employee — DMS-IA replaces paper memo systems with automated digital workflow inside Google Workspace. Built for industrial organisations.">
+<title>Your Digi Employee — Digital Memo System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Google+Sans:wght@400;500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
+<style>
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   DESIGN SYSTEM — Google Material Design 3, v2
+   Roboto + Material Symbols, pill buttons, 4-color brand accents,
+   Material elevation shadows, soft gradient blobs, generous rounding.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+:root {
+  --ink:        #202124;
+  --ink-2:      #3c4043;
+  --ink-3:      #5f6368;
+  --ink-4:      #80868b;
+  --rule:       #dadce0;
+  --rule-2:     #e8eaed;
+  --surface:    #ffffff;
+  --surface-2:  #f8f9fa;
+
+  --blue:       #1a73e8;
+  --blue-2:     #4285f4;
+  --blue-dim:   #e8f0fe;
+  --red:        #ea4335;
+  --red-dim:    #fce8e6;
+  --yellow:     #fbbc04;
+  --yellow-dim: #fef7e0;
+  --green:      #34a853;
+  --green-dim:  #e6f4ea;
+
+  --sans: 'Google Sans', 'Roboto', Arial, sans-serif;
+  --text: 'Roboto', Arial, sans-serif;
+
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px;
+  --s5: 40px; --s6: 48px; --s8: 64px; --s10: 80px;
+  --s12: 96px; --s16: 128px;
+
+  --max: 1200px;
+  --r: 16px;
+  --r-lg: 24px;
+  --r-pill: 100px;
+
+  --e1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --e2: 0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15);
+  --e3: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+  font-family: var(--text);
+  background: var(--surface);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+
+*:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+::selection { background: var(--blue-dim); color: var(--blue); }
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   NAV
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  height: 64px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule-2);
+  transition: box-shadow 0.2s;
+}
+nav.scrolled { box-shadow: var(--e1); }
+.nav-inner {
+  height: 100%;
+  max-width: var(--max); margin: 0 auto;
+  padding: 0 var(--s5);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  font-family: var(--sans);
+  font-size: 16px; font-weight: 500;
+  letter-spacing: 0; color: var(--ink);
+  display: flex; align-items: center; gap: 10px;
+}
+.logo-mark {
+  width: 30px; height: 30px; border-radius: 8px;
+  position: relative;
+  background: conic-gradient(from 0deg, var(--blue) 0deg 90deg, var(--red) 90deg 180deg, var(--yellow) 180deg 270deg, var(--green) 270deg 360deg);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.logo-mark::after {
+  content: '';
+  position: absolute; inset: 5px;
+  background: #fff; border-radius: 5px;
+}
+.logo-mark-letter {
+  position: relative; z-index: 1;
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 700; color: var(--blue);
+}
+.nav-links {
+  display: flex; align-items: center; gap: var(--s4);
+}
+.nav-links a:not(.nav-cta) {
+  font-size: 14px; font-weight: 500;
+  color: var(--ink-3);
+  transition: color 0.15s, background 0.15s;
+  padding: 8px 12px;
+  border-radius: var(--r-pill);
+}
+.nav-links a:not(.nav-cta):hover { color: var(--blue); background: var(--blue-dim); }
+.nav-cta {
+  height: 40px;
+  padding: 0 var(--s3);
+  background: var(--blue);
+  color: #fff !important;
+  border-radius: var(--r-pill);
+  font-family: var(--sans);
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  display: flex; align-items: center; gap: 6px;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.15s;
+  box-shadow: var(--e1);
+}
+.nav-cta:hover { background: #1765cc; box-shadow: var(--e2); transform: translateY(-1px); }
+.nav-cta:active { transform: scale(0.97); }
+.nav-cta .material-symbols-outlined { font-size: 18px; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HERO — with soft Google-style gradient blob field
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.hero {
+  position: relative;
+  padding: calc(64px + var(--s12)) var(--s5) var(--s12);
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--rule-2);
+  overflow: hidden;
+}
+.hero-blobs {
+  position: absolute; inset: 0;
+  z-index: 0; pointer-events: none;
+  opacity: 0.55;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+}
+.blob-1 { width: 420px; height: 420px; top: -160px; right: 6%; background: radial-gradient(circle, var(--blue-2), transparent 70%); }
+.blob-2 { width: 340px; height: 340px; top: 120px; right: -80px; background: radial-gradient(circle, var(--red), transparent 70%); opacity: 0.5; }
+.blob-3 { width: 300px; height: 300px; bottom: -140px; left: 8%; background: radial-gradient(circle, var(--yellow), transparent 70%); opacity: 0.55; }
+.blob-4 { width: 260px; height: 260px; bottom: 40px; right: 30%; background: radial-gradient(circle, var(--green), transparent 70%); opacity: 0.4; }
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: var(--max); margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: var(--s16);
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex; align-items: center; gap: var(--s1);
+  font-size: 13px; font-weight: 500;
+  color: var(--blue);
+  letter-spacing: 0.02em;
+  margin-bottom: var(--s3);
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  padding: 6px 14px 6px 10px;
+  border-radius: var(--r-pill);
+  box-shadow: var(--e1);
+}
+.eyebrow-dots { display: inline-flex; gap: 3px; }
+.eyebrow-dots span {
+  width: 6px; height: 6px; border-radius: 50%;
+  display: inline-block;
+}
+.eyebrow-dots span:nth-child(1) { background: var(--blue-2); }
+.eyebrow-dots span:nth-child(2) { background: var(--red); }
+.eyebrow-dots span:nth-child(3) { background: var(--yellow); }
+.eyebrow-dots span:nth-child(4) { background: var(--green); }
+
+.hero-h {
+  font-family: var(--sans);
+  font-size: clamp(40px, 4.6vw, 58px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.5px;
+  color: var(--ink);
+  margin-bottom: var(--s3);
+}
+.hero-h b { font-weight: 700; }
+.hero-h .accent { color: var(--blue); font-weight: 700; }
+.hero-h .old {
+  position: relative;
+  color: var(--ink-4);
+  font-weight: 400;
+}
+.hero-h .old::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  top: 50%; transform: translateY(-50%);
+  height: 2px;
+  background: var(--red);
+  border-radius: 1px;
+}
+
+.hero-sub {
+  font-size: 17px; font-weight: 400;
+  color: var(--ink-3); line-height: 1.7;
+  max-width: 500px; margin-bottom: var(--s5);
+}
+.hero-sub strong { font-weight: 500; color: var(--ink); }
+
+.hero-actions {
+  display: flex; align-items: center; gap: var(--s2);
+  flex-wrap: wrap;
+}
+.btn-ink {
+  height: 48px; padding: 0 var(--s4);
+  background: var(--blue); color: #fff;
+  border-radius: var(--r-pill);
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: box-shadow 0.15s, background 0.15s, transform 0.15s;
+  white-space: nowrap;
+  box-shadow: var(--e1);
+}
+.btn-ink:hover { background: #1765cc; box-shadow: var(--e2); transform: translateY(-1px); }
+.btn-ink:active { transform: scale(0.97); }
+.btn-ink .material-symbols-outlined { font-size: 18px; }
+.btn-ghost {
+  height: 48px; padding: 0 var(--s3);
+  color: var(--blue);
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 6px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+.btn-ghost:hover { background: var(--blue-dim); border-color: var(--blue-dim); }
+.btn-ghost:active { transform: scale(0.97); }
+.btn-ghost .material-symbols-outlined { font-size: 18px; }
+
+.hero-trust {
+  display: flex; align-items: center; gap: var(--s2);
+  margin-top: var(--s4);
+  font-size: 13px; color: var(--ink-4);
+  flex-wrap: wrap;
+}
+.trust-sep { color: var(--rule); }
+
+.hero-tagline {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--surface);
+  border: 1px solid rgba(26,115,232,0.15);
+  border-radius: var(--r);
+  padding: 14px 18px;
+  margin-bottom: var(--s5);
+  max-width: 500px;
+  box-shadow: var(--e1);
+}
+.hero-tagline-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: var(--blue-dim);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hero-tagline-icon .material-symbols-outlined { font-size: 18px; color: var(--blue); }
+.hero-tagline p {
+  font-size: 14.5px; font-weight: 500;
+  color: var(--ink-2); line-height: 1.5;
+}
+.hero-tagline p strong { color: var(--ink); font-weight: 700; }
+
+/* ── HERO CARD ── */
+.hcard {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--e2);
+}
+.hcard-chrome {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--rule-2);
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 6px;
+}
+.hc-dot { width: 9px; height: 9px; border-radius: 50%; }
+.hc-label {
+  margin-left: auto;
+  font-size: 10px; letter-spacing: 0.06em;
+  color: var(--ink-4);
+  font-weight: 500;
+}
+.hcard-body { padding: var(--s3); }
+
+.hstats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: var(--s1); margin-bottom: var(--s2);
+}
+.hstat {
+  background: var(--surface-2);
+  border-radius: var(--r);
+  padding: var(--s2) var(--s1);
+  text-align: center;
+}
+.hstat-n {
+  font-family: var(--sans);
+  font-size: 24px; font-weight: 700;
+  color: var(--blue); line-height: 1;
+}
+.hstat:nth-child(2) .hstat-n { color: var(--green); }
+.hstat:nth-child(3) .hstat-n { color: var(--red); }
+.hstat-l { font-size: 10px; color: var(--ink-4); margin-top: 4px; font-weight: 500; }
+
+.hmemo {
+  background: var(--surface-2);
+  border-radius: var(--r);
+  padding: var(--s2); margin-bottom: var(--s2);
+}
+.hrow {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 6px 0; font-size: 12.5px;
+}
+.hrow + .hrow { border-top: 1px solid var(--rule-2); }
+.hl { color: var(--ink-4); }
+.hv { color: var(--ink); font-weight: 500; }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 10.5px; font-weight: 600;
+  padding: 3px 10px; border-radius: var(--r-pill);
+}
+.pill .material-symbols-outlined { font-size: 13px; }
+.pill-amber { background: var(--yellow-dim); color: #a15c00; }
+.pill-blue  { background: var(--blue-dim);  color: var(--blue); }
+.pill-green { background: var(--green-dim); color: var(--green); }
+.pill-red   { background: var(--red-dim);   color: var(--red); }
+
+.hactions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ha {
+  padding: 11px; border-radius: var(--r-pill);
+  font-size: 11.5px; font-weight: 600;
+  text-align: center; letter-spacing: 0.01em;
+  display: flex; align-items: center; justify-content: center; gap: 4px;
+}
+.ha .material-symbols-outlined { font-size: 15px; }
+.ha-yes { background: var(--green-dim); color: var(--green); }
+.ha-no  { background: var(--red-dim);   color: var(--red); }
+
+.solve-strip {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: var(--s3);
+  max-width: 560px;
+}
+.solve-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 500;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-pill);
+  padding: 6px 12px 6px 10px;
+}
+.solve-chip .material-symbols-outlined {
+  font-size: 14px; color: var(--green);
+  flex-shrink: 0;
+}
+
+.hcard-video {
+  position: relative;
+  line-height: 0;
+  background: var(--ink);
+}
+.hcard-video video {
+  width: 100%; height: auto; display: block;
+}
+.hcard-video-caption {
+  position: absolute; left: 12px; bottom: 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 11.5px; font-weight: 500;
+  padding: 6px 12px; border-radius: var(--r-pill);
+}
+.hcard-video-caption .material-symbols-outlined {
+  font-size: 14px; color: var(--red);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TICKER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.ticker {
+  background: var(--surface);
+  padding: 14px 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--rule-2);
+}
+.ticker-track {
+  display: flex; width: max-content;
+  animation: tick 28s linear infinite;
+}
+@keyframes tick {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 0 36px;
+  font-size: 13px; font-weight: 500;
+  color: var(--ink-3);
+  white-space: nowrap;
+}
+.ticker-item b { color: var(--ink); font-weight: 700; }
+.ticker-sep {
+  width: 6px; height: 6px; border-radius: 50%;
+  flex-shrink: 0;
+}
+.ticker-item:nth-child(4n+1) .ticker-sep { background: var(--blue-2); }
+.ticker-item:nth-child(4n+2) .ticker-sep { background: var(--red); }
+.ticker-item:nth-child(4n+3) .ticker-sep { background: var(--yellow); }
+.ticker-item:nth-child(4n+4) .ticker-sep { background: var(--green); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   METRICS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.metrics {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule-2);
+  padding: var(--s8) var(--s5);
+}
+.metrics-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 0;
+  max-width: 560px;
+}
+.metric {
+  padding: 0 var(--s5);
+  border-right: 1px solid var(--rule-2);
+  text-align: center;
+}
+.metric:first-child { padding-left: 0; text-align: left; }
+.metric:last-child  { border-right: none; padding-right: 0; text-align: right; }
+.metric-n {
+  font-family: var(--sans);
+  font-size: 48px; line-height: 1;
+  color: var(--blue); letter-spacing: -1px;
+  font-weight: 700;
+}
+.metric:nth-child(2) .metric-n { color: var(--green); }
+.metric-n sup {
+  font-family: var(--sans);
+  font-size: 20px;
+  vertical-align: top; margin-top: 8px;
+  display: inline-block; font-weight: 700;
+}
+.metric-label {
+  font-size: 13.5px; color: var(--ink-3);
+  margin-top: 8px; font-weight: 400;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SHARED SECTION STYLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.section { padding: var(--s12) var(--s5); }
+.section-alt {
+  background: var(--surface-2);
+  border-top: 1px solid var(--rule-2);
+  border-bottom: 1px solid var(--rule-2);
+}
+.section-inner { max-width: var(--max); margin: 0 auto; }
+
+.section-label {
+  font-size: 12px; font-weight: 600;
+  color: var(--blue); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: var(--s2);
+}
+.section-heading {
+  font-family: var(--sans);
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 400; line-height: 1.15;
+  color: var(--ink); margin-bottom: var(--s2);
+  letter-spacing: -0.3px;
+}
+.section-body {
+  font-size: 16px; font-weight: 400;
+  color: var(--ink-3); line-height: 1.8;
+  max-width: 580px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   COMPARISON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.comparison { margin-top: var(--s8); }
+.comp-table {
+  width: 100%; border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--e1);
+}
+.comp-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.04em;
+  background: var(--surface-2);
+  color: var(--ink-3);
+  border-bottom: 1px solid var(--rule-2);
+}
+.comp-table th.col-dms { color: var(--blue); background: var(--blue-dim); }
+.comp-table td {
+  padding: 14px 20px;
+  font-size: 13.5px; color: var(--ink-2);
+  vertical-align: top; line-height: 1.55;
+}
+.comp-table td:first-child {
+  font-weight: 500; color: var(--ink);
+  width: 22%;
+}
+.comp-table tr:not(:last-child) td { border-bottom: 1px solid var(--rule-2); }
+.comp-table tr:hover td { background: var(--surface-2); }
+.bad-val { color: var(--ink-4); }
+.good-val { color: var(--green); font-weight: 500; }
+.dms-col { background: rgba(26,115,232,0.04); }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HOW IT WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.steps-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: var(--s2); margin-top: var(--s8);
+}
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  padding: var(--s5) var(--s4);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.step-card:hover { box-shadow: var(--e2); transform: translateY(-2px); }
+.step-num {
+  font-size: 11.5px; font-weight: 600;
+  color: var(--ink-4); letter-spacing: 0.1em;
+  margin-bottom: var(--s3);
+}
+.step-icon-wrap {
+  width: 48px; height: 48px; border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--s2);
+}
+.step-icon-wrap .material-symbols-outlined { font-size: 24px; }
+.step-card:nth-child(1) .step-icon-wrap { background: var(--blue-dim); color: var(--blue); }
+.step-card:nth-child(2) .step-icon-wrap { background: var(--red-dim); color: var(--red); }
+.step-card:nth-child(3) .step-icon-wrap { background: var(--green-dim); color: var(--green); }
+.step-title {
+  font-family: var(--sans);
+  font-size: 16px; font-weight: 500;
+  color: var(--ink); margin-bottom: var(--s1);
+}
+.step-desc {
+  font-size: 13.5px; color: var(--ink-3); line-height: 1.7;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FEATURES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.features-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: var(--s2); margin-top: var(--s8);
+}
+.feat-card {
+  padding: var(--s3);
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.feat-card:hover {
+  box-shadow: var(--e2);
+  transform: translateY(-2px);
+}
+.feat-icon {
+  width: 44px; height: 44px; border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--s2);
+}
+.feat-icon .material-symbols-outlined { font-size: 22px; }
+.feat-card:nth-child(6n+1) .feat-icon { background: var(--blue-dim); color: var(--blue); }
+.feat-card:nth-child(6n+2) .feat-icon { background: var(--red-dim); color: var(--red); }
+.feat-card:nth-child(6n+3) .feat-icon { background: var(--yellow-dim); color: #a15c00; }
+.feat-card:nth-child(6n+4) .feat-icon { background: var(--green-dim); color: var(--green); }
+.feat-card:nth-child(6n+5) .feat-icon { background: var(--blue-dim); color: var(--blue); }
+.feat-card:nth-child(6n+6) .feat-icon { background: var(--red-dim); color: var(--red); }
+.feat-title {
+  font-family: var(--sans);
+  font-size: 15px; font-weight: 500;
+  color: var(--ink); margin-bottom: 6px;
+}
+.feat-desc { font-size: 13.5px; color: var(--ink-3); line-height: 1.65; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PRODUCT DETAIL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.product-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--s10); align-items: start;
+  margin-top: var(--s8);
+}
+.check-list { list-style: none; margin-top: var(--s3); }
+.check-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 11px 0;
+  border-bottom: 1px solid var(--rule-2);
+  font-size: 14px; color: var(--ink-2); line-height: 1.5;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-icon {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--green-dim);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--green);
+  flex-shrink: 0; margin-top: 2px;
+}
+.check-icon .material-symbols-outlined { font-size: 15px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--s3); }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: var(--r-pill);
+  border: 1px solid var(--rule);
+  font-size: 12.5px; font-weight: 500; color: var(--ink-2);
+  background: var(--surface-2);
+}
+.chip .material-symbols-outlined { font-size: 16px; }
+
+.product-panel {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg); overflow: hidden;
+  box-shadow: var(--e2);
+}
+.panel-chrome {
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--rule-2);
+  padding: 12px 16px;
+  display: flex; align-items: center; gap: 6px;
+}
+.panel-label {
+  margin-left: var(--s1);
+  font-size: 10.5px; font-weight: 500;
+  color: var(--ink-4);
+  letter-spacing: 0.04em;
+}
+.panel-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--rule-2);
+  font-size: 13px;
+}
+.panel-row:last-child { border-bottom: none; }
+.pr-main { font-weight: 500; color: var(--ink); }
+.pr-sub  { font-size: 11.5px; color: var(--ink-4); }
+
+.demo-video-wrap { margin-top: var(--s8); max-width: 860px; }
+.demo-video-panel {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--e3);
+}
+.demo-video-panel video {
+  width: 100%; height: auto; display: block; background: #000;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SECURITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.security-intro {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--s10); align-items: start;
+  margin-bottom: var(--s6);
+}
+.casa-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--green-dim);
+  color: var(--green);
+  font-size: 13.5px; font-weight: 500;
+  padding: 12px 20px; border-radius: var(--r-pill);
+  margin-top: var(--s4);
+}
+.casa-badge .material-symbols-outlined { font-size: 18px; }
+.security-grid {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: var(--s2);
+}
+.sec-card {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  padding: var(--s3);
+  border: 1px solid var(--rule-2);
+  box-shadow: var(--e1);
+}
+.sec-card-icon {
+  width: 40px; height: 40px; border-radius: var(--r);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: var(--s2);
+}
+.sec-card-icon .material-symbols-outlined { font-size: 21px; }
+.sec-card:nth-child(1) .sec-card-icon { background: var(--blue-dim); color: var(--blue); }
+.sec-card:nth-child(2) .sec-card-icon { background: var(--yellow-dim); color: #a15c00; }
+.sec-card:nth-child(3) .sec-card-icon { background: var(--red-dim); color: var(--red); }
+.sec-card:nth-child(4) .sec-card-icon { background: var(--green-dim); color: var(--green); }
+.sec-card-title {
+  font-family: var(--sans);
+  font-size: 15px; font-weight: 500;
+  color: var(--ink); margin-bottom: 6px;
+}
+.sec-card-body {
+  font-size: 13px; color: var(--ink-3);
+  line-height: 1.7;
+}
+.sec-card-body a { color: var(--blue); text-decoration: underline; }
+.sec-card-body a:hover { color: #1765cc; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: var(--s3); margin-top: var(--s8);
+}
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg); padding: var(--s4);
+  box-shadow: var(--e1);
+}
+.contact-row {
+  display: flex; align-items: center; gap: var(--s2);
+  padding: 11px 0; border-bottom: 1px solid var(--rule-2);
+}
+.contact-row:last-child { border-bottom: none; }
+.contact-icon {
+  width: 36px; height: 36px; border-radius: var(--r);
+  background: var(--surface-2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+.contact-icon .material-symbols-outlined { font-size: 18px; }
+.contact-lbl { font-size: 10.5px; color: var(--ink-4); font-weight: 500; }
+.contact-val { font-size: 13.5px; font-weight: 500; color: var(--ink); }
+.contact-val a { color: var(--blue); }
+
+.ip-card {
+  background: var(--blue-dim);
+  border-radius: var(--r-lg); padding: var(--s4);
+  display: flex; flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(26,115,232,0.15);
+}
+.ip-title {
+  font-family: var(--sans);
+  font-size: 19px; font-weight: 500;
+  color: var(--ink); margin-bottom: var(--s2);
+  display: flex; align-items: center; gap: 8px;
+}
+.ip-title .material-symbols-outlined { font-size: 22px; color: var(--blue); }
+.ip-body {
+  font-size: 13.5px; color: var(--ink-2);
+  line-height: 1.8; font-weight: 400;
+}
+.ip-stamp {
+  display: inline-block; margin-top: var(--s4);
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  color: var(--ink-3);
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 8px 14px; border-radius: var(--r-pill);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   FOOTER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+footer {
+  background: var(--surface-2);
+  padding: var(--s8) var(--s5);
+  border-top: 1px solid var(--rule-2);
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr auto;
+  align-items: end; gap: var(--s5);
+}
+.footer-brand {
+  font-family: var(--sans);
+  font-size: 22px; font-weight: 500;
+  color: var(--ink);
+  margin-bottom: var(--s2);
+  display: flex; align-items: center; gap: 8px;
+}
+.footer-brand .fb-mark {
+  width: 24px; height: 24px; border-radius: 6px;
+  background: conic-gradient(from 0deg, var(--blue) 0deg 90deg, var(--red) 90deg 180deg, var(--yellow) 180deg 270deg, var(--green) 270deg 360deg);
+}
+.footer-sub {
+  font-size: 12.5px; color: var(--ink-4); line-height: 1.8;
+}
+.footer-links {
+  display: flex; flex-direction: column;
+  align-items: flex-end; gap: 10px;
+}
+.footer-nav {
+  display: flex; gap: var(--s3); flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.footer-nav a {
+  font-size: 13px; color: var(--ink-3);
+  transition: color 0.15s;
+}
+.footer-nav a:hover { color: var(--blue); }
+.footer-copy {
+  font-size: 11.5px; color: var(--ink-4);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   REVEAL ANIMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   RESPONSIVE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+@media (max-width: 1024px) {
+  .nav-inner { padding: 0 var(--s3); }
+  .hero { padding: calc(64px + 72px) var(--s3) 72px; }
+  .hero-inner { grid-template-columns: 1fr; gap: var(--s8); }
+  .hcard { max-width: 440px; }
+  .metrics { padding: var(--s6) var(--s3); }
+  .metrics-inner { grid-template-columns: 1fr 1fr; gap: var(--s4); }
+  .metric { border-right: none; text-align: center; padding: var(--s2) var(--s3); }
+  .metric:first-child { text-align: center; padding-left: var(--s3); }
+  .metric:last-child { padding-right: var(--s3); }
+  .section { padding: 72px var(--s3); }
+  .steps-grid { grid-template-columns: 1fr; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+  .security-intro { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-links { align-items: flex-start; }
+  .footer-nav { justify-content: flex-start; }
+}
+@media (max-width: 640px) {
+  .nav-links a:not(.nav-cta) { display: none; }
+  .hero { padding: calc(64px + 56px) var(--s2) 56px; }
+  .hero-h { font-size: 34px; }
+  .hero-sub { font-size: 15px; }
+  .btn-ink, .btn-ghost { width: 100%; justify-content: center; }
+  .metrics-inner { grid-template-columns: 1fr 1fr; }
+  .metric-n { font-size: 36px; }
+  .section { padding: 56px var(--s2); }
+  .features-grid { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: 1fr; }
+  footer { padding: var(--s5) var(--s2); }
+  .comp-table td, .comp-table th { padding: 10px 12px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <div class="logo-mark"><span class="logo-mark-letter">Y</span></div>
+      Your Digi Employee
+    </a>
+    <div class="nav-links">
+      <a href="#process">How it works</a>
+      <a href="#demo">Demo</a>
+      <a href="#features">Features</a>
+      <a href="#security">Security</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+      <a href="https://workspace.google.com/marketplace" class="nav-cta" target="_blank">
+        <span class="material-symbols-outlined">open_in_new</span>
+        Get on Marketplace
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+  <div class="hero-inner">
+
+    <div>
+      <div class="eyebrow reveal">
+        <span class="eyebrow-dots"><span></span><span></span><span></span><span></span></span>
+        Now on Google Workspace Marketplace
+      </div>
+
+      <h1 class="hero-h reveal reveal-delay-1">
+        The <span class="old">paper memo</span><br>
+        has always been<br>
+        <span class="accent">replaceable.</span>
+      </h1>
+
+      <p class="hero-sub reveal reveal-delay-2">
+        <strong>DMS-IA</strong> automates your entire internal memo system — submission, routing, approval, escalation — inside your existing Google account. No server. No installation. No paper.
+      </p>
+
+      <div class="hero-tagline reveal reveal-delay-2">
+        <div class="hero-tagline-icon"><span class="material-symbols-outlined">record_voice_over</span></div>
+        <p><strong>Your memo speaks for itself now</strong> — attach any photo, video, or document, and every safety detail stays on the record.</p>
+      </div>
+
+      <div class="hero-actions reveal reveal-delay-3">
+        <a href="https://workspace.google.com/marketplace" class="btn-ink" target="_blank">
+          Install Free on Google Workspace
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a href="#demo" class="btn-ghost">
+          See how it works
+          <span class="material-symbols-outlined">play_circle</span>
+        </a>
+      </div>
+
+      <div class="hero-trust reveal reveal-delay-3">
+        <span>Built on Google Workspace</span>
+        <span class="trust-sep">·</span>
+        <span>Zero infrastructure cost</span>
+        <span class="trust-sep">·</span>
+        <span>Made in India 🇮🇳</span>
+        <span class="trust-sep">·</span>
+        <span>Copyright SW-25725/2026-CO</span>
+      </div>
+
+      <div class="solve-strip reveal reveal-delay-3">
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>No hand-delivery delays</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Under 60-second approvals</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>OTP + QR code login</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Unique trackable memo ID</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Digital safety audit trail</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>No personal data required</span>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="hcard">
+        <div class="hcard-chrome">
+          <div class="hc-dot" style="background:var(--red);"></div>
+          <div class="hc-dot" style="background:var(--yellow);"></div>
+          <div class="hc-dot" style="background:var(--green);"></div>
+          <div class="hc-label">LIVE RECORDING — NOT A MOCKUP</div>
+        </div>
+        <div class="hcard-video">
+          <video autoplay muted loop playsinline poster="hero_loop_poster.jpg">
+            <source src="dms_ia_hero_loop.mp4" type="video/mp4">
+          </video>
+          <div class="hcard-video-caption">
+            <span class="material-symbols-outlined">videocam</span>
+            Real approval, real inbox, real memo
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── TICKER ── -->
+<div class="ticker">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="ticker-sep"></span><b>Zero servers</b> required</div>
+    <div class="ticker-item"><span class="ticker-sep"></span>Runs on <b>Google Workspace</b></div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>HMAC-SHA256</b> approval security</div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>OTP-authenticated</b> Call Memos</div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>3,000 workers</b> supported</div>
+    <div class="ticker-item"><span class="ticker-sep"></span>Made in <b>India 🇮🇳</b></div>
+    <div class="ticker-item"><span class="ticker-sep"></span>Installs in <b>30 minutes</b></div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>Zero servers</b> required</div>
+    <div class="ticker-item"><span class="ticker-sep"></span>Runs on <b>Google Workspace</b></div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>HMAC-SHA256</b> approval security</div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>OTP-authenticated</b> Call Memos</div>
+    <div class="ticker-item"><span class="ticker-sep"></span><b>3,000 workers</b> supported</div>
+    <div class="ticker-item"><span class="ticker-sep"></span>Made in <b>India 🇮🇳</b></div>
+    <div class="ticker-item"><span class="ticker-sep"></span>Installs in <b>30 minutes</b></div>
+  </div>
+</div>
+
+<!-- ── METRICS ── -->
+<div class="metrics">
+  <div class="metrics-inner">
+    <div class="metric reveal">
+      <div class="metric-n">3<sup>K</sup></div>
+      <div class="metric-label">Workers per deployment</div>
+    </div>
+    <div class="metric reveal reveal-delay-1">
+      <div class="metric-n">0</div>
+      <div class="metric-label">Servers required</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── COMPARISON ── -->
+<section class="section" id="compare">
+  <div class="section-inner">
+    <div class="section-label reveal">Paper vs. digital</div>
+    <h2 class="section-heading reveal">Why the paper memo system fails every factory</h2>
+    <p class="section-body reveal">This is the reality of how most Indian industrial organisations handle memos today — and why it costs time, money, and accountability.</p>
+    <div class="comparison reveal">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>The problem</th>
+            <th>Paper memo system</th>
+            <th class="col-dms">DMS-IA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Approval speed</td>
+            <td class="bad-val">Hours to days, requires physical presence of both parties</td>
+            <td class="good-val dms-col">Seconds — click a link in email from anywhere on any device</td>
+          </tr>
+          <tr>
+            <td>Escalation</td>
+            <td class="bad-val">Manual — someone must remember to follow up, often forgotten</td>
+            <td class="good-val dms-col">Fully automatic: reminder at 24h, HOD alert at 48h</td>
+          </tr>
+          <tr>
+            <td>Audit trail</td>
+            <td class="bad-val">Paper files, easy to lose, misplace, or alter with no trace</td>
+            <td class="good-val dms-col">Permanent, tamper-evident AUDIT LOG in your Sheets</td>
+          </tr>
+          <tr>
+            <td>Infrastructure dependency</td>
+            <td class="bad-val">Works when people are present — fails outside office hours</td>
+            <td class="good-val dms-col">Runs on Google's servers, independent of your office network</td>
+          </tr>
+          <tr>
+            <td>Worker identification</td>
+            <td class="bad-val">Handwritten names — spelling errors, duplicate names, no verification</td>
+            <td class="good-val dms-col">OTP-authenticated QR scan, DP verified against TO sheet</td>
+          </tr>
+          <tr>
+            <td>Approval authenticity</td>
+            <td class="bad-val">Any signature can be forged, no cryptographic proof</td>
+            <td class="good-val dms-col">HMAC-SHA256 signed — mathematically bound to each approver</td>
+          </tr>
+          <tr>
+            <td>Total cost</td>
+            <td class="bad-val">Paper, printing, storage, admin time — recurring every month</td>
+            <td class="good-val dms-col">₹0 — runs entirely inside your existing Google account</td>
+          </tr>
+          <tr>
+            <td>Setup time</td>
+            <td class="bad-val">New systems need weeks of IT work and procurement</td>
+            <td class="good-val dms-col">30 minutes — one selfSetup() function does everything</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section class="section section-alt" id="process">
+  <div class="section-inner">
+    <div class="section-label reveal">Process</div>
+    <h2 class="section-heading reveal">Three steps. Fully automated.</h2>
+    <p class="section-body reveal">Install once. Every memo after that is tracked, routed, and resolved without any manual work.</p>
+    <div class="steps-grid reveal">
+      <div class="step-card">
+        <div class="step-num">STEP 01</div>
+        <div class="step-icon-wrap"><span class="material-symbols-outlined">bolt</span></div>
+        <div class="step-title">Run selfSetup() once</div>
+        <div class="step-desc">One click from the ⚙ DMS-IA menu creates all 12 sheets, installs 5 time-based triggers, generates the unified portal QR code, and builds the SETTINGS dashboard. Zero manual configuration.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">STEP 02</div>
+        <div class="step-icon-wrap"><span class="material-symbols-outlined">qr_code_2</span></div>
+        <div class="step-title">Staff and workers submit via QR</div>
+        <div class="step-desc">One QR code on the factory noticeboard opens a choice screen. Official Memo for staff (OTP-authenticated HTML form). Call Memo for workers (designation-filtered list, up to 30 people). No app download required.</div>
+      </div>
+      <div class="step-card">
+        <div class="step-num">STEP 03</div>
+        <div class="step-icon-wrap"><span class="material-symbols-outlined">task_alt</span></div>
+        <div class="step-title">Approvals happen in email</div>
+        <div class="step-desc">Approver clicks Approve or Reject in their email. Decision recorded, submitter notified, AUDIT LOG updated — immediately. If no action: auto-escalation fires at 24h, then HOD is alerted at 48h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DEMO VIDEO ── -->
+<section class="section section-alt" id="demo">
+  <div class="section-inner">
+    <div class="section-label reveal">See it in action</div>
+    <h2 class="section-heading reveal">Watch a real memo get approved</h2>
+    <p class="section-body reveal">No slides, no staged screenshots — this is an actual DMS-IA deployment: submitting an Official Memo, the approval email landing in Gmail, and the decision recorded instantly.</p>
+    <div class="demo-video-wrap reveal">
+      <div class="demo-video-panel">
+        <div class="panel-chrome">
+          <div class="hc-dot" style="background:var(--red);"></div>
+          <div class="hc-dot" style="background:var(--yellow);"></div>
+          <div class="hc-dot" style="background:var(--green);"></div>
+          <div class="panel-label">DMS-IA · OFFICIAL MEMO WALKTHROUGH · 4:30</div>
+        </div>
+        <video controls preload="metadata" poster="demo_full_poster.jpg">
+          <source src="dms_ia_demo_full.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="section" id="features">
+  <div class="section-inner">
+    <div class="section-label reveal">Features</div>
+    <h2 class="section-heading reveal">Everything your workflow needs</h2>
+    <p class="section-body reveal">Built for industrial organisations where reliability, traceability, and zero downtime are non-negotiable requirements.</p>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon"><span class="material-symbols-outlined">description</span></div>
+        <div class="feat-title">Official Memo Form</div>
+        <div class="feat-desc">Material Design 3 HTML form — priority chips, live DP-01 validation, CC support, direct photo/video attachment upload, 3-step preview and confirm flow.</div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-icon"><span class="material-symbols-outlined">qr_code_scanner</span></div>
+        <div class="feat-title">Call Memo via QR</div>
+        <div class="feat-desc">Workers scan QR → enter DP → receive OTP magic link → select from designation-filtered worker list → submit. Up to 30 workers per memo, server-side enforced.</div>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-icon"><span class="material-symbols-outlined">schedule</span></div>
+        <div class="feat-title">Automatic Escalation</div>
+        <div class="feat-desc">Stage 1 reminder to approver at 24h. Stage 2 HOD alert at 48h. Configurable per deployment from SETTINGS sheet. Completely unattended.</div>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon"><span class="material-symbols-outlined">dashboard</span></div>
+        <div class="feat-title">Command Center</div>
+        <div class="feat-desc">Live dashboard — pending, approved, rejected, and escalated memo counts by department. Daily health report emailed to admin every morning automatically.</div>
+      </div>
+      <div class="feat-card reveal reveal-delay-1">
+        <div class="feat-icon"><span class="material-symbols-outlined">autorenew</span></div>
+        <div class="feat-title">Retry Queue</div>
+        <div class="feat-desc">Failed email sends retry with exponential backoff — 1 min, 2 min, 4 min — before alerting the admin. Zero silent failures, ever.</div>
+      </div>
+      <div class="feat-card reveal reveal-delay-2">
+        <div class="feat-icon"><span class="material-symbols-outlined">print</span></div>
+        <div class="feat-title">PDF Print View</div>
+        <div class="feat-desc">Every approved memo has a branded print view for physical filing. Full memo details, company name, department, decision, and timestamp. Professionally formatted.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRODUCT DETAIL ── -->
+<section class="section section-alt">
+  <div class="section-inner">
+    <div class="section-label reveal">DMS-IA</div>
+    <h2 class="section-heading reveal">Digital Memo System —<br>Industrial Automation</h2>
+    <div class="product-grid">
+      <div class="reveal">
+        <p class="section-body">The first product in the Your Digi Employee suite. Built specifically for factories, plants, and industrial organisations managing internal memo workflows across departments.</p>
+        <ul class="check-list">
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Official Memo HTML form with HMAC-secured approval links</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Call Memo QR page with OTP authentication for workers</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Trigger-based queue processing every 1 minute</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Escalation: Stage 1 (24h) and Stage 2 HOD (48h)</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Delegation to backup approver if primary is unavailable</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Memo recall and withdrawal before approval</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>PDF print view for physical archiving</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>12-test automated test suite built in</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Supports up to 3,000 workers in WORKER LIST</li>
+          <li><span class="check-icon"><span class="material-symbols-outlined">check</span></span>Listed on Google Workspace Marketplace</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip">🇮🇳 Made in India</span>
+          <span class="chip"><span class="material-symbols-outlined">bolt</span> Google Apps Script</span>
+          <span class="chip"><span class="material-symbols-outlined">table_chart</span> Google Sheets</span>
+          <span class="chip"><span class="material-symbols-outlined">redeem</span> Free to install</span>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="product-panel">
+          <div class="panel-chrome">
+            <div class="hc-dot" style="background:var(--red);"></div>
+            <div class="hc-dot" style="background:var(--yellow);"></div>
+            <div class="hc-dot" style="background:var(--green);"></div>
+            <div class="panel-label">MASTER MEMO — Live Records</div>
+          </div>
+          <div class="panel-row">
+            <div><div class="pr-main">OT Request — Shift A</div><div class="pr-sub">Mechanical Dept · ELE-004</div></div>
+            <span class="pill pill-green">Approved</span>
+          </div>
+          <div class="panel-row">
+            <div><div class="pr-main">Safety Inspection Notice</div><div class="pr-sub">Civil Dept · CIV-002</div></div>
+            <span class="pill pill-blue">Pending</span>
+          </div>
+          <div class="panel-row">
+            <div><div class="pr-main">Equipment Maintenance</div><div class="pr-sub">Electrical Dept · ELE-001</div></div>
+            <span class="pill pill-green">Approved</span>
+          </div>
+          <div class="panel-row">
+            <div><div class="pr-main">Call Memo — Night Shift</div><div class="pr-sub">Operations · OPS-003</div></div>
+            <span class="pill pill-green">Approved</span>
+          </div>
+          <div class="panel-row">
+            <div><div class="pr-main">Leave Escalation Alert</div><div class="pr-sub">HR Dept · HR-001</div></div>
+            <span class="pill pill-red">Escalated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECURITY ── -->
+<section class="section" id="security">
+  <div class="section-inner">
+    <div class="security-intro">
+      <div>
+        <div class="section-label reveal">Security</div>
+        <h2 class="section-heading reveal">Cryptographic security.<br>No extras needed.</h2>
+        <p class="section-body reveal">Every link is signed. Every OTP is hashed. Your memo and HR data stays inside your own Google account — the developer has no access to it.</p>
+      </div>
+      <div class="security-grid reveal">
+        <div class="sec-card">
+          <div class="sec-card-icon"><span class="material-symbols-outlined">lock</span></div>
+          <div class="sec-card-title">HMAC-SHA256 Signing</div>
+          <div class="sec-card-body">Every approval link is cryptographically bound to the approver's email, memo ID, and timestamp. Tampering invalidates it immediately.</div>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><span class="material-symbols-outlined">key</span></div>
+          <div class="sec-card-title">OTP — SHA-256 Hashed</div>
+          <div class="sec-card-body">Raw OTP never stored. SHA-256 hash only. Expires in 5 minutes. Single-use. 5-attempt brute-force limit per 10 minutes.</div>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><span class="material-symbols-outlined">shield</span></div>
+          <div class="sec-card-title">Zero Restricted Scopes</div>
+          <div class="sec-card-body">No GmailApp. No DriveApp. No CardService. Six non-restricted OAuth scopes only. CSP-compliant HTML throughout.</div>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><span class="material-symbols-outlined">domain</span></div>
+          <div class="sec-card-title">Data Stays Yours</div>
+          <div class="sec-card-body">Your memo and HR records live entirely in your own Google Sheets — never on our servers. Optional attachments are stored via Cloudinary with automatic 3-day deletion, and can be moved to your own Cloudinary account any time. Full details in our <a href="/privacy.html">Privacy Policy</a>.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PRICING SECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<style>
+.pricing-section {
+  padding: var(--s12) var(--s5);
+  background: var(--surface);
+  border-top: 1px solid var(--rule-2);
+  border-bottom: 1px solid var(--rule-2);
+}
+.pricing-inner { max-width: var(--max); margin: 0 auto; }
+
+.trial-banner {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--green-dim);
+  color: var(--green);
+  font-size: 14px; font-weight: 500;
+  padding: 12px 22px; border-radius: var(--r-pill);
+  margin-top: var(--s4);
+}
+.trial-banner strong { font-weight: 700; }
+.trial-banner .material-symbols-outlined { font-size: 18px; }
+
+.slider-wrap {
+  margin-top: var(--s8);
+  background: var(--surface-2);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  padding: var(--s5);
+}
+.slider-label {
+  font-size: 13.5px; font-weight: 500;
+  color: var(--ink-3); margin-bottom: var(--s3);
+  display: flex; align-items: center;
+  justify-content: space-between;
+}
+.slider-label span {
+  font-family: var(--sans);
+  font-size: 15px; font-weight: 700;
+  color: var(--blue);
+}
+.duration-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%; height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--blue) 0%, var(--blue) 50%, #dadce0 50%, #dadce0 100%);
+  outline: none; cursor: pointer;
+  transition: background 0.15s;
+}
+.duration-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 4px solid #fff;
+  box-shadow: var(--e1);
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.duration-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.12);
+  box-shadow: var(--e2);
+}
+.duration-slider::-moz-range-thumb {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 4px solid #fff;
+  box-shadow: var(--e1);
+  cursor: pointer;
+}
+.slider-ticks {
+  display: flex; justify-content: space-between;
+  margin-top: 12px;
+}
+.tick {
+  font-size: 12px; font-weight: 600;
+  color: var(--ink-4); cursor: pointer;
+  transition: color 0.15s;
+  text-align: center;
+}
+.tick.active { color: var(--blue); }
+.tick span { display: block; font-size: 11px; font-weight: 400; margin-top: 2px; }
+
+.pricing-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s2);
+  margin-top: var(--s5);
+}
+.pcard {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  padding: var(--s4);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--e1);
+}
+.pcard::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 4px;
+  background: var(--rule);
+  transition: background 0.3s;
+}
+.pcard.active {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: var(--e3);
+}
+.pcard.active::before { background: var(--blue); }
+
+.pcard-name {
+  font-size: 12px; font-weight: 700;
+  color: var(--ink-4); letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: var(--s2);
+}
+.pcard.active .pcard-name { color: var(--blue); }
+
+.pcard-duration {
+  font-family: var(--sans);
+  font-size: 24px; font-weight: 500;
+  color: var(--ink); line-height: 1;
+  margin-bottom: var(--s1);
+}
+.pcard-total {
+  font-size: 13.5px; color: var(--ink-4);
+  margin-bottom: var(--s3);
+}
+.pcard-total strong { color: var(--ink); font-weight: 600; }
+
+.pcard-price {
+  margin-bottom: var(--s1);
+  display: flex; align-items: baseline; gap: 4px;
+}
+.price-currency {
+  font-size: 18px; font-weight: 600;
+  color: var(--ink-3); margin-top: 4px;
+}
+.price-amount {
+  font-family: var(--sans);
+  font-size: 44px; font-weight: 700;
+  color: var(--ink); line-height: 1;
+  letter-spacing: -1px;
+  transition: all 0.3s ease;
+}
+.price-period {
+  font-size: 13.5px; color: var(--ink-4);
+  align-self: flex-end; padding-bottom: 6px;
+}
+.pcard-saving {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--green-dim);
+  color: var(--green);
+  font-size: 11.5px; font-weight: 700;
+  padding: 4px 12px; border-radius: var(--r-pill);
+  margin-bottom: var(--s3);
+  min-height: 20px;
+}
+
+.pcard-divider {
+  height: 1px; background: var(--rule-2);
+  margin: var(--s3) 0;
+}
+
+.pcard-features { list-style: none; }
+.pcard-features li {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; color: var(--ink-2);
+  padding: 5px 0; line-height: 1.45;
+}
+.feat-check {
+  color: var(--green); flex-shrink: 0;
+}
+.feat-check .material-symbols-outlined { font-size: 15px; }
+
+.pcard-cta {
+  display: flex; align-items: center; justify-content: center;
+  height: 44px; border-radius: var(--r-pill);
+  font-family: var(--sans);
+  font-size: 14px; font-weight: 500;
+  margin-top: var(--s3); cursor: pointer;
+  border: 1px solid var(--rule);
+  color: var(--blue);
+  background: var(--surface);
+  transition: all 0.15s;
+  text-decoration: none;
+}
+.pcard-cta:hover {
+  background: var(--blue-dim);
+  border-color: var(--blue-dim);
+}
+.pcard.active .pcard-cta {
+  background: var(--blue); color: #fff;
+  border-color: var(--blue);
+  box-shadow: var(--e1);
+}
+.pcard.active .pcard-cta:hover { background: #1765cc; }
+.pcard-cta:active { transform: scale(0.97); }
+
+.pricing-summary {
+  margin-top: var(--s5);
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: var(--s2);
+}
+.psummary {
+  background: var(--surface-2);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r);
+  padding: var(--s2) var(--s3);
+  text-align: center;
+}
+.psummary-val {
+  font-family: var(--sans);
+  font-size: 20px; font-weight: 700;
+  color: var(--blue); line-height: 1;
+  transition: all 0.3s ease;
+}
+.psummary-lbl {
+  font-size: 11.5px; color: var(--ink-4);
+  margin-top: 4px; font-weight: 500;
+}
+
+.trial-note {
+  margin-top: var(--s5);
+  padding: var(--s3) var(--s4);
+  background: var(--yellow-dim);
+  border-radius: var(--r);
+  font-size: 13.5px; color: #7a5300;
+  line-height: 1.6;
+}
+.trial-note strong { font-weight: 700; }
+
+.pricing-contact {
+  margin-top: var(--s5);
+  text-align: center;
+  font-size: 14px; color: var(--ink-3);
+}
+.pricing-contact a { color: var(--blue); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .pricing-cards { grid-template-columns: 1fr; }
+  .pcard.active { transform: none; }
+  .pricing-summary { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .pricing-section { padding: 56px var(--s2); }
+  .slider-wrap { padding: var(--s3); }
+  .pricing-summary { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-inner">
+
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="section-heading reveal">Simple, transparent pricing</h2>
+    <p class="section-body reveal">One product. Three commitment lengths. All features included in every plan — no hidden tiers, no feature gating. Choose how long you want to commit.</p>
+
+    <div class="trial-banner reveal">
+      <span class="material-symbols-outlined">redeem</span>
+      <span><strong>Free trial included:</strong> Every plan comes with 1 month free. Still unsure? Get 1 extra month free — up to 2 months total, no payment needed.</span>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="slider-wrap reveal">
+      <div class="slider-label">
+        Drag to explore plans
+        <span id="slider-display">12 months</span>
+      </div>
+      <input
+        type="range"
+        class="duration-slider"
+        id="durationSlider"
+        min="0" max="2" step="1" value="1"
+      >
+      <div class="slider-ticks">
+        <div class="tick" data-val="0" onclick="setSlider(0)">6 months<span>Starter</span></div>
+        <div class="tick active" data-val="1" onclick="setSlider(1)">12 months<span>Standard</span></div>
+        <div class="tick" data-val="2" onclick="setSlider(2)">60 months<span>Professional</span></div>
+      </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="pricing-cards">
+
+      <!-- STARTER -->
+      <div class="pcard" id="card-0">
+        <div class="pcard-name">Starter</div>
+        <div class="pcard-duration">6 months</div>
+        <div class="pcard-total">Total: <strong>₹5,999</strong></div>
+        <div class="pcard-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount" id="price-0">1,000</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="pcard-saving" id="saving-0">&nbsp;</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Unlimited memo submissions</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Auto-escalation and delegation</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Command Center dashboard</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>30 days email support</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>1 month free trial included</li>
+        </ul>
+        <a href="mailto:admin@yourdigiemployee.com?subject=DMS-IA Starter Plan Enquiry" class="pcard-cta">Get Started</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="pcard active" id="card-1">
+        <div class="pcard-name">Standard</div>
+        <div class="pcard-duration">12 months</div>
+        <div class="pcard-total">Total: <strong>₹9,999</strong></div>
+        <div class="pcard-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount" id="price-1">833</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="pcard-saving" id="saving-1">Save ₹2,004 vs Starter</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Unlimited memo submissions</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Auto-escalation and delegation</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Command Center dashboard</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>90 days email support</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>1 month free trial included</li>
+        </ul>
+        <a href="mailto:admin@yourdigiemployee.com?subject=DMS-IA Standard Plan Enquiry" class="pcard-cta">Get Started</a>
+      </div>
+
+      <!-- PROFESSIONAL -->
+      <div class="pcard" id="card-2">
+        <div class="pcard-name">Professional</div>
+        <div class="pcard-duration">60 months</div>
+        <div class="pcard-total">Total: <strong>₹27,499</strong></div>
+        <div class="pcard-price">
+          <span class="price-currency">₹</span>
+          <span class="price-amount" id="price-2">458</span>
+          <span class="price-period">/month</span>
+        </div>
+        <div class="pcard-saving" id="saving-2">Save ₹32,501 over 5 years</div>
+        <div class="pcard-divider"></div>
+        <ul class="pcard-features">
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All features — Official Memo + Call Memo</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Up to 3,000 workers in WORKER LIST</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Unlimited memo submissions</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Auto-escalation and delegation</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>Command Center dashboard</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>12 months priority email support</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>All updates for 12 months</li>
+          <li><span class="feat-check"><span class="material-symbols-outlined">check</span></span>1 month free trial included</li>
+        </ul>
+        <a href="mailto:admin@yourdigiemployee.com?subject=DMS-IA Professional Plan Enquiry" class="pcard-cta">Get Started</a>
+      </div>
+
+    </div>
+
+    <!-- SUMMARY STRIP -->
+    <div class="pricing-summary reveal">
+      <div class="psummary">
+        <div class="psummary-val" id="sum-total">₹9,999</div>
+        <div class="psummary-lbl">Total investment</div>
+      </div>
+      <div class="psummary">
+        <div class="psummary-val" id="sum-monthly">₹833/mo</div>
+        <div class="psummary-lbl">Monthly equivalent</div>
+      </div>
+      <div class="psummary">
+        <div class="psummary-val" id="sum-saving">₹2,004</div>
+        <div class="psummary-lbl">Saved vs Starter</div>
+      </div>
+    </div>
+
+    <!-- TRIAL NOTE -->
+    <div class="trial-note reveal">
+      <strong>🎁 Free trial policy:</strong> Every plan starts with <strong>1 month free</strong> — no payment required upfront. If you still have doubts after the first month, we give you <strong>1 additional month free</strong>. You only pay when you are fully satisfied. Maximum free trial period: <strong>2 months</strong>.
+    </div>
+
+    <div class="pricing-contact reveal">
+      Need a custom quote for multiple deployments or enterprise?
+      <a href="mailto:admin@yourdigiemployee.com">Contact us directly →</a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var plans = [
+    {
+      name: 'Starter',
+      months: 6,
+      total: 5999,
+      monthly: 1000,
+      saving: '',
+      savingVal: 0,
+      label: '6 months'
+    },
+    {
+      name: 'Standard',
+      months: 12,
+      total: 9999,
+      monthly: 833,
+      saving: 'Save ₹2,004 vs Starter',
+      savingVal: 2004,
+      label: '12 months'
+    },
+    {
+      name: 'Professional',
+      months: 60,
+      total: 27499,
+      monthly: 458,
+      saving: 'Save ₹32,501 over 5 years',
+      savingVal: 32501,
+      label: '60 months'
+    }
+  ];
+
+  var slider = document.getElementById('durationSlider');
+  var display = document.getElementById('slider-display');
+  var ticks = document.querySelectorAll('.tick');
+
+  function fmt(n) {
+    return n.toLocaleString('en-IN');
+  }
+
+  function updateSlider(val) {
+    var pct = (val / 2) * 100;
+    slider.style.background =
+      'linear-gradient(to right, #1a73e8 0%, #1a73e8 ' + pct + '%, #dadce0 ' + pct + '%, #dadce0 100%)';
+
+    display.textContent = plans[val].label;
+
+    ticks.forEach(function(t) {
+      t.classList.toggle('active', parseInt(t.dataset.val) === val);
+    });
+
+    for (var i = 0; i < 3; i++) {
+      var card = document.getElementById('card-' + i);
+      card.classList.toggle('active', i === val);
+
+      var priceEl = document.getElementById('price-' + i);
+      priceEl.style.transform = 'scale(1.08)';
+      priceEl.style.color = i === val ? '#1a73e8' : '#202124';
+      setTimeout(function(el) {
+        el.style.transform = 'scale(1)';
+      }, 200, priceEl);
+
+      var savingEl = document.getElementById('saving-' + i);
+      savingEl.textContent = plans[i].saving || ' ';
+    }
+
+    var p = plans[val];
+    document.getElementById('sum-total').textContent = '₹' + fmt(p.total);
+    document.getElementById('sum-monthly').textContent = '₹' + fmt(p.monthly) + '/mo';
+    document.getElementById('sum-saving').textContent =
+      p.savingVal > 0 ? '₹' + fmt(p.savingVal) : '—';
+  }
+
+  slider.addEventListener('input', function() {
+    updateSlider(parseInt(this.value));
+  });
+
+  window.setSlider = function(val) {
+    slider.value = val;
+    updateSlider(val);
+  };
+
+  updateSlider(1);
+})();
+</script>
+
+<!-- ── CONTACT ── -->
+<section class="section section-alt" id="contact">
+  <div class="section-inner">
+    <div class="section-label reveal">Contact</div>
+    <h2 class="section-heading reveal">Get in touch</h2>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-row">
+          <div class="contact-icon"><span class="material-symbols-outlined">person</span></div>
+          <div>
+            <div class="contact-lbl">Developer</div>
+            <div class="contact-val">Romit Shirguppi</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><span class="material-symbols-outlined">mail</span></div>
+          <div>
+            <div class="contact-lbl">Email</div>
+            <div class="contact-val"><a href="mailto:admin@yourdigiemployee.com">admin@yourdigiemployee.com</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><span class="material-symbols-outlined">call</span></div>
+          <div>
+            <div class="contact-lbl">Phone</div>
+            <div class="contact-val">+91-9535835504</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><span class="material-symbols-outlined">location_on</span></div>
+          <div>
+            <div class="contact-lbl">Location</div>
+            <div class="contact-val">Dandeli, Karnataka, India</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon"><span class="material-symbols-outlined">link</span></div>
+          <div>
+            <div class="contact-lbl">Legal</div>
+            <div class="contact-val">
+              <a href="/privacy.html">Privacy Policy</a>
+              &nbsp;·&nbsp;
+              <a href="/terms.html">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="ip-card reveal reveal-delay-1">
+        <div>
+          <div class="ip-title"><span class="material-symbols-outlined">gavel</span>Intellectual Property</div>
+          <p class="ip-body">
+            DMS-IA — Digital Memo System Industrial Automation is original software protected under the Indian Copyright Act 1957. All source code, algorithms, HTML pages, email templates, and documentation are the exclusive property of Romit Shirguppi.
+            <br><br>
+            Unauthorised copying, distribution, reverse engineering, or resale is prohibited under the Software Licence Agreement and subject to legal action.
+          </p>
+        </div>
+        <div class="ip-stamp">COPYRIGHT DIARY NO. SW-25725/2026-CO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand"><span class="fb-mark"></span>Your Digi Employee</div>
+      <div class="footer-sub">
+        DMS-IA — Digital Memo System Industrial Automation<br>
+        © 2026 Romit Shirguppi · Dandeli, Karnataka, India
+      </div>
+    </div>
+    <div class="footer-links">
+      <nav class="footer-nav">
+        <a href="#process">How it works</a>
+        <a href="#demo">Demo</a>
+        <a href="#features">Features</a>
+        <a href="#security">Security</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </nav>
+      <div class="footer-copy">
+        Built on Google Workspace · Made in India
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function(el) { el.classList.add('visible'); });
+  } else {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    els.forEach(function(el) { io.observe(el); });
+  }
+
+  var nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 8) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
