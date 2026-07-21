@@ -378,25 +378,6 @@ nav.scrolled { box-shadow: var(--e1); }
 .ha-yes { background: var(--green-dim); color: var(--green); }
 .ha-no  { background: var(--red-dim);   color: var(--red); }
 
-.solve-strip {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: var(--s3);
-  max-width: 560px;
-}
-.solve-chip {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 12px; font-weight: 500;
-  color: var(--ink-2);
-  background: var(--surface);
-  border: 1px solid var(--rule-2);
-  border-radius: var(--r-pill);
-  padding: 6px 12px 6px 10px;
-}
-.solve-chip .material-symbols-outlined {
-  font-size: 14px; color: var(--green);
-  flex-shrink: 0;
-}
-
 .hcard-video {
   position: relative;
   line-height: 0;
@@ -417,6 +398,44 @@ nav.scrolled { box-shadow: var(--e1); }
 .hcard-video-caption .material-symbols-outlined {
   font-size: 14px; color: var(--red);
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SOLVE BAND — full checklist, restored elegantly
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+.solve-band {
+  background: var(--surface);
+  padding: var(--s6) var(--s5);
+  border-bottom: 1px solid var(--rule-2);
+}
+.solve-band-inner { max-width: var(--max); margin: 0 auto; }
+.solve-band-head {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  font-size: 12px; font-weight: 600;
+  color: var(--blue); letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: var(--s4);
+}
+.solve-band-head .material-symbols-outlined { font-size: 16px; }
+.solve-band-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 4px var(--s3);
+}
+.solve-band-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 10px;
+  border-radius: var(--r);
+  font-size: 13.5px; font-weight: 500;
+  color: var(--ink-2);
+  transition: background 0.15s;
+}
+.solve-band-item:hover { background: var(--surface-2); }
+.solve-band-icon {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green-dim);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.solve-band-icon .material-symbols-outlined { font-size: 14px; color: var(--green); }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    TICKER
@@ -878,6 +897,7 @@ footer {
   .hero { padding: calc(64px + 72px) var(--s3) 72px; }
   .hero-inner { grid-template-columns: 1fr; gap: var(--s8); }
   .hcard { max-width: 440px; }
+  .solve-band-grid { grid-template-columns: repeat(2, 1fr); }
   .metrics { padding: var(--s6) var(--s3); }
   .metrics-inner { grid-template-columns: 1fr 1fr; gap: var(--s4); }
   .metric { border-right: none; text-align: center; padding: var(--s2) var(--s3); }
@@ -900,6 +920,7 @@ footer {
   .hero-h { font-size: 34px; }
   .hero-sub { font-size: 15px; }
   .btn-ink, .btn-ghost { width: 100%; justify-content: center; }
+  .solve-band-grid { grid-template-columns: 1fr; }
   .metrics-inner { grid-template-columns: 1fr 1fr; }
   .metric-n { font-size: 36px; }
   .section { padding: 56px var(--s2); }
@@ -985,15 +1006,6 @@ footer {
         <span class="trust-sep">·</span>
         <span>Copyright SW-25725/2026-CO</span>
       </div>
-
-      <div class="solve-strip reveal reveal-delay-3">
-        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>No hand-delivery delays</span>
-        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Under 60-second approvals</span>
-        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>OTP + QR code login</span>
-        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Unique trackable memo ID</span>
-        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Digital safety audit trail</span>
-        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>No personal data required</span>
-      </div>
     </div>
 
     <div class="reveal reveal-delay-2">
@@ -1018,6 +1030,30 @@ footer {
 
   </div>
 </section>
+
+<!-- ── SOLVE BAND ── -->
+<div class="solve-band">
+  <div class="solve-band-inner">
+    <div class="solve-band-head reveal">
+      <span class="material-symbols-outlined">task_alt</span>
+      What DMS-IA solves, from day one
+    </div>
+    <div class="solve-band-grid">
+      <div class="solve-band-item reveal"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>No hand-delivery delays</div>
+      <div class="solve-band-item reveal"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Under 60-second approvals</div>
+      <div class="solve-band-item reveal"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>OTP + QR code login</div>
+      <div class="solve-band-item reveal"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Unique trackable memo ID</div>
+      <div class="solve-band-item reveal reveal-delay-1"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Blocks unauthorised submissions</div>
+      <div class="solve-band-item reveal reveal-delay-1"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>No memo books or files</div>
+      <div class="solve-band-item reveal reveal-delay-1"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Auto timestamp & priority tags</div>
+      <div class="solve-band-item reveal reveal-delay-1"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Digital safety audit trail</div>
+      <div class="solve-band-item reveal reveal-delay-2"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Photo, PDF & video attachments</div>
+      <div class="solve-band-item reveal reveal-delay-2"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>20-min setup, zero training</div>
+      <div class="solve-band-item reveal reveal-delay-2"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>No personal data required</div>
+      <div class="solve-band-item reveal reveal-delay-2"><span class="solve-band-icon"><span class="material-symbols-outlined">check</span></span>Fully mobile-friendly</div>
+    </div>
+  </div>
+</div>
 
 <!-- ── TICKER ── -->
 <div class="ticker">
