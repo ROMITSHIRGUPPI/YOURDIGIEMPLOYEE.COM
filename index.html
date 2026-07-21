@@ -378,20 +378,44 @@ nav.scrolled { box-shadow: var(--e1); }
 .ha-yes { background: var(--green-dim); color: var(--green); }
 .ha-no  { background: var(--red-dim);   color: var(--red); }
 
-.solve-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 14px;
-  padding: 4px 2px;
+.solve-strip {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: var(--s3);
+  max-width: 560px;
 }
-.solve-item {
-  display: flex; align-items: flex-start; gap: 6px;
+.solve-chip {
+  display: inline-flex; align-items: center; gap: 5px;
   font-size: 12px; font-weight: 500;
-  color: var(--ink-2); line-height: 1.35;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-pill);
+  padding: 6px 12px 6px 10px;
 }
-.solve-item .material-symbols-outlined {
-  font-size: 15px; color: var(--green);
-  flex-shrink: 0; margin-top: 1px;
+.solve-chip .material-symbols-outlined {
+  font-size: 14px; color: var(--green);
+  flex-shrink: 0;
+}
+
+.hcard-video {
+  position: relative;
+  line-height: 0;
+  background: var(--ink);
+}
+.hcard-video video {
+  width: 100%; height: auto; display: block;
+}
+.hcard-video-caption {
+  position: absolute; left: 12px; bottom: 12px;
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 11.5px; font-weight: 500;
+  padding: 6px 12px; border-radius: var(--r-pill);
+}
+.hcard-video-caption .material-symbols-outlined {
+  font-size: 14px; color: var(--red);
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -669,6 +693,18 @@ nav.scrolled { box-shadow: var(--e1); }
 .pr-main { font-weight: 500; color: var(--ink); }
 .pr-sub  { font-size: 11.5px; color: var(--ink-4); }
 
+.demo-video-wrap { margin-top: var(--s8); max-width: 860px; }
+.demo-video-panel {
+  background: var(--surface);
+  border: 1px solid var(--rule-2);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--e3);
+}
+.demo-video-panel video {
+  width: 100%; height: auto; display: block; background: #000;
+}
+
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    SECURITY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -885,6 +921,7 @@ footer {
     </a>
     <div class="nav-links">
       <a href="#process">How it works</a>
+      <a href="#demo">Demo</a>
       <a href="#features">Features</a>
       <a href="#security">Security</a>
       <a href="#pricing">Pricing</a>
@@ -933,7 +970,7 @@ footer {
           Install Free on Google Workspace
           <span class="material-symbols-outlined">arrow_forward</span>
         </a>
-        <a href="#process" class="btn-ghost">
+        <a href="#demo" class="btn-ghost">
           See how it works
           <span class="material-symbols-outlined">play_circle</span>
         </a>
@@ -948,6 +985,15 @@ footer {
         <span class="trust-sep">·</span>
         <span>Copyright SW-25725/2026-CO</span>
       </div>
+
+      <div class="solve-strip reveal reveal-delay-3">
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>No hand-delivery delays</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Under 60-second approvals</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>OTP + QR code login</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Unique trackable memo ID</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>Digital safety audit trail</span>
+        <span class="solve-chip"><span class="material-symbols-outlined">check_circle</span>No personal data required</span>
+      </div>
     </div>
 
     <div class="reveal reveal-delay-2">
@@ -956,22 +1002,15 @@ footer {
           <div class="hc-dot" style="background:var(--red);"></div>
           <div class="hc-dot" style="background:var(--yellow);"></div>
           <div class="hc-dot" style="background:var(--green);"></div>
-          <div class="hc-label">WHAT DMS-IA SOLVES</div>
+          <div class="hc-label">LIVE RECORDING — NOT A MOCKUP</div>
         </div>
-        <div class="hcard-body">
-          <div class="solve-grid">
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>No hand-delivery delays</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Under 60-second approvals</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>OTP + QR code login</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Unique trackable memo ID</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Blocks unauthorised submissions</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>No memo books or files</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Auto timestamp & priority tags</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Digital safety audit trail</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Photo, PDF & video attachments</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>20-min setup, zero training</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>No personal data required</div>
-            <div class="solve-item"><span class="material-symbols-outlined">check_circle</span>Fully mobile-friendly</div>
+        <div class="hcard-video">
+          <video autoplay muted loop playsinline poster="hero_loop_poster.jpg">
+            <source src="dms_ia_hero_loop.mp4" type="video/mp4">
+          </video>
+          <div class="hcard-video-caption">
+            <span class="material-symbols-outlined">videocam</span>
+            Real approval, real inbox, real memo
           </div>
         </div>
       </div>
@@ -1100,6 +1139,28 @@ footer {
         <div class="step-icon-wrap"><span class="material-symbols-outlined">task_alt</span></div>
         <div class="step-title">Approvals happen in email</div>
         <div class="step-desc">Approver clicks Approve or Reject in their email. Decision recorded, submitter notified, AUDIT LOG updated — immediately. If no action: auto-escalation fires at 24h, then HOD is alerted at 48h.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DEMO VIDEO ── -->
+<section class="section section-alt" id="demo">
+  <div class="section-inner">
+    <div class="section-label reveal">See it in action</div>
+    <h2 class="section-heading reveal">Watch a real memo get approved</h2>
+    <p class="section-body reveal">No slides, no staged screenshots — this is an actual DMS-IA deployment: submitting an Official Memo, the approval email landing in Gmail, and the decision recorded instantly.</p>
+    <div class="demo-video-wrap reveal">
+      <div class="demo-video-panel">
+        <div class="panel-chrome">
+          <div class="hc-dot" style="background:var(--red);"></div>
+          <div class="hc-dot" style="background:var(--yellow);"></div>
+          <div class="hc-dot" style="background:var(--green);"></div>
+          <div class="panel-label">DMS-IA · OFFICIAL MEMO WALKTHROUGH · 4:30</div>
+        </div>
+        <video controls preload="metadata" poster="demo_full_poster.jpg">
+          <source src="dms_ia_demo_full.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -1798,6 +1859,7 @@ footer {
     <div class="footer-links">
       <nav class="footer-nav">
         <a href="#process">How it works</a>
+        <a href="#demo">Demo</a>
         <a href="#features">Features</a>
         <a href="#security">Security</a>
         <a href="#pricing">Pricing</a>
